@@ -11,9 +11,9 @@ import java.util.EnumMap;
 import java.util.function.Supplier;
 
 public enum RandomisfitsMaterials implements ArmorMaterial {
-    INVISIBLE("randomisfits_invisible", 15, createMap(new int[]{2, 5, 6, 2}),
+    INVISIBLE("randomisfits:invisible", 15, createMap(new int[]{2, 5, 6, 2}),
             9, SoundEvents.ARMOR_EQUIP_GENERIC, 0f, 0f, () -> Ingredient.of(Blocks.GLASS)),
-    REINFORCED_INVISIBLE("randomisfits_invisible", 30, createMap(new int[]{3, 6, 8, 3}),
+    REINFORCED_INVISIBLE("randomisfits:invisible", 30, createMap(new int[]{3, 6, 8, 3}),
             10, SoundEvents.ARMOR_EQUIP_GENERIC, 2f, 0f, () -> Ingredient.of(Blocks.GLASS));
 
     private static EnumMap<EquipmentSlot, Integer> createMap(int[] values) {
