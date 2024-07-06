@@ -21,13 +21,13 @@ public class RandomisfitsModItems {
     public static final Item REINFORCED_INVISIBLE_CHESTPLATE = RegistryObject("reinforced_invisible_chestplate", new BaseArmorItem(RandomisfitsMaterials.REINFORCED_INVISIBLE, Type.CHESTPLATE, 30, new Item.Properties().rarity(Rarity.RARE)));
     public static final Item REINFORCED_INVISIBLE_LEGGINGS = RegistryObject("reinforced_invisible_leggings", new BaseArmorItem(RandomisfitsMaterials.REINFORCED_INVISIBLE, Type.LEGGINGS, 30, new Item.Properties().rarity(Rarity.RARE)));
     public static final Item REINFORCED_INVISIBLE_BOOTS = RegistryObject("reinforced_invisible_boots", new BaseArmorItem(RandomisfitsMaterials.REINFORCED_INVISIBLE, Type.BOOTS, 30, new Item.Properties().rarity(Rarity.RARE)));
-    public static final Item LAMP = Registry.register(BuiltInRegistries.ITEM, new ResourceLocation(MODID, "lamp"), new BaseWearableItem(RandomisfitsModBlocks.LAMP, new Item.Properties()));
-    public static final Item NETHERITE_LAMP = Registry.register(BuiltInRegistries.ITEM, new ResourceLocation(MODID, "netherite_lamp"), new NetheriteLampItem(RandomisfitsModBlocks.NETHERITE_LAMP, new Item.Properties()));
+    public static final Item LAMP = Registry.register(BuiltInRegistries.ITEM, ResourceLocation.fromNamespaceAndPath(MODID, "lamp"), new BaseWearableItem(RandomisfitsModBlocks.LAMP, new Item.Properties()));
+    public static final Item NETHERITE_LAMP = Registry.register(BuiltInRegistries.ITEM, ResourceLocation.fromNamespaceAndPath(MODID, "netherite_lamp"), new NetheriteLampItem(RandomisfitsModBlocks.NETHERITE_LAMP, new Item.Properties()));
 
     public static void init() {
     }
 
     public static Item RegistryObject(String name, Item item) {
-        return Registry.register(BuiltInRegistries.ITEM, new ResourceLocation(MODID, name), item);
+        return Registry.register(BuiltInRegistries.ITEM, ResourceLocation.fromNamespaceAndPath(MODID, name), item);
     }
 }

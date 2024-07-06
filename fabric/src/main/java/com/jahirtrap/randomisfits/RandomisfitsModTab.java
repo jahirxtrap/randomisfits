@@ -30,7 +30,7 @@ public class RandomisfitsModTab {
             .build();
 
     public static void init() {
-        Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, new ResourceLocation(RandomisfitsMod.MODID, "tab_randomisfits"), TAB_RANDOMISFITS);
+        Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, ResourceLocation.fromNamespaceAndPath(RandomisfitsMod.MODID, "tab_randomisfits"), TAB_RANDOMISFITS);
     }
 
 }
