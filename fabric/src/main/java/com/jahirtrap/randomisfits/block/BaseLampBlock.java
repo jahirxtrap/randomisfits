@@ -16,14 +16,14 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
-import net.minecraft.world.level.material.Material;
+import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class BaseLampBlock extends Block implements SimpleWaterloggedBlock {
     public BaseLampBlock() {
-        super(BlockBehaviour.Properties.of(Material.DECORATION).sound(SoundType.METAL).strength(0.5f).lightLevel($ -> 15));
+        super(BlockBehaviour.Properties.of().pushReaction(PushReaction.DESTROY).sound(SoundType.METAL).strength(0.5f).lightLevel($ -> 15));
         this.registerDefaultState((this.stateDefinition.any()).setValue(BlockStateProperties.WATERLOGGED, false));
     }
 
