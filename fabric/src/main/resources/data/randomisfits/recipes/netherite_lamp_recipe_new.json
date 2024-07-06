@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "base": {
+    "item": "randomisfits:lamp"
+  },
+  "addition": {
+    "tag": "c:netherite_ingots"
+  },
+  "result": {
+    "item": "randomisfits:netherite_lamp"
+  },
+  "template": {
+    "item": "minecraft:netherite_upgrade_smithing_template"
+  }
+}

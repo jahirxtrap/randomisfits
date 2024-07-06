@@ -2,7 +2,7 @@ package com.jahirtrap.randomisfits.init;
 
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.item.ArmorItem.Type;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Blocks;
@@ -16,23 +16,22 @@ public enum RandomisfitsMaterials implements ArmorMaterial {
     REINFORCED_INVISIBLE("randomisfits:invisible", 30, createMap(new int[]{3, 6, 8, 3}),
             10, SoundEvents.ARMOR_EQUIP_GENERIC, 2f, 0f, () -> Ingredient.of(Blocks.GLASS));
 
-    private static EnumMap<EquipmentSlot, Integer> createMap(int[] values) {
-        EnumMap<EquipmentSlot, Integer> enumMap = new EnumMap<>(EquipmentSlot.class);
-        EquipmentSlot[] slots = new EquipmentSlot[]{EquipmentSlot.HEAD, EquipmentSlot.CHEST, EquipmentSlot.LEGS, EquipmentSlot.FEET};
-        for (int i = 0; i < values.length; i++) enumMap.put(slots[i], values[i]);
+    private static EnumMap<Type, Integer> createMap(int[] values) {
+        EnumMap<Type, Integer> enumMap = new EnumMap<>(Type.class);
+        for (int i = 0; i < values.length; i++) enumMap.put(Type.values()[i], values[i]);
         return enumMap;
     }
 
     private final String name;
     private final int durabilityMultiplier;
-    private final EnumMap<EquipmentSlot, Integer> defense;
+    private final EnumMap<Type, Integer> defense;
     private final int enchantmentValue;
     private final SoundEvent sound;
     private final float toughness;
     private final float knockbackResistance;
     private final Supplier<Ingredient> ingredient;
 
-    RandomisfitsMaterials(String name, int durabilityMultiplier, EnumMap<EquipmentSlot, Integer> defense, int enchantmentValue, SoundEvent sound, float toughness, float knockbackResistance, Supplier<Ingredient> ingredient) {
+    RandomisfitsMaterials(String name, int durabilityMultiplier, EnumMap<Type, Integer> defense, int enchantmentValue, SoundEvent sound, float toughness, float knockbackResistance, Supplier<Ingredient> ingredient) {
         this.name = name;
         this.durabilityMultiplier = durabilityMultiplier;
         this.defense = defense;
@@ -43,12 +42,12 @@ public enum RandomisfitsMaterials implements ArmorMaterial {
         this.ingredient = ingredient;
     }
 
-    public int getDurabilityForSlot(EquipmentSlot slot) {
-        return createMap(new int[]{13, 15, 16, 11}).get(slot) * this.durabilityMultiplier;
+    public int getDurabilityForType(Type type) {
+        return createMap(new int[]{13, 15, 16, 11}).get(type) * this.durabilityMultiplier;
     }
 
-    public int getDefenseForSlot(EquipmentSlot slot) {
-        return this.defense.get(slot);
+    public int getDefenseForType(Type type) {
+        return this.defense.get(type);
     }
 
     public int getEnchantmentValue() {

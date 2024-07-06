@@ -16,6 +16,6 @@ public class RandomisfitsMod {
 
         RandomisfitsModBlocks.REGISTRY.register(bus);
         RandomisfitsModItems.REGISTRY.register(bus);
-        RandomisfitsModTab.init();
+        RandomisfitsModTab.init(bus);
     }
 }
