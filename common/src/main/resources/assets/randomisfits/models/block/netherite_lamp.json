@@ -1,0 +1,7 @@
+{
+  "parent": "randomisfits:block/lamp",
+  "textures": {
+    "0": "randomisfits:block/netherite_lamp",
+    "particle": "randomisfits:block/netherite_lamp"
+  }
+}

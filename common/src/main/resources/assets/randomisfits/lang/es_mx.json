@@ -1,0 +1,13 @@
+{
+  "block.randomisfits.lamp": "Lámpara",
+  "block.randomisfits.netherite_lamp": "Lámpara de netherita",
+  "item.randomisfits.invisible_boots": "Botas invisibles",
+  "item.randomisfits.invisible_chestplate": "Pechera invisible",
+  "item.randomisfits.invisible_helmet": "Yelmo invisible",
+  "item.randomisfits.invisible_leggings": "Grebas invisibles",
+  "item.randomisfits.reinforced_invisible_boots": "Botas invisibles reforzadas",
+  "item.randomisfits.reinforced_invisible_chestplate": "Pechera invisible reforzada",
+  "item.randomisfits.reinforced_invisible_helmet": "Yelmo invisible reforzado",
+  "item.randomisfits.reinforced_invisible_leggings": "Grebas invisibles reforzadas",
+  "itemGroup.randomisfits.tab_randomisfits": "Random Misfits TXF"
+}

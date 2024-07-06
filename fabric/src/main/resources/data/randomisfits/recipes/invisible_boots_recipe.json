@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "GGG",
+    "GIG",
+    "GGG"
+  ],
+  "key": {
+    "G": {
+      "tag": "c:glass_colorless"
+    },
+    "I": {
+      "item": "minecraft:iron_boots"
+    }
+  },
+  "result": {
+    "item": "randomisfits:invisible_boots",
+    "count": 1
+  }
+}

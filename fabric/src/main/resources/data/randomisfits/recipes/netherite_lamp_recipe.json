@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "randomisfits:lamp"
+  },
+  "addition": {
+    "tag": "c:netherite_ingots"
+  },
+  "result": {
+    "item": "randomisfits:netherite_lamp"
+  }
+}

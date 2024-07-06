@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "GGG",
+    "GIG",
+    "GGG"
+  ],
+  "key": {
+    "G": {
+      "tag": "forge:glass/colorless"
+    },
+    "I": {
+      "item": "minecraft:iron_helmet"
+    }
+  },
+  "result": {
+    "item": "randomisfits:invisible_helmet",
+    "count": 1
+  }
+}
