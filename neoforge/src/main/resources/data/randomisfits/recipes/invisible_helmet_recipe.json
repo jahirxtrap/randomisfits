@@ -7,14 +7,14 @@
   ],
   "key": {
     "G": {
-      "tag": "forge:glass/colorless"
+      "tag": "c:glass_blocks/colorless"
     },
     "I": {
       "item": "minecraft:iron_helmet"
     }
   },
   "result": {
-    "item": "randomisfits:invisible_helmet",
+    "id": "randomisfits:invisible_helmet",
     "count": 1
   }
 }

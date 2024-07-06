@@ -7,7 +7,7 @@
     "tag": "forge:ingots/netherite"
   },
   "result": {
-    "item": "randomisfits:netherite_lamp"
+    "id": "randomisfits:netherite_lamp"
   },
   "template": {
     "item": "minecraft:netherite_upgrade_smithing_template"

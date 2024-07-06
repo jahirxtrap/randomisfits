@@ -7,14 +7,14 @@
   ],
   "key": {
     "G": {
-      "tag": "forge:glass/colorless"
+      "tag": "c:glass_blocks/colorless"
     },
     "I": {
       "item": "minecraft:iron_boots"
     }
   },
   "result": {
-    "item": "randomisfits:invisible_boots",
+    "id": "randomisfits:invisible_boots",
     "count": 1
   }
 }

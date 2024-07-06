@@ -78,7 +78,7 @@ processResources {
     filesMatching(resourceTargets) {
         expand replaceProperties
     }
-    exclude '**/data/forge/**'
+    exclude '**/data/forge/**', '**/data/neoforge/**'
     from project(":common").sourceSets.main.resources
 }
 

@@ -7,14 +7,14 @@
   ],
   "key": {
     "G": {
-      "tag": "forge:glass/colorless"
+      "tag": "c:glass_blocks/colorless"
     },
     "I": {
       "item": "minecraft:iron_leggings"
     }
   },
   "result": {
-    "item": "randomisfits:invisible_leggings",
+    "id": "randomisfits:invisible_leggings",
     "count": 1
   }
 }

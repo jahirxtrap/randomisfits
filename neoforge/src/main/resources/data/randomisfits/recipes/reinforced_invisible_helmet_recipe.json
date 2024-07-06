@@ -1,4 +1,5 @@
 {
+  "group": "ingotcraft",
   "type": "minecraft:crafting_shaped",
   "pattern": [
     "GGG",
@@ -7,14 +8,14 @@
   ],
   "key": {
     "G": {
-      "tag": "forge:glass/colorless"
+      "tag": "c:glass_blocks/colorless"
     },
     "D": {
       "item": "minecraft:diamond_helmet"
     }
   },
   "result": {
-    "item": "randomisfits:reinforced_invisible_helmet",
+    "id": "randomisfits:reinforced_invisible_helmet",
     "count": 1
   }
 }
