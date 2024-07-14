@@ -1,6 +1,7 @@
 package com.jahirtrap.randomisfits.init;
 
 import com.jahirtrap.randomisfits.item.BaseArmorItem;
+import com.jahirtrap.randomisfits.item.BaseRepairKitItem;
 import com.jahirtrap.randomisfits.item.BaseWearableItem;
 import com.jahirtrap.randomisfits.item.NetheriteLampItem;
 import net.minecraft.core.Registry;
@@ -23,6 +24,9 @@ public class RandomisfitsModItems {
     public static final Item REINFORCED_INVISIBLE_CHESTPLATE = RegistryObject("reinforced_invisible_chestplate", new BaseArmorItem(RandomisfitsMaterials.REINFORCED_INVISIBLE, EquipmentSlot.CHEST, new Item.Properties().rarity(Rarity.RARE)));
     public static final Item REINFORCED_INVISIBLE_LEGGINGS = RegistryObject("reinforced_invisible_leggings", new BaseArmorItem(RandomisfitsMaterials.REINFORCED_INVISIBLE, EquipmentSlot.LEGS, new Item.Properties().rarity(Rarity.RARE)));
     public static final Item REINFORCED_INVISIBLE_BOOTS = RegistryObject("reinforced_invisible_boots", new BaseArmorItem(RandomisfitsMaterials.REINFORCED_INVISIBLE, EquipmentSlot.FEET, new Item.Properties().rarity(Rarity.RARE)));
+    public static final Item REPAIR_KIT = RegistryObject("repair_kit", new BaseRepairKitItem(new Item.Properties(), RandomisfitsModConfig.kitRepairAmount));
+    public static final Item DIAMOND_REPAIR_KIT = RegistryObject("diamond_repair_kit", new BaseRepairKitItem(new Item.Properties(), RandomisfitsModConfig.diamondKitRepairAmount));
+    public static final Item NETHERITE_REPAIR_KIT = RegistryObject("netherite_repair_kit", new BaseRepairKitItem(new Item.Properties().fireResistant(), RandomisfitsModConfig.netheriteKitRepairAmount));
     public static final Item LAMP = RegistryObject("lamp", new BaseWearableItem(RandomisfitsModBlocks.LAMP, new Item.Properties()));
     public static final Item NETHERITE_LAMP = RegistryObject("netherite_lamp", new NetheriteLampItem(RandomisfitsModBlocks.NETHERITE_LAMP, new Item.Properties()));
 
