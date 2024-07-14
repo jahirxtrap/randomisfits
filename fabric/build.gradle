@@ -68,7 +68,8 @@ def replaceProperties = [
         loader_version_range: fabric_loader_version_range,
         mod_id: mod_id, mod_name: mod_name, mod_license: mod_license, mod_version: version,
         mod_author: mod_author, mod_description: mod_description,
-        mod_url: mod_url, side: fabric_side
+        mod_url: mod_url, side: fabric_side,
+        configlibtxf_version: configlibtxf_version
 ]
 
 processResources {

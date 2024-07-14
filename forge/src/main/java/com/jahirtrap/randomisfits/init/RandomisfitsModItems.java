@@ -1,6 +1,7 @@
 package com.jahirtrap.randomisfits.init;
 
 import com.jahirtrap.randomisfits.item.BaseArmorItem;
+import com.jahirtrap.randomisfits.item.BaseRepairKitItem;
 import com.jahirtrap.randomisfits.item.BaseWearableItem;
 import com.jahirtrap.randomisfits.item.NetheriteLampItem;
 import net.minecraft.world.item.ArmorItem.Type;
@@ -24,6 +25,9 @@ public class RandomisfitsModItems {
     public static final RegistryObject<Item> REINFORCED_INVISIBLE_CHESTPLATE = REGISTRY.register("reinforced_invisible_chestplate", () -> new BaseArmorItem(RandomisfitsMaterials.REINFORCED_INVISIBLE, Type.CHESTPLATE, 30, new Item.Properties().rarity(Rarity.RARE)));
     public static final RegistryObject<Item> REINFORCED_INVISIBLE_LEGGINGS = REGISTRY.register("reinforced_invisible_leggings", () -> new BaseArmorItem(RandomisfitsMaterials.REINFORCED_INVISIBLE, Type.LEGGINGS, 30, new Item.Properties().rarity(Rarity.RARE)));
     public static final RegistryObject<Item> REINFORCED_INVISIBLE_BOOTS = REGISTRY.register("reinforced_invisible_boots", () -> new BaseArmorItem(RandomisfitsMaterials.REINFORCED_INVISIBLE, Type.BOOTS, 30, new Item.Properties().rarity(Rarity.RARE)));
+    public static final RegistryObject<Item> REPAIR_KIT = REGISTRY.register("repair_kit", () -> new BaseRepairKitItem(new Item.Properties(), RandomisfitsModConfig.kitRepairAmount));
+    public static final RegistryObject<Item> DIAMOND_REPAIR_KIT = REGISTRY.register("diamond_repair_kit", () -> new BaseRepairKitItem(new Item.Properties(), RandomisfitsModConfig.diamondKitRepairAmount));
+    public static final RegistryObject<Item> NETHERITE_REPAIR_KIT = REGISTRY.register("netherite_repair_kit", () -> new BaseRepairKitItem(new Item.Properties().fireResistant(), RandomisfitsModConfig.netheriteKitRepairAmount));
     public static final RegistryObject<Item> LAMP = REGISTRY.register("lamp", () -> new BaseWearableItem(RandomisfitsModBlocks.LAMP.get(), new Item.Properties()));
     public static final RegistryObject<Item> NETHERITE_LAMP = REGISTRY.register("netherite_lamp", () -> new NetheriteLampItem(RandomisfitsModBlocks.NETHERITE_LAMP.get(), new Item.Properties()));
 
