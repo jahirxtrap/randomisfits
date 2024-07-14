@@ -24,6 +24,9 @@ public class RandomisfitsModTab {
                 event.accept(RandomisfitsModItems.REINFORCED_INVISIBLE_CHESTPLATE.get());
                 event.accept(RandomisfitsModItems.REINFORCED_INVISIBLE_LEGGINGS.get());
                 event.accept(RandomisfitsModItems.REINFORCED_INVISIBLE_BOOTS.get());
+                event.accept(RandomisfitsModItems.REPAIR_KIT.get());
+                event.accept(RandomisfitsModItems.DIAMOND_REPAIR_KIT.get());
+                event.accept(RandomisfitsModItems.NETHERITE_REPAIR_KIT.get());
                 event.accept(RandomisfitsModItems.LAMP.get());
                 event.accept(RandomisfitsModItems.NETHERITE_LAMP.get());
             })
