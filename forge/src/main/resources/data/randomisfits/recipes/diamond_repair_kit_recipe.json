@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    "#K#",
+    " # "
+  ],
+  "key": {
+    "#": {
+      "tag": "forge:gems/diamond"
+    },
+    "K": {
+      "item": "randomisfits:repair_kit"
+    }
+  },
+  "result": {
+    "item": "randomisfits:diamond_repair_kit",
+    "count": 1
+  }
+}

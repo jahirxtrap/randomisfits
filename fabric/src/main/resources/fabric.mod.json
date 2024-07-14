@@ -26,5 +26,8 @@
 		"minecraft": "${minecraft_version_range}",
 		"java": ">=17",
 		"fabric": "*"
-	}
+	},
+	"jars": [{
+		"file": "META-INF/jars/configlibtxf-${configlibtxf_version}-fabric.jar"
+    	}]
 }

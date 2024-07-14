@@ -9,5 +9,9 @@
   "item.randomisfits.reinforced_invisible_chestplate": "Pechera invisible reforzada",
   "item.randomisfits.reinforced_invisible_helmet": "Yelmo invisible reforzado",
   "item.randomisfits.reinforced_invisible_leggings": "Grebas invisibles reforzadas",
-  "itemGroup.randomisfits.tab_randomisfits": "Random Misfits TXF"
+  "item.randomisfits.repair_kit": "Kit de reparación",
+  "item.randomisfits.diamond_repair_kit": "Kit de reparación de diamante",
+  "item.randomisfits.netherite_repair_kit": "Kit de reparación de netherita",
+  "itemGroup.randomisfits.tab_randomisfits": "Random Misfits TXF",
+  "randomisfits.config.title": "Random Misfits TXF"
 }
