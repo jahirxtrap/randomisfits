@@ -1,17 +1,20 @@
 package com.jahirtrap.randomisfits.util;
 
-import net.minecraft.client.Minecraft;
-import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.level.GameType;
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.Component;
 
 public class CommonUtils {
-    public static boolean checkCreativeMode(Player player) {
-        if (player instanceof ServerPlayer serverPlayer)
-            return serverPlayer.gameMode.getGameModeForPlayer() == GameType.CREATIVE;
-        else if (player.level.isClientSide())
-            return Minecraft.getInstance().getConnection().getPlayerInfo(player.getGameProfile().getId()).getGameMode() == GameType.CREATIVE;
+    public static Component coloredTextComponent(String string, ChatFormatting color) {
+        var textComponent = Component.literal(string);
+        textComponent.withStyle(color);
+        return textComponent;
+    }
 
-        return false;
+    public static String formatText(float amount) {
+        if (amount % 1.0 == 0) {
+            return String.format("%.0f", amount);
+        } else {
+            return String.valueOf(amount);
+        }
     }
 }

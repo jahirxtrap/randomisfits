@@ -1,6 +1,5 @@
 package com.jahirtrap.randomisfits;
 
-import com.jahirtrap.randomisfits.init.RandomisfitsModBlocks;
 import com.jahirtrap.randomisfits.init.RandomisfitsModItems;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.network.chat.Component;
