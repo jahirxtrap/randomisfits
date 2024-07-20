@@ -9,9 +9,15 @@
   "item.randomisfits.reinforced_invisible_chestplate": "Peto invisible reforzado",
   "item.randomisfits.reinforced_invisible_helmet": "Casco invisible reforzado",
   "item.randomisfits.reinforced_invisible_leggings": "Grebas invisibles reforzadas",
+  "item.randomisfits.iron_multitool": "Multitool de hierro",
+  "item.randomisfits.diamond_multitool": "Multitool de diamante",
+  "item.randomisfits.netherite_multitool": "Multitool de netherita",
   "item.randomisfits.repair_kit": "Kit de reparación",
   "item.randomisfits.diamond_repair_kit": "Kit de reparación de diamante",
   "item.randomisfits.netherite_repair_kit": "Kit de reparación de netherita",
   "itemGroup.randomisfits.tab_randomisfits": "Random Misfits TXF",
-  "randomisfits.config.title": "Random Misfits TXF"
+  "randomisfits.config.title": "Random Misfits TXF",
+  "randomisfits.repair_kit.amount": "Cantidad: ",
+  "randomisfits.multitool.mode.shovel": "Modo: Pala",
+  "randomisfits.multitool.mode.hoe": "Modo: Azada"
 }
