@@ -5,7 +5,7 @@ Random things that don't fit with my other mods
 
 <strong>This mod adds:</strong>
 
-- Invisible armor, Repair kits, Lamp
+- Invisible armor, Multitools, Repair kits, Lamp
 - Random things
 - More random things
 
@@ -14,6 +14,6 @@ Random things that don't fit with my other mods
 <details>
   <summary>Spoiler</summary>
 
-<img src="https://cdn.modrinth.com/data/sdjh3tKn/images/99c30c481878af2c9a593356a5fe0e38ace7baef.png" width="500">
+<img src="https://cdn.modrinth.com/data/sdjh3tKn/images/b5a68102f7d9113a78099716e70c282ef04374c8.png" width="500">
 
 </details>
