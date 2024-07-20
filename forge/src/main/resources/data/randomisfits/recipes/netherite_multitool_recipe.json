@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ASP",
+    "HR ",
+    " R "
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:netherite_axe"
+    },
+    "S": {
+      "item": "minecraft:netherite_shovel"
+    },
+    "P": {
+      "item": "minecraft:netherite_pickaxe"
+    },
+    "H": {
+      "item": "minecraft:netherite_hoe"
+    },
+    "R": {
+      "tag": "forge:rods/wooden"
+    }
+  },
+  "result": {
+    "item": "randomisfits:netherite_multitool",
+    "count": 1
+  }
+}

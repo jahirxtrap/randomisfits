@@ -3,6 +3,7 @@ package com.jahirtrap.randomisfits.item;
 import com.jahirtrap.randomisfits.event.RepairItemEvent;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionResultHolder;
@@ -38,6 +39,6 @@ public class BaseRepairKitItem extends BaseItem {
 
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
-        tooltip.add(coloredTextComponent("Repair amount: " + formatText(amount), ChatFormatting.GRAY));
+        tooltip.add(coloredTextComponent(new TranslatableComponent("randomisfits.repair_kit.amount").getString() + formatText(amount), ChatFormatting.GRAY));
     }
 }

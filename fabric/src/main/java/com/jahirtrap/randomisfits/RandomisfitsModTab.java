@@ -8,7 +8,7 @@ import net.minecraft.world.item.ItemStack;
 
 public class RandomisfitsModTab {
     public static CreativeModeTab TAB_RANDOMISFITS = FabricItemGroupBuilder.build(
-            new ResourceLocation(RandomisfitsMod.MODID, "tab_randomisfits"), () -> new ItemStack(RandomisfitsModItems.REINFORCED_INVISIBLE_CHESTPLATE));
+            new ResourceLocation(RandomisfitsMod.MODID, "tab_randomisfits"), () -> new ItemStack(RandomisfitsModItems.NETHERITE_MULTITOOL));
 
     public static void init() {
     }
