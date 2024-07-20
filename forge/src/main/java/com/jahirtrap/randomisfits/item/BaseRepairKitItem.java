@@ -7,7 +7,6 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
@@ -21,7 +20,7 @@ import static com.jahirtrap.randomisfits.util.CommonUtils.formatText;
 public class BaseRepairKitItem extends BaseItem {
     private final int amount;
 
-    public BaseRepairKitItem(Item.Properties properties, int repairAmount) {
+    public BaseRepairKitItem(Properties properties, int repairAmount) {
         super(properties.stacksTo(16));
         this.amount = repairAmount;
     }
@@ -39,6 +38,6 @@ public class BaseRepairKitItem extends BaseItem {
 
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
-        tooltip.add(coloredTextComponent("Repair amount: " + formatText(amount), ChatFormatting.GRAY));
+        tooltip.add(coloredTextComponent(Component.translatable("randomisfits.repair_kit.amount").getString() + formatText(amount), ChatFormatting.GRAY));
     }
 }

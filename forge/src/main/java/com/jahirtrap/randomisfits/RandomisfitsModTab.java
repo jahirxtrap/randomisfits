@@ -11,7 +11,7 @@ public class RandomisfitsModTab {
         TAB_RANDOMISFITS = new CreativeModeTab("randomisfits.tab_randomisfits") {
             @Override
             public ItemStack makeIcon() {
-                return new ItemStack(RandomisfitsModItems.REINFORCED_INVISIBLE_CHESTPLATE.get());
+                return new ItemStack(RandomisfitsModItems.NETHERITE_MULTITOOL.get());
             }
         };
     }

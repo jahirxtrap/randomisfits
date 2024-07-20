@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ASP",
+    "HR ",
+    " R "
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:diamond_axe"
+    },
+    "S": {
+      "item": "minecraft:diamond_shovel"
+    },
+    "P": {
+      "item": "minecraft:diamond_pickaxe"
+    },
+    "H": {
+      "item": "minecraft:diamond_hoe"
+    },
+    "R": {
+      "tag": "c:wooden_rods"
+    }
+  },
+  "result": {
+    "item": "randomisfits:diamond_multitool",
+    "count": 1
+  }
+}
