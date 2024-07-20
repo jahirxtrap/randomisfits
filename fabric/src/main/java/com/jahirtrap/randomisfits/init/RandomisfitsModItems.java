@@ -1,9 +1,6 @@
 package com.jahirtrap.randomisfits.init;
 
-import com.jahirtrap.randomisfits.item.BaseArmorItem;
-import com.jahirtrap.randomisfits.item.BaseRepairKitItem;
-import com.jahirtrap.randomisfits.item.BaseWearableItem;
-import com.jahirtrap.randomisfits.item.NetheriteLampItem;
+import com.jahirtrap.randomisfits.item.*;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
@@ -22,6 +19,9 @@ public class RandomisfitsModItems {
     public static final Item REINFORCED_INVISIBLE_CHESTPLATE = RegistryObject("reinforced_invisible_chestplate", new BaseArmorItem(RandomisfitsMaterials.REINFORCED_INVISIBLE, Type.CHESTPLATE, 30, new Item.Properties().rarity(Rarity.RARE)));
     public static final Item REINFORCED_INVISIBLE_LEGGINGS = RegistryObject("reinforced_invisible_leggings", new BaseArmorItem(RandomisfitsMaterials.REINFORCED_INVISIBLE, Type.LEGGINGS, 30, new Item.Properties().rarity(Rarity.RARE)));
     public static final Item REINFORCED_INVISIBLE_BOOTS = RegistryObject("reinforced_invisible_boots", new BaseArmorItem(RandomisfitsMaterials.REINFORCED_INVISIBLE, Type.BOOTS, 30, new Item.Properties().rarity(Rarity.RARE)));
+    public static final Item IRON_MULTITOOL = RegistryObject("iron_multitool", new BaseMultitoolItem(RandomisfitsTiers.IRON_MULTITOOL, new Item.Properties()));
+    public static final Item DIAMOND_MULTITOOL = RegistryObject("diamond_multitool", new BaseMultitoolItem(RandomisfitsTiers.DIAMOND_MULTITOOL, new Item.Properties()));
+    public static final Item NETHERITE_MULTITOOL = RegistryObject("netherite_multitool", new BaseMultitoolItem(RandomisfitsTiers.NETHERITE_MULTITOOL, new Item.Properties().fireResistant()));
     public static final Item REPAIR_KIT = RegistryObject("repair_kit", new BaseRepairKitItem(new Item.Properties(), RandomisfitsModConfig.kitRepairAmount));
     public static final Item DIAMOND_REPAIR_KIT = RegistryObject("diamond_repair_kit", new BaseRepairKitItem(new Item.Properties(), RandomisfitsModConfig.diamondKitRepairAmount));
     public static final Item NETHERITE_REPAIR_KIT = RegistryObject("netherite_repair_kit", new BaseRepairKitItem(new Item.Properties().fireResistant(), RandomisfitsModConfig.netheriteKitRepairAmount));

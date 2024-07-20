@@ -38,6 +38,6 @@ public class BaseRepairKitItem extends Item {
 
     @Override
     public void appendHoverText(ItemStack stack, TooltipContext tooltipContext, List<Component> tooltip, TooltipFlag flag) {
-        tooltip.add(coloredTextComponent("Repair amount: " + formatText(amount), ChatFormatting.GRAY));
+        tooltip.add(coloredTextComponent(Component.translatable("randomisfits.repair_kit.amount").getString() + formatText(amount), ChatFormatting.GRAY));
     }
 }
