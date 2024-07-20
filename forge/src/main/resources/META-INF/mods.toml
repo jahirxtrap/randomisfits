@@ -10,7 +10,7 @@ displayURL = "${mod_url}"
 logoFile = "logo.png"
 authors = "${mod_author}"
 description = "${mod_description}"
-itemIcon = "randomisfits:reinforced_invisible_chestplate"
+itemIcon = "randomisfits:netherite_multitool"
 
 [[dependencies.${mod_id}]]
     modId = "forge"
