@@ -11,7 +11,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 public class RandomisfitsModTab {
 
     public static void register(CreativeModeTabEvent.Register register) {
-        CreativeModeTab TAB_RANDOMISFITS = register.registerCreativeModeTab(new ResourceLocation(RandomisfitsMod.MODID, "tab_randomisfits"), builder -> builder.icon(() -> new ItemStack(RandomisfitsModItems.REINFORCED_INVISIBLE_CHESTPLATE.get()))
+        CreativeModeTab TAB_RANDOMISFITS = register.registerCreativeModeTab(new ResourceLocation(RandomisfitsMod.MODID, "tab_randomisfits"), builder -> builder.icon(() -> new ItemStack(RandomisfitsModItems.NETHERITE_MULTITOOL.get()))
                 .displayItems((features, event) -> {
                     event.accept(RandomisfitsModItems.INVISIBLE_HELMET.get());
                     event.accept(RandomisfitsModItems.INVISIBLE_CHESTPLATE.get());
@@ -21,6 +21,9 @@ public class RandomisfitsModTab {
                     event.accept(RandomisfitsModItems.REINFORCED_INVISIBLE_CHESTPLATE.get());
                     event.accept(RandomisfitsModItems.REINFORCED_INVISIBLE_LEGGINGS.get());
                     event.accept(RandomisfitsModItems.REINFORCED_INVISIBLE_BOOTS.get());
+                    event.accept(RandomisfitsModItems.IRON_MULTITOOL.get());
+                    event.accept(RandomisfitsModItems.DIAMOND_MULTITOOL.get());
+                    event.accept(RandomisfitsModItems.NETHERITE_MULTITOOL.get());
                     event.accept(RandomisfitsModItems.REPAIR_KIT.get());
                     event.accept(RandomisfitsModItems.DIAMOND_REPAIR_KIT.get());
                     event.accept(RandomisfitsModItems.NETHERITE_REPAIR_KIT.get());

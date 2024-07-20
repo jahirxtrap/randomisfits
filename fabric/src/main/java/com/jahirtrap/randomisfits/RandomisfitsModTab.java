@@ -11,7 +11,7 @@ public class RandomisfitsModTab {
 
     public static void init() {
         CreativeModeTab TAB_RANDOMISFITS = FabricItemGroup.builder(new ResourceLocation(RandomisfitsMod.MODID, "tab_randomisfits"))
-                .icon(() -> new ItemStack(RandomisfitsModItems.REINFORCED_INVISIBLE_CHESTPLATE))
+                .icon(() -> new ItemStack(RandomisfitsModItems.NETHERITE_MULTITOOL))
                 .displayItems((features, event) -> {
                     event.accept(RandomisfitsModItems.INVISIBLE_HELMET);
                     event.accept(RandomisfitsModItems.INVISIBLE_CHESTPLATE);
@@ -21,6 +21,9 @@ public class RandomisfitsModTab {
                     event.accept(RandomisfitsModItems.REINFORCED_INVISIBLE_CHESTPLATE);
                     event.accept(RandomisfitsModItems.REINFORCED_INVISIBLE_LEGGINGS);
                     event.accept(RandomisfitsModItems.REINFORCED_INVISIBLE_BOOTS);
+                    event.accept(RandomisfitsModItems.IRON_MULTITOOL);
+                    event.accept(RandomisfitsModItems.DIAMOND_MULTITOOL);
+                    event.accept(RandomisfitsModItems.NETHERITE_MULTITOOL);
                     event.accept(RandomisfitsModItems.REPAIR_KIT);
                     event.accept(RandomisfitsModItems.DIAMOND_REPAIR_KIT);
                     event.accept(RandomisfitsModItems.NETHERITE_REPAIR_KIT);
