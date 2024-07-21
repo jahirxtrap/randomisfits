@@ -6,7 +6,7 @@ import net.minecraft.world.item.crafting.Ingredient;
 
 import java.util.function.Supplier;
 
-public enum RandomisfitsTiers implements Tier {
+public enum ModTiers implements Tier {
     IRON_MULTITOOL(Tiers.IRON, 0, 2, 0),
     DIAMOND_MULTITOOL(Tiers.DIAMOND, 0, 2, 0),
     NETHERITE_MULTITOOL(Tiers.NETHERITE, 0, 2, 0);
@@ -18,7 +18,16 @@ public enum RandomisfitsTiers implements Tier {
     private final int enchantmentValue;
     private final Supplier<Ingredient> ingredient;
 
-    RandomisfitsTiers(Tier tier, int i, int j, float k) {
+    ModTiers(int level, int uses, int speed, float damage, int enchantmentValue, Supplier<Ingredient> ingredient) {
+        this.level = level;
+        this.uses = uses;
+        this.speed = speed;
+        this.damage = damage;
+        this.enchantmentValue = enchantmentValue;
+        this.ingredient = ingredient;
+    }
+
+    ModTiers(Tier tier, int i, int j, float k) {
         this.level = tier.getLevel() + i;
         this.uses = tier.getUses() * j;
         this.speed = tier.getSpeed() + k;
