@@ -10,7 +10,7 @@ import net.minecraft.world.level.block.Blocks;
 import java.util.EnumMap;
 import java.util.function.Supplier;
 
-public enum RandomisfitsMaterials implements ArmorMaterial {
+public enum ModMaterials implements ArmorMaterial {
     INVISIBLE("randomisfits:invisible", 15, createMap(new int[]{2, 5, 6, 2}),
             9, SoundEvents.ARMOR_EQUIP_GENERIC, 0f, 0f, () -> Ingredient.of(Blocks.GLASS)),
     REINFORCED_INVISIBLE("randomisfits:invisible", 30, createMap(new int[]{3, 6, 8, 3}),
@@ -31,7 +31,7 @@ public enum RandomisfitsMaterials implements ArmorMaterial {
     private final float knockbackResistance;
     private final Supplier<Ingredient> ingredient;
 
-    RandomisfitsMaterials(String name, int durabilityMultiplier, EnumMap<Type, Integer> defense, int enchantmentValue, SoundEvent sound, float toughness, float knockbackResistance, Supplier<Ingredient> ingredient) {
+    ModMaterials(String name, int durabilityMultiplier, EnumMap<Type, Integer> defense, int enchantmentValue, SoundEvent sound, float toughness, float knockbackResistance, Supplier<Ingredient> ingredient) {
         this.name = name;
         this.durabilityMultiplier = durabilityMultiplier;
         this.defense = defense;
