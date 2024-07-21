@@ -15,7 +15,7 @@ import java.util.EnumMap;
 import java.util.List;
 import java.util.function.Supplier;
 
-public class RandomisfitsMaterials {
+public class ModMaterials {
     public static final Holder<ArmorMaterial> INVISIBLE, REINFORCED_INVISIBLE;
 
     static {
