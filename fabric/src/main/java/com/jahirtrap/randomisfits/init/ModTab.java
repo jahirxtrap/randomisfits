@@ -1,14 +1,15 @@
-package com.jahirtrap.randomisfits;
+package com.jahirtrap.randomisfits.init;
 
-import com.jahirtrap.randomisfits.init.RandomisfitsModItems;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 
-public class RandomisfitsModTab {
+import static com.jahirtrap.randomisfits.RandomisfitsMod.MODID;
+
+public class ModTab {
     public static CreativeModeTab TAB_RANDOMISFITS = FabricItemGroupBuilder.build(
-            new ResourceLocation(RandomisfitsMod.MODID, "tab_randomisfits"), () -> new ItemStack(RandomisfitsModItems.NETHERITE_MULTITOOL));
+            new ResourceLocation(MODID, "tab_randomisfits"), () -> new ItemStack(ModItems.NETHERITE_MULTITOOL));
 
     public static void init() {
     }

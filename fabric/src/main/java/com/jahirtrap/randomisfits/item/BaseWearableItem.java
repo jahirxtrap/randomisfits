@@ -6,7 +6,7 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 
-import static com.jahirtrap.randomisfits.RandomisfitsModTab.TAB_RANDOMISFITS;
+import static com.jahirtrap.randomisfits.init.ModTab.TAB_RANDOMISFITS;
 
 public class BaseWearableItem extends BlockItem implements WearableItem {
     public BaseWearableItem(Block block, Properties properties) {
