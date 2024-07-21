@@ -8,7 +8,7 @@ import net.minecraft.world.level.block.Block;
 
 import java.util.function.Supplier;
 
-public enum RandomisfitsTiers implements Tier {
+public enum ModTiers implements Tier {
     IRON_MULTITOOL(Tiers.IRON, null, 2, 0),
     DIAMOND_MULTITOOL(Tiers.DIAMOND, null, 2, 0),
     NETHERITE_MULTITOOL(Tiers.NETHERITE, null, 2, 0);
@@ -20,7 +20,16 @@ public enum RandomisfitsTiers implements Tier {
     private final int enchantmentValue;
     private final Supplier<Ingredient> ingredient;
 
-    RandomisfitsTiers(Tier tier, TagKey<Block> incorrect, int j, float k) {
+    ModTiers(TagKey<Block> incorrect, int uses, int speed, float damage, int enchantmentValue, Supplier<Ingredient> ingredient) {
+        this.incorrect = incorrect;
+        this.uses = uses;
+        this.speed = speed;
+        this.damage = damage;
+        this.enchantmentValue = enchantmentValue;
+        this.ingredient = ingredient;
+    }
+
+    ModTiers(Tier tier, TagKey<Block> incorrect, int j, float k) {
         this.incorrect = incorrect == null ? tier.getIncorrectBlocksForDrops() : incorrect;
         this.uses = tier.getUses() * j;
         this.speed = tier.getSpeed() + k;

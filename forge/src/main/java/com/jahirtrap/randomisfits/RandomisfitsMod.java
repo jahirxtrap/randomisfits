@@ -1,8 +1,8 @@
 package com.jahirtrap.randomisfits;
 
-import com.jahirtrap.randomisfits.init.RandomisfitsModBlocks;
-import com.jahirtrap.randomisfits.init.RandomisfitsModConfig;
-import com.jahirtrap.randomisfits.init.RandomisfitsModItems;
+import com.jahirtrap.randomisfits.init.ModConfig;
+import com.jahirtrap.randomisfits.init.ModItems;
+import com.jahirtrap.randomisfits.init.ModTab;
 import com.jahirtrap.randomisfits.util.configlib.TXFConfig;
 import com.jahirtrap.randomisfits.util.configlib.TXFConfigClient;
 import net.minecraftforge.client.ConfigScreenHandler;
@@ -19,12 +19,11 @@ public class RandomisfitsMod {
     public RandomisfitsMod() {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        TXFConfig.init(MODID, RandomisfitsModConfig.class);
+        TXFConfig.init(MODID, ModConfig.class);
         ModLoadingContext.get().registerExtensionPoint(ConfigScreenHandler.ConfigScreenFactory.class, () ->
                 new ConfigScreenHandler.ConfigScreenFactory((client, parent) -> TXFConfigClient.getScreen(parent, MODID)));
 
-        RandomisfitsModBlocks.REGISTRY.register(bus);
-        RandomisfitsModItems.REGISTRY.register(bus);
-        RandomisfitsModTab.init(bus);
+        ModItems.init(bus);
+        ModTab.init(bus);
     }
 }
