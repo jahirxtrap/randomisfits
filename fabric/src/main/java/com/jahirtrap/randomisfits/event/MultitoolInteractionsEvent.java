@@ -1,6 +1,6 @@
 package com.jahirtrap.randomisfits.event;
 
-import com.jahirtrap.randomisfits.init.RandomisfitsModConfig;
+import com.jahirtrap.randomisfits.init.ModConfig;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
@@ -25,7 +25,7 @@ import java.util.function.Predicate;
 
 public class MultitoolInteractionsEvent {
     public static InteractionResult execute(UseOnContext context, int mode) {
-        if (!RandomisfitsModConfig.multitoolInteractions) return InteractionResult.PASS;
+        if (!ModConfig.multitoolInteractions) return InteractionResult.PASS;
         Level level = context.getLevel();
         BlockPos pos = context.getClickedPos();
         BlockState state = level.getBlockState(pos);

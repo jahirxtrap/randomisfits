@@ -1,7 +1,7 @@
 package com.jahirtrap.randomisfits.item;
 
 import com.jahirtrap.randomisfits.event.MultitoolInteractionsEvent;
-import com.jahirtrap.randomisfits.init.RandomisfitsModConfig;
+import com.jahirtrap.randomisfits.init.ModConfig;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.Registry;
 import net.minecraft.network.chat.Component;
@@ -25,7 +25,7 @@ import java.util.List;
 import java.util.Objects;
 
 import static com.jahirtrap.randomisfits.RandomisfitsMod.MODID;
-import static com.jahirtrap.randomisfits.RandomisfitsModTab.TAB_RANDOMISFITS;
+import static com.jahirtrap.randomisfits.init.ModTab.TAB_RANDOMISFITS;
 import static com.jahirtrap.randomisfits.util.CommonUtils.coloredTextComponent;
 
 public class BaseMultitoolItem extends DiggerItem {
@@ -43,7 +43,7 @@ public class BaseMultitoolItem extends DiggerItem {
         InteractionResultHolder<ItemStack> holder = super.use(level, player, hand);
         ItemStack stack = player.getItemInHand(hand);
 
-        if (RandomisfitsModConfig.multitoolInteractions && !level.isClientSide && player.isShiftKeyDown()) {
+        if (ModConfig.multitoolInteractions && !level.isClientSide && player.isShiftKeyDown()) {
             String mode = getMode(stack);
 
             if (Objects.equals(mode, HOE_MODE)) mode = SHOVEL_MODE;
@@ -59,7 +59,7 @@ public class BaseMultitoolItem extends DiggerItem {
 
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
-        if (RandomisfitsModConfig.multitoolInteractions)
+        if (ModConfig.multitoolInteractions)
             tooltip.add(coloredTextComponent(getModeText(getMode(stack)), ChatFormatting.GRAY));
     }
 

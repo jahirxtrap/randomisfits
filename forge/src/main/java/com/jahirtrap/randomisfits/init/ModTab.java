@@ -1,17 +1,16 @@
-package com.jahirtrap.randomisfits;
+package com.jahirtrap.randomisfits.init;
 
-import com.jahirtrap.randomisfits.init.RandomisfitsModItems;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 
-public class RandomisfitsModTab {
+public class ModTab {
     public static CreativeModeTab TAB_RANDOMISFITS;
 
     public static void init() {
         TAB_RANDOMISFITS = new CreativeModeTab("randomisfits.tab_randomisfits") {
             @Override
             public ItemStack makeIcon() {
-                return new ItemStack(RandomisfitsModItems.NETHERITE_MULTITOOL.get());
+                return new ItemStack(ModItems.NETHERITE_MULTITOOL.get());
             }
         };
     }
