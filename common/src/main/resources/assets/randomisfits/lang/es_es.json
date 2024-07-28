@@ -15,8 +15,8 @@
   "item.randomisfits.repair_kit": "Kit de reparación",
   "item.randomisfits.diamond_repair_kit": "Kit de reparación de diamante",
   "item.randomisfits.netherite_repair_kit": "Kit de reparación de netherita",
-  "itemGroup.randomisfits.tab_randomisfits": "Random Misfits TXF",
-  "randomisfits.config.title": "Random Misfits TXF",
+  "itemGroup.randomisfits.tab_randomisfits": "Random Misfits",
+  "randomisfits.config.title": "Random Misfits",
   "randomisfits.repair_kit.amount": "Cantidad: ",
   "randomisfits.multitool.mode.shovel": "Modo: Pala",
   "randomisfits.multitool.mode.hoe": "Modo: Azada"
