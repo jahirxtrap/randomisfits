@@ -11,14 +11,14 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.*;
+import net.minecraft.world.item.HoeItem;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.CampfireBlock;
-import net.minecraft.world.level.block.RotatedPillarBlock;
-import net.minecraft.world.level.block.WeatheringCopper;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
+import net.neoforged.neoforge.common.ToolActions;
 
 import java.util.Optional;
 import java.util.function.Consumer;
@@ -34,9 +34,9 @@ public class MultitoolInteractionsEvent {
         ItemStack stack = context.getItemInHand();
         SoundEvent sound = null;
 
-        Optional<BlockState> optional = Optional.ofNullable(AxeItem.STRIPPABLES.get(state.getBlock())).map(block -> block.defaultBlockState().setValue(RotatedPillarBlock.AXIS, state.getValue(RotatedPillarBlock.AXIS)));
-        Optional<BlockState> optional1 = WeatheringCopper.getPrevious(state);
-        Optional<BlockState> optional2 = Optional.ofNullable(HoneycombItem.WAX_OFF_BY_BLOCK.get().get(state.getBlock())).map(block -> block.withPropertiesOf(state));
+        Optional<BlockState> optional = Optional.ofNullable(state.getToolModifiedState(context, ToolActions.AXE_STRIP, false));
+        Optional<BlockState> optional1 = optional.isPresent() ? Optional.empty() : Optional.ofNullable(state.getToolModifiedState(context, ToolActions.AXE_SCRAPE, false));
+        Optional<BlockState> optional2 = optional.isEmpty() && optional1.isEmpty() ? Optional.ofNullable(state.getToolModifiedState(context, ToolActions.AXE_WAX_OFF, false)) : Optional.empty();
         Optional<BlockState> optional3 = Optional.empty();
 
         if (optional.isPresent()) {
@@ -87,11 +87,10 @@ public class MultitoolInteractionsEvent {
             if (context.getClickedFace() == Direction.DOWN) {
                 return InteractionResult.PASS;
             } else {
-                BlockState state2 = ShovelItem.FLATTENABLES.get(state.getBlock());
-                if (state2 != null && level.getBlockState(pos.above()).isAir())
+                BlockState state2 = state.getToolModifiedState(context, ToolActions.SHOVEL_FLATTEN, false);
+                if (state2 != null && level.isEmptyBlock(pos.above())) {
                     level.playSound(player, pos, SoundEvents.SHOVEL_FLATTEN, SoundSource.BLOCKS, 1, 1);
 
-                if (state2 != null) {
                     if (!level.isClientSide) {
                         level.setBlock(pos, state2, 11);
                         level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(player, state2));
@@ -103,7 +102,8 @@ public class MultitoolInteractionsEvent {
                 } else return InteractionResult.PASS;
             }
         } else {
-            Pair<Predicate<UseOnContext>, Consumer<UseOnContext>> pair = HoeItem.TILLABLES.get(level.getBlockState(pos).getBlock());
+            BlockState toolModifiedState = level.getBlockState(pos).getToolModifiedState(context, ToolActions.HOE_TILL, false);
+            Pair<Predicate<UseOnContext>, Consumer<UseOnContext>> pair = toolModifiedState == null ? null : Pair.of((ctx) -> true, HoeItem.changeIntoState(toolModifiedState));
             if (pair == null) {
                 return InteractionResult.PASS;
             } else {
