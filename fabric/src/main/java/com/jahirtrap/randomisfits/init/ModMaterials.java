@@ -5,16 +5,17 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.ArmorItem.Type;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.level.block.Blocks;
 
 import java.util.EnumMap;
 import java.util.function.Supplier;
 
+import static com.jahirtrap.randomisfits.util.CommonUtils.itemTag;
+
 public enum ModMaterials implements ArmorMaterial {
     INVISIBLE("randomisfits:invisible", 15, createMap(new int[]{2, 5, 6, 2}),
-            9, SoundEvents.ARMOR_EQUIP_GENERIC, 0f, 0f, () -> Ingredient.of(Blocks.GLASS)),
+            9, SoundEvents.ARMOR_EQUIP_GENERIC, 0f, 0f, () -> Ingredient.of(itemTag("c:glass_colorless"))),
     REINFORCED_INVISIBLE("randomisfits:invisible", 30, createMap(new int[]{3, 6, 8, 3}),
-            10, SoundEvents.ARMOR_EQUIP_GENERIC, 2f, 0f, () -> Ingredient.of(Blocks.GLASS));
+            10, SoundEvents.ARMOR_EQUIP_GENERIC, 2f, 0f, () -> Ingredient.of(itemTag("c:glass_colorless")));
 
     private static EnumMap<Type, Integer> createMap(int[] values) {
         EnumMap<Type, Integer> enumMap = new EnumMap<>(Type.class);

@@ -1,7 +1,11 @@
 package com.jahirtrap.randomisfits.util;
 
 import net.minecraft.ChatFormatting;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
 
 public class CommonUtils {
     public static Component coloredTextComponent(String string, ChatFormatting color) {
@@ -16,5 +20,9 @@ public class CommonUtils {
         } else {
             return String.valueOf(amount);
         }
+    }
+
+    public static TagKey<Item> itemTag(String string) {
+        return TagKey.create(Registries.ITEM, new ResourceLocation(string));
     }
 }
