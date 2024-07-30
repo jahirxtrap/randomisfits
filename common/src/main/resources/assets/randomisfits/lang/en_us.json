@@ -12,12 +12,22 @@
   "item.randomisfits.iron_multitool": "Iron Multitool",
   "item.randomisfits.diamond_multitool": "Diamond Multitool",
   "item.randomisfits.netherite_multitool": "Netherite Multitool",
+  "item.randomisfits.iron_hammer": "Iron Hammer",
+  "item.randomisfits.diamond_hammer": "Diamond Hammer",
+  "item.randomisfits.netherite_hammer": "Netherite Hammer",
+  "item.randomisfits.iron_excavator": "Iron Excavator",
+  "item.randomisfits.diamond_excavator": "Diamond Excavator",
+  "item.randomisfits.netherite_excavator": "Netherite Excavator",
   "item.randomisfits.repair_kit": "Repair Kit",
   "item.randomisfits.diamond_repair_kit": "Diamond Repair Kit",
   "item.randomisfits.netherite_repair_kit": "Netherite Repair Kit",
+  "painting.randomisfits.misfit.author": "jahirtrap",
+  "painting.randomisfits.misfit.title": "Misfit",
   "itemGroup.randomisfits.tab_randomisfits": "Random Misfits",
   "randomisfits.config.title": "Random Misfits",
   "randomisfits.repair_kit.amount": "Amount: ",
   "randomisfits.multitool.mode.shovel": "Mode: Shovel",
-  "randomisfits.multitool.mode.hoe": "Mode: Hoe"
+  "randomisfits.multitool.mode.hoe": "Mode: Hoe",
+  "randomisfits.range.mode.yes": "Mode: 3x3",
+  "randomisfits.range.mode.no": "Mode: 1x1"
 }

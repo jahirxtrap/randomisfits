@@ -22,6 +22,8 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
+import net.neoforged.neoforge.common.ItemAbilities;
+import net.neoforged.neoforge.common.ItemAbility;
 
 import java.util.List;
 import java.util.Objects;
@@ -47,8 +49,8 @@ public class BaseMultitoolItem extends DiggerItem {
         if (ModConfig.multitoolInteractions && !level.isClientSide && player.isShiftKeyDown()) {
             String mode = getMode(stack);
 
-            if (Objects.equals(mode, HOE_MODE)) mode = SHOVEL_MODE;
-            else mode = HOE_MODE;
+            if (Objects.equals(mode, SHOVEL_MODE)) mode = HOE_MODE;
+            else mode = SHOVEL_MODE;
 
             setMode(stack, mode);
             player.displayClientMessage(coloredTextComponent(getModeText(mode), ChatFormatting.GOLD), true);
@@ -56,6 +58,11 @@ public class BaseMultitoolItem extends DiggerItem {
         }
 
         return holder;
+    }
+
+    @Override
+    public boolean canPerformAction(ItemStack stack, ItemAbility itemAbility) {
+        return ItemAbilities.DEFAULT_PICKAXE_ACTIONS.contains(itemAbility) || ItemAbilities.DEFAULT_AXE_ACTIONS.contains(itemAbility) || ItemAbilities.DEFAULT_SHOVEL_ACTIONS.contains(itemAbility) || ItemAbilities.DEFAULT_HOE_ACTIONS.contains(itemAbility);
     }
 
     @Override
@@ -69,6 +76,9 @@ public class BaseMultitoolItem extends DiggerItem {
     }
 
     private String getMode(ItemStack stack) {
+        if (!stack.getComponents().has(MODE_KEY))
+            setMode(stack, SHOVEL_MODE);
+
         return stack.getOrDefault(MODE_KEY, SHOVEL_MODE);
     }
 

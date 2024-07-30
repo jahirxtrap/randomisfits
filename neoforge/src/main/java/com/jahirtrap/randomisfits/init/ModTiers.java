@@ -9,9 +9,9 @@ import net.minecraft.world.level.block.Block;
 import java.util.function.Supplier;
 
 public enum ModTiers implements Tier {
-    IRON_MULTITOOL(Tiers.IRON, null, 2, 0),
-    DIAMOND_MULTITOOL(Tiers.DIAMOND, null, 2, 0),
-    NETHERITE_MULTITOOL(Tiers.NETHERITE, null, 2, 0);
+    IRON_HARD(Tiers.IRON, 2, 0),
+    DIAMOND_HARD(Tiers.DIAMOND, 2, 0),
+    NETHERITE_HARD(Tiers.NETHERITE, 2, 0);
 
     private final TagKey<Block> incorrect;
     private final int uses;
@@ -29,10 +29,10 @@ public enum ModTiers implements Tier {
         this.ingredient = ingredient;
     }
 
-    ModTiers(Tier tier, TagKey<Block> incorrect, int j, float k) {
-        this.incorrect = incorrect == null ? tier.getIncorrectBlocksForDrops() : incorrect;
-        this.uses = tier.getUses() * j;
-        this.speed = tier.getSpeed() + k;
+    ModTiers(Tier tier, int i, float j) {
+        this.incorrect = tier.getIncorrectBlocksForDrops();
+        this.uses = tier.getUses() * i;
+        this.speed = tier.getSpeed() + j;
         this.damage = tier.getAttackDamageBonus();
         this.enchantmentValue = tier.getEnchantmentValue();
         this.ingredient = tier::getRepairIngredient;
