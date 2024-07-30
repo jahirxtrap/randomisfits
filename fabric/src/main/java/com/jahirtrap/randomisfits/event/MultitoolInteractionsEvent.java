@@ -85,10 +85,9 @@ public class MultitoolInteractionsEvent {
                 return InteractionResult.PASS;
             } else {
                 BlockState state2 = ShovelItem.FLATTENABLES.get(state.getBlock());
-                if (state2 != null && level.getBlockState(pos.above()).isAir())
+                if (state2 != null && level.isEmptyBlock(pos.above())) {
                     level.playSound(player, pos, SoundEvents.SHOVEL_FLATTEN, SoundSource.BLOCKS, 1, 1);
 
-                if (state2 != null) {
                     if (!level.isClientSide) {
                         level.setBlock(pos, state2, 11);
                         if (player != null)

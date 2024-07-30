@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "IBI",
+    "IRI",
+    " R "
+  ],
+  "key": {
+    "B": {
+      "tag": "c:iron_blocks"
+    },
+    "I": {
+      "tag": "c:iron_ingots"
+    },
+    "R": {
+      "tag": "c:wooden_rods"
+    }
+  },
+  "result": {
+    "item": "randomisfits:iron_hammer",
+    "count": 1
+  }
+}
