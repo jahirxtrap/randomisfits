@@ -7,9 +7,9 @@ import net.minecraft.world.item.crafting.Ingredient;
 import java.util.function.Supplier;
 
 public enum ModTiers implements Tier {
-    IRON_MULTITOOL(Tiers.IRON, 0, 2, 0),
-    DIAMOND_MULTITOOL(Tiers.DIAMOND, 0, 2, 0),
-    NETHERITE_MULTITOOL(Tiers.NETHERITE, 0, 2, 0);
+    IRON_HARD(Tiers.IRON, 2, 0),
+    DIAMOND_HARD(Tiers.DIAMOND, 2, 0),
+    NETHERITE_HARD(Tiers.NETHERITE, 2, 0);
 
     private final int level;
     private final int uses;
@@ -27,10 +27,10 @@ public enum ModTiers implements Tier {
         this.ingredient = ingredient;
     }
 
-    ModTiers(Tier tier, int i, int j, float k) {
-        this.level = tier.getLevel() + i;
-        this.uses = tier.getUses() * j;
-        this.speed = tier.getSpeed() + k;
+    ModTiers(Tier tier, int i, float j) {
+        this.level = tier.getLevel();
+        this.uses = tier.getUses() * i;
+        this.speed = tier.getSpeed() + j;
         this.damage = tier.getAttackDamageBonus();
         this.enchantmentValue = tier.getEnchantmentValue();
         this.ingredient = tier::getRepairIngredient;
