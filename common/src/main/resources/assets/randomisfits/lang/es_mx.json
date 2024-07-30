@@ -12,6 +12,12 @@
   "item.randomisfits.iron_multitool": "Multitool de hierro",
   "item.randomisfits.diamond_multitool": "Multitool de diamante",
   "item.randomisfits.netherite_multitool": "Multitool de netherita",
+  "item.randomisfits.iron_hammer": "Martillo de hierro",
+  "item.randomisfits.diamond_hammer": "Martillo de diamante",
+  "item.randomisfits.netherite_hammer": "Martillo de netherita",
+  "item.randomisfits.iron_excavator": "Excavadora de hierro",
+  "item.randomisfits.diamond_excavator": "Excavadora de diamante",
+  "item.randomisfits.netherite_excavator": "Excavadora de netherita",
   "item.randomisfits.repair_kit": "Kit de reparación",
   "item.randomisfits.diamond_repair_kit": "Kit de reparación de diamante",
   "item.randomisfits.netherite_repair_kit": "Kit de reparación de netherita",
@@ -19,5 +25,7 @@
   "randomisfits.config.title": "Random Misfits",
   "randomisfits.repair_kit.amount": "Cantidad: ",
   "randomisfits.multitool.mode.shovel": "Modo: Pala",
-  "randomisfits.multitool.mode.hoe": "Modo: Azada"
+  "randomisfits.multitool.mode.hoe": "Modo: Azada",
+  "randomisfits.range.mode.yes": "Modo: 3x3",
+  "randomisfits.range.mode.no": "Modo: 1x1"
 }

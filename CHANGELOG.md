@@ -1,1 +1,3 @@
-- Some fixes
+- Hammers
+- Excavators
+- Painting
