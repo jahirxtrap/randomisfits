@@ -47,8 +47,8 @@ public class BaseMultitoolItem extends DiggerItem {
         if (ModConfig.multitoolInteractions && !level.isClientSide && player.isShiftKeyDown()) {
             String mode = getMode(stack);
 
-            if (Objects.equals(mode, HOE_MODE)) mode = SHOVEL_MODE;
-            else mode = HOE_MODE;
+            if (Objects.equals(mode, SHOVEL_MODE)) mode = HOE_MODE;
+            else mode = SHOVEL_MODE;
 
             setMode(stack, mode);
             player.displayClientMessage(coloredTextComponent(getModeText(mode), ChatFormatting.GOLD), true);
@@ -69,6 +69,9 @@ public class BaseMultitoolItem extends DiggerItem {
     }
 
     private String getMode(ItemStack stack) {
+        if (!stack.getComponents().has(MODE_KEY))
+            setMode(stack, SHOVEL_MODE);
+
         return stack.getOrDefault(MODE_KEY, SHOVEL_MODE);
     }
 

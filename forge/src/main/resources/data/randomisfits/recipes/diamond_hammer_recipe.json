@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "IBI",
+    "IRI",
+    " R "
+  ],
+  "key": {
+    "B": {
+      "tag": "forge:storage_blocks/diamond"
+    },
+    "I": {
+      "tag": "forge:gems/diamond"
+    },
+    "R": {
+      "tag": "forge:rods/wooden"
+    }
+  },
+  "result": {
+    "id": "randomisfits:diamond_hammer",
+    "count": 1
+  }
+}

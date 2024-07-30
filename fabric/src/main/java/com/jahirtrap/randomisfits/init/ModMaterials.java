@@ -9,20 +9,21 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.ArmorItem.Type;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.level.block.Blocks;
 
 import java.util.EnumMap;
 import java.util.List;
 import java.util.function.Supplier;
+
+import static com.jahirtrap.randomisfits.util.CommonUtils.itemTag;
 
 public class ModMaterials {
     public static final Holder<ArmorMaterial> INVISIBLE, REINFORCED_INVISIBLE;
 
     static {
         INVISIBLE = register("randomisfits:invisible", createMap(new int[]{2, 5, 6, 2, 5}),
-                9, SoundEvents.ARMOR_EQUIP_GENERIC, 0f, 0f, () -> Ingredient.of(Blocks.GLASS));
+                9, SoundEvents.ARMOR_EQUIP_GENERIC, 0f, 0f, () -> Ingredient.of(itemTag("c:glass_blocks/colorless")));
         REINFORCED_INVISIBLE = register("randomisfits:invisible", createMap(new int[]{3, 6, 8, 3, 11}),
-                10, SoundEvents.ARMOR_EQUIP_GENERIC, 2f, 0f, () -> Ingredient.of(Blocks.GLASS));
+                10, SoundEvents.ARMOR_EQUIP_GENERIC, 2f, 0f, () -> Ingredient.of(itemTag("c:glass_blocks/colorless")));
     }
 
     private static EnumMap<Type, Integer> createMap(int[] values) {

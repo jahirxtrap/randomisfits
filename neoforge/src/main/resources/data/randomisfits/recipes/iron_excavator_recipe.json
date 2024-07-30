@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "B",
+    "R",
+    "R"
+  ],
+  "key": {
+    "B": {
+      "tag": "c:storage_blocks/iron"
+    },
+    "R": {
+      "tag": "c:rods/wooden"
+    }
+  },
+  "result": {
+    "id": "randomisfits:iron_excavator",
+    "count": 1
+  }
+}
