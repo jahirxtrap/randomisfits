@@ -5,7 +5,7 @@ Armor, multitools & other random things
 
 <strong>This mod adds:</strong>
 
-- Invisible armor, Multitools, Hammers, Excavators, Repair kits, Lamp, Painting
+- Invisible armor, Multitools, Hammers, Lumberaxes, Excavators, Repair kits, Lamp, Painting
 - Random things
 - More random things
 
@@ -18,6 +18,6 @@ Armor, multitools & other random things
 <details>
   <summary>Spoiler</summary>
 
-<img src="https://cdn.modrinth.com/data/sdjh3tKn/images/d0ea8b5cdab09dc79dd782ef74175320db7ca212.png" width="500">
+<img src="https://cdn.modrinth.com/data/sdjh3tKn/images/da99004d321f6143fb8381fb4e2514ee5beb1405.png" width="500">
 
 </details>
