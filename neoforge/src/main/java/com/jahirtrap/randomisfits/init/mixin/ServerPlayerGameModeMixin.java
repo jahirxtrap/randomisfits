@@ -1,21 +1,17 @@
 package com.jahirtrap.randomisfits.init.mixin;
 
+import com.jahirtrap.randomisfits.init.ModConfig;
+import com.jahirtrap.randomisfits.item.BaseLumberaxeItem;
 import com.jahirtrap.randomisfits.item.RangeItem;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.core.Vec3i;
 import net.minecraft.network.protocol.game.ServerboundPlayerActionPacket;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.ServerPlayerGameMode;
-import net.minecraft.world.InteractionHand;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.GameMasterBlock;
-import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
-import net.neoforged.neoforge.common.CommonHooks;
-import net.neoforged.neoforge.event.EventHooks;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -25,8 +21,8 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 @Mixin(ServerPlayerGameMode.class)
 public abstract class ServerPlayerGameModeMixin {
@@ -38,71 +34,92 @@ public abstract class ServerPlayerGameModeMixin {
     protected ServerPlayer player;
     @Unique
     private Direction direction;
-
-    @Shadow
-    protected abstract boolean removeBlock(BlockPos pos, boolean canHarvest);
+    @Unique
+    private List<BlockPos> destroyedBlocks = new CopyOnWriteArrayList<>();
+    @Unique
+    private List<BlockPos> rangeBlocks = new CopyOnWriteArrayList<>();
+    @Unique
+    private List<BlockPos> fellingBlocks = new CopyOnWriteArrayList<>();
 
     @Inject(method = "handleBlockBreakAction", at = @At("HEAD"))
     private void getDirection(BlockPos blockPos, ServerboundPlayerActionPacket.Action action, Direction direction, int i, int j, CallbackInfo ci) {
         this.direction = direction;
     }
 
-    @Inject(method = "destroyBlock", at = @At("HEAD"), cancellable = true)
+    @Inject(method = "destroyBlock", at = @At("HEAD"))
     public void destroyBlock(BlockPos pos, CallbackInfoReturnable<Boolean> cir) {
         ItemStack stack = player.getMainHandItem();
         BlockState state = level.getBlockState(pos);
+        Block block = state.getBlock();
 
         if (stack.getItem() instanceof RangeItem rangeItem && stack.isCorrectToolForDrops(state) && rangeItem.enableRange(stack)) {
-            List<Vec3i> blocks = getTargetBlocks(direction, rangeItem.getRange());
-            for (Vec3i block : blocks) {
-                if (stack.getDamageValue() >= stack.getMaxDamage()) break;
-                BlockPos targetPos = pos.offset(block);
-                BlockState targetState = level.getBlockState(targetPos);
-
-                if (stack.isCorrectToolForDrops(targetState)) {
-                    int exp = CommonHooks.onBlockBreakEvent(level, player.gameMode.getGameModeForPlayer(), player, targetPos);
-                    if (exp != -1) {
-                        BlockEntity targetBlockEntity = level.getBlockEntity(targetPos);
-                        Block targetBlock = targetState.getBlock();
-                        if (targetBlock instanceof GameMasterBlock && !player.canUseGameMasterBlocks()) {
-                            level.sendBlockUpdated(targetPos, targetState, targetState, 3);
-                        } else if (!stack.onBlockStartBreak(targetPos, player) && !player.blockActionRestricted(level, targetPos, player.gameMode.getGameModeForPlayer())) {
-                            if (!player.isCreative()) {
-                                ItemStack stack1 = stack.copy();
-                                boolean bl1 = targetState.canHarvestBlock(level, targetPos, player);
-                                stack.mineBlock(level, targetState, targetPos, player);
-                                if (stack.isEmpty() && !stack1.isEmpty())
-                                    EventHooks.onPlayerDestroyItem(player, stack, InteractionHand.MAIN_HAND);
-                                boolean bl = removeBlock(targetPos, bl1);
-                                if (bl && bl1)
-                                    targetBlock.playerDestroy(level, player, targetPos, targetState, targetBlockEntity, stack1);
-                                if (bl && exp > 0) targetBlock.popExperience(level, targetPos, exp);
-                            } else {
-                                removeBlock(targetPos, false);
-                            }
-                        }
+            if (rangeBlocks.isEmpty()) {
+                getRangeBlocks(pos, direction, stack, rangeItem.getRange());
+                for (BlockPos targetPos : rangeBlocks) {
+                    if (stack.getDamageValue() >= stack.getMaxDamage()) {
+                        rangeBlocks.clear();
+                        break;
                     }
+                    player.gameMode.destroyBlock(targetPos);
+                    rangeBlocks.remove(targetPos);
                 }
             }
-            cir.setReturnValue(true);
+        } else if (stack.getItem() instanceof BaseLumberaxeItem lumberaxeItem && stack.isCorrectToolForDrops(state) && lumberaxeItem.enableFelling(stack) && !(block instanceof BonemealableBlock || block instanceof VineBlock || block instanceof SugarCaneBlock || block instanceof HangingRootsBlock || block instanceof BushBlock || block instanceof SporeBlossomBlock || block instanceof ScaffoldingBlock)) {
+            getFellingBlocks(pos, stack);
+        }
+    }
+
+    @Inject(method = "tick", at = @At("TAIL"))
+    public void tick(CallbackInfo ci) {
+        int i = 0;
+        if (fellingBlocks != null) {
+            for (BlockPos targetPos : fellingBlocks) {
+                if (player.getMainHandItem().getDamageValue() >= player.getMainHandItem().getMaxDamage()) {
+                    fellingBlocks.clear();
+                    break;
+                }
+                player.gameMode.destroyBlock(targetPos);
+                fellingBlocks.remove(targetPos);
+                if (i++ > 32) break;
+            }
+            if (destroyedBlocks.size() > ModConfig.fellingLimit) fellingBlocks.clear();
+            if (fellingBlocks.isEmpty()) destroyedBlocks.clear();
         }
     }
 
     @Unique
-    private List<Vec3i> getTargetBlocks(Direction direction, int range) {
-        List<Vec3i> blocks = new ArrayList<>(List.of(new Vec3i(0, 0, 0)));
-
+    private void getRangeBlocks(BlockPos pos, Direction direction, ItemStack stack, int range) {
         for (int i = -range; i <= range; i++) {
             for (int j = -range; j <= range; j++) {
-                if (i == 0 && j == 0) continue;
+                BlockPos targetPos = pos;
                 switch (direction) {
-                    case DOWN, UP -> blocks.add(new Vec3i(i, 0, j));
-                    case NORTH, SOUTH -> blocks.add(new Vec3i(i, j, 0));
-                    case WEST, EAST -> blocks.add(new Vec3i(0, i, j));
+                    case DOWN, UP -> targetPos = pos.offset(i, 0, j);
+                    case NORTH, SOUTH -> targetPos = pos.offset(i, j, 0);
+                    case WEST, EAST -> targetPos = pos.offset(0, i, j);
+                }
+                BlockState targetState = level.getBlockState(targetPos);
+                if (!stack.isCorrectToolForDrops(targetState) || rangeBlocks.contains(targetPos)) continue;
+                rangeBlocks.add(targetPos);
+            }
+        }
+    }
+
+    @Unique
+    private void getFellingBlocks(BlockPos pos, ItemStack stack) {
+        destroyedBlocks.add(pos);
+
+        for (int i = -1; i <= 1; i++) {
+            for (int j = -1; j <= 1; j++) {
+                for (int k = -1; k <= 1; k++) {
+                    BlockPos targetPos = pos.offset(i, j, k);
+                    BlockState targetState = level.getBlockState(targetPos);
+                    Block targetBlock = targetState.getBlock();
+                    if (!stack.isCorrectToolForDrops(targetState) || targetBlock instanceof BonemealableBlock || targetBlock instanceof VineBlock || targetBlock instanceof SugarCaneBlock || targetBlock instanceof HangingRootsBlock || targetBlock instanceof BushBlock || targetBlock instanceof SporeBlossomBlock || targetBlock instanceof ScaffoldingBlock)
+                        continue;
+                    if (fellingBlocks.contains(targetPos) || destroyedBlocks.contains(targetPos)) continue;
+                    fellingBlocks.add(targetPos);
                 }
             }
         }
-
-        return blocks;
     }
 }

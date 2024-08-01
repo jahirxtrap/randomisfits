@@ -9,6 +9,10 @@ public class ModConfig extends TXFConfig {
     public static boolean toggleHammerMode = true;
     @Entry(name = "Toggle Excavator Mode")
     public static boolean toggleExcavatorMode = true;
+    @Entry(name = "Toggle Lumberaxe Felling")
+    public static boolean toggleLumberaxeFelling = true;
+    @Entry(name = "Felling Limit", min = 1, max = Integer.MAX_VALUE)
+    public static int fellingLimit = 512;
     @Entry(name = "Kit Repair Amount", min = 1, max = Integer.MAX_VALUE)
     public static int kitRepairAmount = 150;
     @Entry(name = "Diamond Kit Repair Amount", min = 1, max = Integer.MAX_VALUE)
