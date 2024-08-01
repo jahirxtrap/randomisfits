@@ -27,6 +27,9 @@ public class ModTab {
                     event.accept(ModContent.IRON_HAMMER.get());
                     event.accept(ModContent.DIAMOND_HAMMER.get());
                     event.accept(ModContent.NETHERITE_HAMMER.get());
+                    event.accept(ModContent.IRON_LUMBERAXE.get());
+                    event.accept(ModContent.DIAMOND_LUMBERAXE.get());
+                    event.accept(ModContent.NETHERITE_LUMBERAXE.get());
                     event.accept(ModContent.IRON_EXCAVATOR.get());
                     event.accept(ModContent.DIAMOND_EXCAVATOR.get());
                     event.accept(ModContent.NETHERITE_EXCAVATOR.get());
