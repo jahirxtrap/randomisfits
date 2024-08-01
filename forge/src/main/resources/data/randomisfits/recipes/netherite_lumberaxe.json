@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "randomisfits:diamond_lumberaxe"
+  },
+  "addition": {
+    "tag": "forge:storage_blocks/netherite"
+  },
+  "result": {
+    "item": "randomisfits:netherite_lumberaxe"
+  }
+}
