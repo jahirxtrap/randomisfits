@@ -1,3 +1,2 @@
-- Hammers
-- Excavators
-- Painting
+- Internal changes
+- Lumberaxes

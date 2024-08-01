@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "IB",
+    "IR",
+    " R"
+  ],
+  "key": {
+    "B": {
+      "tag": "c:storage_blocks/diamond"
+    },
+    "I": {
+      "tag": "c:gems/diamond"
+    },
+    "R": {
+      "tag": "c:rods/wooden"
+    }
+  },
+  "result": {
+    "id": "randomisfits:diamond_lumberaxe",
+    "count": 1
+  }
+}
