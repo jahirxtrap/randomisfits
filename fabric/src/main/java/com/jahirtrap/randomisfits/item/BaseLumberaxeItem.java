@@ -19,10 +19,11 @@ import net.minecraft.world.level.Level;
 
 import java.util.List;
 
+import static com.jahirtrap.randomisfits.util.CommonUtils.blueBar;
 import static com.jahirtrap.randomisfits.util.CommonUtils.coloredTextComponent;
 
 public class BaseLumberaxeItem extends AxeItem {
-    DataComponentType<Boolean> FELLING_KEY = DataComponents.register("felling", (builder) -> builder.persistent(Codec.BOOL).networkSynchronized(ByteBufCodecs.BOOL));
+    private static final DataComponentType<Boolean> FELLING_KEY = DataComponents.register("felling", (builder) -> builder.persistent(Codec.BOOL).networkSynchronized(ByteBufCodecs.BOOL));
 
     public BaseLumberaxeItem(Tier tier, Properties properties) {
         super(tier, properties.attributes(createAttributes(tier, 6f, -3f)));
@@ -46,6 +47,11 @@ public class BaseLumberaxeItem extends AxeItem {
     public void appendHoverText(ItemStack stack, TooltipContext tooltipContext, List<Component> tooltip, TooltipFlag flag) {
         if (ModConfig.toggleLumberaxeFelling)
             tooltip.add(coloredTextComponent(getModeText(getMode(stack)), ChatFormatting.GRAY));
+    }
+
+    @Override
+    public int getBarColor(ItemStack stack) {
+        return blueBar(stack);
     }
 
     boolean getMode(ItemStack stack) {

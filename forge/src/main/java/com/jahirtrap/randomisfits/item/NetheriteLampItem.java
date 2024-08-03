@@ -4,14 +4,13 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.level.block.Block;
 
 public class NetheriteLampItem extends BaseWearableItem {
 
     public NetheriteLampItem(Block block, Properties properties) {
-        super(block, properties.fireResistant().rarity(Rarity.RARE).attributes(createAttributes()));
+        super(block, properties.fireResistant().attributes(createAttributes()));
     }
 
     public static ItemAttributeModifiers createAttributes() {
