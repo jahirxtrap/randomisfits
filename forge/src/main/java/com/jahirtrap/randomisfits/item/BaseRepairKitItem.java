@@ -28,10 +28,8 @@ public class BaseRepairKitItem extends BaseItem {
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
         InteractionResultHolder<ItemStack> holder = super.use(level, player, hand);
-        ItemStack stack = player.getItemInHand(hand);
-
         if (RepairItemEvent.execute(player, amount))
-            return new InteractionResultHolder<>(InteractionResult.SUCCESS, stack);
+            return new InteractionResultHolder<>(InteractionResult.SUCCESS, player.getItemInHand(hand));
 
         return holder;
     }

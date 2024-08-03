@@ -17,6 +17,7 @@ import javax.annotation.Nullable;
 import java.util.List;
 
 import static com.jahirtrap.randomisfits.init.ModTab.TAB_RANDOMISFITS;
+import static com.jahirtrap.randomisfits.util.CommonUtils.blueBar;
 import static com.jahirtrap.randomisfits.util.CommonUtils.coloredTextComponent;
 
 public class BaseHammerItem extends PickaxeItem implements RangeItem {
@@ -42,6 +43,11 @@ public class BaseHammerItem extends PickaxeItem implements RangeItem {
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
         if (ModConfig.toggleHammerMode)
             tooltip.add(coloredTextComponent(getModeText(getMode(stack)), ChatFormatting.GRAY));
+    }
+
+    @Override
+    public int getBarColor(ItemStack stack) {
+        return blueBar(stack);
     }
 
     @Override
