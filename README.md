@@ -5,9 +5,14 @@ Armor, multitools & other random things
 
 <strong>This mod adds:</strong>
 
-- Invisible armor, Multitools, Hammers, Lumberaxes, Excavators, Repair kits, Lamp, Painting
-- Random things
-- More random things
+- Invisible Armor => Armor that provides protection while allowing your skin to be visible.
+- Multitools => A combined axe, pickaxe, shovel, and hoe in one tool (Crouch + right-click to switch between shovel and hoe actions).
+- Hammers, Excavators => Tools that mine or excavate in a 3x3 area (Crouch + right-click to switch between mining a single block or in a 3x3 area).
+- Lumberaxes => An axe that allows chopping down a configurable number of nearby blocks, useful for felling entire trees (Crouch + right-click to toggle felling mode).
+- Repair Kits => Repair a configurable amount of durability to items (Used by holding a kit in one hand, the item to be repaired in the other hand, and right-clicking).
+- Ender Bag => A portable item that grants access to the player's Ender Chest inventory by right-clicking.
+- Lamps => Ceiling light source blocks, can also be equipped on the head (Useful with dynamic lighting mods).
+- Misfit painting => The first mod logo in a 1x1 painting.
 
 <strong>Fabric/Quilt dependencies:</strong>
 
@@ -18,6 +23,6 @@ Armor, multitools & other random things
 <details>
   <summary>Spoiler</summary>
 
-<img src="https://cdn.modrinth.com/data/sdjh3tKn/images/da99004d321f6143fb8381fb4e2514ee5beb1405.png" width="500">
+<img src="https://cdn.modrinth.com/data/sdjh3tKn/images/6dca2c1e065a4864395fad6f8b2be287296ae757.png" width="500">
 
 </details>

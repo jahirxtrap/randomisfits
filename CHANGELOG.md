@@ -1,2 +1,3 @@
-- Internal changes
-- Lumberaxes
+- Added Ender Bag
+- Simplified Multitools usage logic
+- Changed tools durability bar color

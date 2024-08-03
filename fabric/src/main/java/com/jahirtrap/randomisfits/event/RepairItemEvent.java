@@ -7,29 +7,17 @@ import net.minecraft.world.item.ItemStack;
 
 public class RepairItemEvent {
     public static boolean execute(Player player, int amount) {
-        ItemStack mainHandIst = player.getMainHandItem(), offHandIst = player.getOffhandItem();
+        ItemStack mainHand = player.getMainHandItem(), offHand = player.getOffhandItem();
+        return attemptRepair(player, mainHand, offHand, amount) || attemptRepair(player, offHand, mainHand, amount);
+    }
 
-        if (isRepairKit(mainHandIst) && isRepairable(offHandIst))
-            return repairItem(player, offHandIst, mainHandIst, amount);
-        else if (isRepairKit(offHandIst) && isRepairable(mainHandIst))
-            return repairItem(player, mainHandIst, offHandIst, amount);
-
+    private static boolean attemptRepair(Player player, ItemStack kit, ItemStack item, int amount) {
+        if (kit.getItem() instanceof BaseRepairKitItem && item.getDamageValue() > 0 && item.getCount() == 1) {
+            item.setDamageValue(item.getDamageValue() - amount);
+            if (!player.getAbilities().instabuild) kit.shrink(1);
+            player.playSound(SoundEvents.ANVIL_USE, 1, 1);
+            return true;
+        }
         return false;
-    }
-
-    private static boolean isRepairKit(ItemStack stack) {
-        return stack.getItem() instanceof BaseRepairKitItem;
-    }
-
-    private static boolean isRepairable(ItemStack stack) {
-        return stack.getDamageValue() > 0 && stack.getCount() == 1;
-    }
-
-    private static boolean repairItem(Player player, ItemStack result, ItemStack stack, int amount) {
-        result.setDamageValue(result.getDamageValue() - amount);
-        if (!player.getAbilities().instabuild) stack.shrink(1);
-
-        player.playSound(SoundEvents.ANVIL_USE, 1, 1);
-        return true;
     }
 }
