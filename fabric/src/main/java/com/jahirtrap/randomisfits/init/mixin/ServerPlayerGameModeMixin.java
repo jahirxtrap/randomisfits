@@ -35,11 +35,11 @@ public abstract class ServerPlayerGameModeMixin {
     @Unique
     private Direction direction;
     @Unique
-    private List<BlockPos> destroyedBlocks = new CopyOnWriteArrayList<>();
+    private final List<BlockPos> destroyedBlocks = new CopyOnWriteArrayList<>();
     @Unique
-    private List<BlockPos> rangeBlocks = new CopyOnWriteArrayList<>();
+    private final List<BlockPos> rangeBlocks = new CopyOnWriteArrayList<>();
     @Unique
-    private List<BlockPos> fellingBlocks = new CopyOnWriteArrayList<>();
+    private final List<BlockPos> fellingBlocks = new CopyOnWriteArrayList<>();
 
     @Inject(method = "handleBlockBreakAction", at = @At("HEAD"))
     private void getDirection(BlockPos blockPos, ServerboundPlayerActionPacket.Action action, Direction direction, int i, CallbackInfo ci) {
@@ -72,7 +72,7 @@ public abstract class ServerPlayerGameModeMixin {
     @Inject(method = "tick", at = @At("TAIL"))
     public void tick(CallbackInfo ci) {
         int i = 0;
-        if (fellingBlocks != null) {
+        if (!fellingBlocks.isEmpty()) {
             for (BlockPos targetPos : fellingBlocks) {
                 if (player.getMainHandItem().getDamageValue() >= player.getMainHandItem().getMaxDamage()) {
                     fellingBlocks.clear();
