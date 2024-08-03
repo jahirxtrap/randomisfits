@@ -6,7 +6,6 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.item.Rarity;
 import net.minecraft.world.level.block.Block;
 
 import java.util.UUID;
@@ -14,7 +13,7 @@ import java.util.UUID;
 public class NetheriteLampItem extends BaseWearableItem {
 
     public NetheriteLampItem(Block block, Properties properties) {
-        super(block, properties.fireResistant().rarity(Rarity.RARE));
+        super(block, properties.fireResistant());
     }
 
     @Override

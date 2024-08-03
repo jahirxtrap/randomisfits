@@ -36,6 +36,7 @@ public class ModTab {
                     event.accept(ModContent.REPAIR_KIT);
                     event.accept(ModContent.DIAMOND_REPAIR_KIT);
                     event.accept(ModContent.NETHERITE_REPAIR_KIT);
+                    event.accept(ModContent.ENDER_BAG);
                     event.accept(ModContent.LAMP);
                     event.accept(ModContent.NETHERITE_LAMP);
                 })
