@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SLS",
+    "LCL",
+    "LLL"
+  ],
+  "key": {
+    "S": {
+      "tag": "c:string"
+    },
+    "L": {
+      "tag": "c:leather"
+    },
+    "C": {
+      "item": "minecraft:ender_chest"
+    }
+  },
+  "result": {
+    "item": "randomisfits:ender_bag",
+    "count": 1
+  }
+}
