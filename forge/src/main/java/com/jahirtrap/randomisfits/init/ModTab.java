@@ -21,6 +21,7 @@ public class ModTab {
                     event.accept(ModContent.REINFORCED_INVISIBLE_CHESTPLATE.get());
                     event.accept(ModContent.REINFORCED_INVISIBLE_LEGGINGS.get());
                     event.accept(ModContent.REINFORCED_INVISIBLE_BOOTS.get());
+                    event.accept(ModContent.HANDLE.get());
                     event.accept(ModContent.IRON_MULTITOOL.get());
                     event.accept(ModContent.DIAMOND_MULTITOOL.get());
                     event.accept(ModContent.NETHERITE_MULTITOOL.get());

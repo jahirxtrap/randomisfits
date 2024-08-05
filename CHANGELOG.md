@@ -1,3 +1,4 @@
-- Added Ender Bag
-- Simplified Multitools usage logic
-- Changed tools durability bar color
+- Added Handle item
+- Added closing sound and particles for Ender Bag
+- Updated tool crafting recipes
+- Updated textures
