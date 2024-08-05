@@ -19,7 +19,7 @@
       "item": "minecraft:diamond_hoe"
     },
     "R": {
-      "tag": "forge:rods/wooden"
+      "item": "randomisfits:handle"
     }
   },
   "result": {
