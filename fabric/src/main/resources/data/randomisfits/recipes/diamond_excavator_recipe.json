@@ -10,7 +10,7 @@
       "tag": "c:diamond_blocks"
     },
     "R": {
-      "tag": "c:wooden_rods"
+      "item": "randomisfits:handle"
     }
   },
   "result": {

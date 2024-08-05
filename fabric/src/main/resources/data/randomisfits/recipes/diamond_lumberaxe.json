@@ -13,7 +13,7 @@
       "tag": "c:diamonds"
     },
     "R": {
-      "tag": "c:wooden_rods"
+      "item": "randomisfits:handle"
     }
   },
   "result": {
