@@ -6,6 +6,7 @@ Armor, multitools & other random things
 <strong>This mod adds:</strong>
 
 - Invisible Armor => Armor that provides protection while allowing your skin to be visible.
+- Handle => Used to craft tools of this mod.
 - Multitools => A combined axe, pickaxe, shovel, and hoe in one tool (Crouch + right-click to switch between shovel and hoe actions).
 - Hammers, Excavators => Tools that mine or excavate in a 3x3 area (Crouch + right-click to switch between mining a single block or in a 3x3 area).
 - Lumberaxes => An axe that allows chopping down a configurable number of nearby blocks, useful for felling entire trees (Crouch + right-click to toggle felling mode).
@@ -23,6 +24,6 @@ Armor, multitools & other random things
 <details>
   <summary>Spoiler</summary>
 
-<img src="https://cdn.modrinth.com/data/sdjh3tKn/images/6dca2c1e065a4864395fad6f8b2be287296ae757.png" width="500">
+<img src="https://cdn.modrinth.com/data/sdjh3tKn/images/ba7313c543e8dce906a93e62576b06e5a99e0ba6.png" width="500">
 
 </details>

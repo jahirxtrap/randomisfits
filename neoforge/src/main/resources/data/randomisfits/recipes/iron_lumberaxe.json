@@ -13,7 +13,7 @@
       "tag": "c:ingots/iron"
     },
     "R": {
-      "tag": "c:rods/wooden"
+      "item": "randomisfits:handle"
     }
   },
   "result": {
