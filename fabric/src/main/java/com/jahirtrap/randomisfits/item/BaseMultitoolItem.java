@@ -66,6 +66,7 @@ public class BaseMultitoolItem extends DiggerItem {
         return blueBar(stack);
     }
 
+    @Override
     public InteractionResult useOn(UseOnContext context) {
         if (!ModConfig.multitoolInteractions) return InteractionResult.PASS;
         InteractionResult result = items[0].useOn(context);
