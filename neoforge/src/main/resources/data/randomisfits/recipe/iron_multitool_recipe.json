@@ -19,7 +19,7 @@
       "item": "minecraft:iron_hoe"
     },
     "R": {
-      "tag": "c:rods/wooden"
+      "item": "randomisfits:handle"
     }
   },
   "result": {

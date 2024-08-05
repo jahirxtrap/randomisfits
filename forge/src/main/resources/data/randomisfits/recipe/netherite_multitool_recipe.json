@@ -19,7 +19,7 @@
       "item": "minecraft:netherite_hoe"
     },
     "R": {
-      "tag": "forge:rods/wooden"
+      "item": "randomisfits:handle"
     }
   },
   "result": {
