@@ -10,7 +10,7 @@
       "tag": "forge:storage_blocks/iron"
     },
     "R": {
-      "tag": "forge:rods/wooden"
+      "item": "randomisfits:handle"
     }
   },
   "result": {
