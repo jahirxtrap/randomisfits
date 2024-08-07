@@ -11,6 +11,7 @@ Armor, multitools & other random things
 - Hammers, Excavators => Tools that mine or excavate in a 3x3 area (Crouch + right-click to switch between mining a single block or in a 3x3 area).
 - Lumberaxes => An axe that allows chopping down a configurable number of nearby blocks, useful for felling entire trees (Crouch + right-click to toggle felling mode).
 - Repair Kits => Repair a configurable amount of durability to items (Used by holding a kit in one hand, the item to be repaired in the other hand, and right-clicking).
+- Crafting Plate => A portable item that grants access to the Crafting Table menu by right-clicking.
 - Ender Bag => A portable item that grants access to the player's Ender Chest inventory by right-clicking.
 - Lamps => Ceiling light source blocks, can also be equipped on the head (Useful with dynamic lighting mods).
 - Misfit painting => The first mod logo in a 1x1 painting.
@@ -24,6 +25,6 @@ Armor, multitools & other random things
 <details>
   <summary>Spoiler</summary>
 
-<img src="https://cdn.modrinth.com/data/sdjh3tKn/images/ba7313c543e8dce906a93e62576b06e5a99e0ba6.png" width="500">
+<img src="https://cdn.modrinth.com/data/sdjh3tKn/images/924368591aae0b4964007b3d07067fed75586bec.png" width="500">
 
 </details>
