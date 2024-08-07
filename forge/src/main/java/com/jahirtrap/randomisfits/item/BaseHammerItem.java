@@ -25,7 +25,6 @@ public class BaseHammerItem extends PickaxeItem implements RangeItem {
 
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
-        InteractionResultHolder<ItemStack> holder = super.use(level, player, hand);
         ItemStack stack = player.getItemInHand(hand);
 
         if (ModConfig.toggleHammerMode && !level.isClientSide && player.isShiftKeyDown()) {
@@ -34,7 +33,7 @@ public class BaseHammerItem extends PickaxeItem implements RangeItem {
             return new InteractionResultHolder<>(InteractionResult.SUCCESS, stack);
         }
 
-        return holder;
+        return super.use(level, player, hand);
     }
 
     @Override

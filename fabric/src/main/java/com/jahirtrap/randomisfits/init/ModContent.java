@@ -38,6 +38,7 @@ public class ModContent {
     public static final Item REPAIR_KIT = registerItem("repair_kit", new BaseRepairKitItem(new Item.Properties(), ModConfig.kitRepairAmount));
     public static final Item DIAMOND_REPAIR_KIT = registerItem("diamond_repair_kit", new BaseRepairKitItem(new Item.Properties(), ModConfig.diamondKitRepairAmount));
     public static final Item NETHERITE_REPAIR_KIT = registerItem("netherite_repair_kit", new BaseRepairKitItem(new Item.Properties().fireResistant(), ModConfig.netheriteKitRepairAmount));
+    public static final Item CRAFTING_PLATE = registerItem("crafting_plate", new CraftingPlateItem());
     public static final Item ENDER_BAG = registerItem("ender_bag", new EnderBagItem());
     public static final Block LAMP_BLOCK = registerBlock("lamp", new BaseLampBlock());
     public static final Item LAMP = registerItem("lamp", new BaseWearableItem(LAMP_BLOCK, new Item.Properties()));
