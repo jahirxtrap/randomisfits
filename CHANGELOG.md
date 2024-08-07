@@ -1,4 +1,2 @@
-- Added Handle item
-- Added closing sound and particles for Ender Bag
-- Updated tool crafting recipes
-- Updated textures
+- Added Crafting Plate item
+- Tweaked some textures
