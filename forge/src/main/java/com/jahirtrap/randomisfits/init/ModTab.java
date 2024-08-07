@@ -40,6 +40,7 @@ public class ModTab {
                 event.accept(ModContent.REPAIR_KIT.get());
                 event.accept(ModContent.DIAMOND_REPAIR_KIT.get());
                 event.accept(ModContent.NETHERITE_REPAIR_KIT.get());
+                event.accept(ModContent.CRAFTING_PLATE.get());
                 event.accept(ModContent.ENDER_BAG.get());
                 event.accept(ModContent.LAMP.get());
                 event.accept(ModContent.NETHERITE_LAMP.get());

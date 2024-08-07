@@ -38,7 +38,6 @@ public class BaseMultitoolItem extends DiggerItem {
 
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
-        InteractionResultHolder<ItemStack> holder = super.use(level, player, hand);
         ItemStack stack = player.getItemInHand(hand);
 
         if (ModConfig.multitoolInteractions && !level.isClientSide && player.isShiftKeyDown()) {
@@ -52,7 +51,7 @@ public class BaseMultitoolItem extends DiggerItem {
             return new InteractionResultHolder<>(InteractionResult.SUCCESS, stack);
         }
 
-        return holder;
+        return super.use(level, player, hand);
     }
 
     @Override

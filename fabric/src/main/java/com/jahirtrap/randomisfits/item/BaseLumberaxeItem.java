@@ -28,7 +28,6 @@ public class BaseLumberaxeItem extends AxeItem {
 
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
-        InteractionResultHolder<ItemStack> holder = super.use(level, player, hand);
         ItemStack stack = player.getItemInHand(hand);
 
         if (ModConfig.toggleLumberaxeFelling && !level.isClientSide && player.isShiftKeyDown()) {
@@ -37,7 +36,7 @@ public class BaseLumberaxeItem extends AxeItem {
             return new InteractionResultHolder<>(InteractionResult.SUCCESS, stack);
         }
 
-        return holder;
+        return super.use(level, player, hand);
     }
 
     @Override
