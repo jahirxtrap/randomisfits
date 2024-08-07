@@ -25,7 +25,7 @@ public class EnderBagItem extends BaseItem {
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
         player.playSound(SoundEvents.ENDER_CHEST_OPEN, 0.5f, level.random.nextFloat() * 0.1f + 0.9f);
-        player.openMenu(new SimpleMenuProvider(EnderChestMenu::new, new TranslatableComponent("item.randomisfits.ender_bag")));
+        player.openMenu(new SimpleMenuProvider(EnderBagMenu::new, new TranslatableComponent("item.randomisfits.ender_bag")));
 
         return new InteractionResultHolder<>(InteractionResult.SUCCESS, player.getItemInHand(hand));
     }
@@ -40,8 +40,8 @@ public class EnderBagItem extends BaseItem {
         }
     }
 
-    private static class EnderChestMenu extends ChestMenu {
-        public EnderChestMenu(int id, Inventory inventory, Player player) {
+    private static class EnderBagMenu extends ChestMenu {
+        public EnderBagMenu(int id, Inventory inventory, Player player) {
             super(MenuType.GENERIC_9x3, id, inventory, player.getEnderChestInventory(), 3);
         }
 
