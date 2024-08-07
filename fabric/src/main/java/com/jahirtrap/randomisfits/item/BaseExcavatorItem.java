@@ -26,7 +26,6 @@ public class BaseExcavatorItem extends ShovelItem implements RangeItem {
 
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
-        InteractionResultHolder<ItemStack> holder = super.use(level, player, hand);
         ItemStack stack = player.getItemInHand(hand);
 
         if (ModConfig.toggleExcavatorMode && !level.isClientSide && player.isShiftKeyDown()) {
@@ -35,7 +34,7 @@ public class BaseExcavatorItem extends ShovelItem implements RangeItem {
             return new InteractionResultHolder<>(InteractionResult.SUCCESS, stack);
         }
 
-        return holder;
+        return super.use(level, player, hand);
     }
 
     @Override
