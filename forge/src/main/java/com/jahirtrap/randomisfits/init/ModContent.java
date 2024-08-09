@@ -19,7 +19,6 @@ import static com.jahirtrap.randomisfits.RandomisfitsMod.MODID;
 public class ModContent {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(Registries.BLOCK, MODID);
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(Registries.ITEM, MODID);
-    public static final DeferredRegister<PaintingVariant> PAINTINGS = DeferredRegister.create(Registries.PAINTING_VARIANT, MODID);
 
     public static final RegistryObject<Item> INVISIBLE_HELMET = registerItem("invisible_helmet", () -> new BaseArmorItem(ModMaterials.INVISIBLE, Type.HELMET, 15, new Item.Properties()));
     public static final RegistryObject<Item> INVISIBLE_CHESTPLATE = registerItem("invisible_chestplate", () -> new BaseArmorItem(ModMaterials.INVISIBLE, Type.CHESTPLATE, 15, new Item.Properties()));
@@ -69,6 +68,5 @@ public class ModContent {
     public static void init(IEventBus bus) {
         BLOCKS.register(bus);
         ITEMS.register(bus);
-        PAINTINGS.register(bus);
     }
 }
