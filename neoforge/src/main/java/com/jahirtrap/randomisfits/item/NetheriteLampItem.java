@@ -8,7 +8,6 @@ import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.level.block.Block;
 
 public class NetheriteLampItem extends BaseWearableItem {
-
     public NetheriteLampItem(Block block, Properties properties) {
         super(block, properties.fireResistant().attributes(createAttributes()));
     }

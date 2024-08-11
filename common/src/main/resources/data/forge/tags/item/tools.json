@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "#randomisfits:glass_cutters",
     "#randomisfits:multitools"
   ]
 }

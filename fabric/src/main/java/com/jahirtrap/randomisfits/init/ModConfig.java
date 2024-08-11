@@ -19,4 +19,6 @@ public class ModConfig extends TXFConfig {
     public static int diamondKitRepairAmount = 600;
     @Entry(name = "Netherite Kit Repair Amount", min = 1, max = Integer.MAX_VALUE)
     public static int netheriteKitRepairAmount = 900;
+    @Entry(name = "Wearable Light Blocks")
+    public static boolean wearableLightBlocks = true;
 }
