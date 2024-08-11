@@ -4,6 +4,7 @@
     "#forge:tools/axes",
     "#forge:tools/pickaxes",
     "#forge:tools/shovels",
+    "#randomisfits:glass_cutters",
     "#randomisfits:multitools"
   ]
 }

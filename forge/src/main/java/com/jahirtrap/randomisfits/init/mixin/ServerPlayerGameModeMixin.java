@@ -2,7 +2,7 @@ package com.jahirtrap.randomisfits.init.mixin;
 
 import com.jahirtrap.randomisfits.init.ModConfig;
 import com.jahirtrap.randomisfits.item.BaseLumberaxeItem;
-import com.jahirtrap.randomisfits.item.RangeItem;
+import com.jahirtrap.randomisfits.util.RangeItem;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.protocol.game.ServerboundPlayerActionPacket;

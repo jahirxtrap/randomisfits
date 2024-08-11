@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "randomisfits:block/bulb"
+    },
+    "facing=up": {
+      "model": "randomisfits:block/bulb",
+      "x": 180
+    },
+    "facing=north": {
+      "model": "randomisfits:block/bulb",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south": {
+      "model": "randomisfits:block/bulb",
+      "x": 90
+    },
+    "facing=east": {
+      "model": "randomisfits:block/bulb",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west": {
+      "model": "randomisfits:block/bulb",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

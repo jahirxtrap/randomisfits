@@ -1,4 +1,4 @@
-package com.jahirtrap.randomisfits.item;
+package com.jahirtrap.randomisfits.util;
 
 import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.item.ItemStack;

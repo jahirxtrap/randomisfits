@@ -1,7 +1,9 @@
 {
   "replace": false,
   "values": [
+    "randomisfits:bulb",
     "randomisfits:lamp",
-    "randomisfits:netherite_lamp"
+    "randomisfits:netherite_lamp",
+    "randomisfits:glow_core"
   ]
 }
