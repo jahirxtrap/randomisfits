@@ -37,13 +37,18 @@ public class ModTab {
                 event.accept(ModContent.IRON_EXCAVATOR.get());
                 event.accept(ModContent.DIAMOND_EXCAVATOR.get());
                 event.accept(ModContent.NETHERITE_EXCAVATOR.get());
+                event.accept(ModContent.GLASS_CUTTER.get());
+                event.accept(ModContent.DIAMOND_GLASS_CUTTER.get());
+                event.accept(ModContent.NETHERITE_GLASS_CUTTER.get());
                 event.accept(ModContent.REPAIR_KIT.get());
                 event.accept(ModContent.DIAMOND_REPAIR_KIT.get());
                 event.accept(ModContent.NETHERITE_REPAIR_KIT.get());
                 event.accept(ModContent.CRAFTING_PLATE.get());
                 event.accept(ModContent.ENDER_BAG.get());
+                event.accept(ModContent.BULB.get());
                 event.accept(ModContent.LAMP.get());
                 event.accept(ModContent.NETHERITE_LAMP.get());
+                event.accept(ModContent.GLOW_CORE.get());
             })
             .title(Component.translatable("itemGroup.randomisfits.tab_randomisfits"))
             .build());
