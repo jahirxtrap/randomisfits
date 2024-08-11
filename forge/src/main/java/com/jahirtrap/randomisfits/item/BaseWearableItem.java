@@ -1,6 +1,6 @@
 package com.jahirtrap.randomisfits.item;
 
-import net.minecraft.world.entity.Entity;
+import com.jahirtrap.randomisfits.init.ModConfig;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
@@ -14,12 +14,8 @@ public class BaseWearableItem extends BlockItem {
     }
 
     @Override
-    public boolean canEquip(ItemStack stack, EquipmentSlot slot, Entity entity) {
-        return slot == EquipmentSlot.HEAD;
-    }
-
-    @Override
     public EquipmentSlot getEquipmentSlot(ItemStack stack) {
-        return EquipmentSlot.HEAD;
+        if (ModConfig.wearableLightBlocks) return EquipmentSlot.HEAD;
+        else return EquipmentSlot.MAINHAND;
     }
 }
