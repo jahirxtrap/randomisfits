@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "I",
+    "A",
+    "R"
+  ],
+  "key": {
+    "A": {
+      "tag": "forge:gems/amethyst"
+    },
+    "I": {
+      "tag": "forge:ingots/iron"
+    },
+    "R": {
+      "item": "randomisfits:handle"
+    }
+  },
+  "result": {
+    "id": "randomisfits:glass_cutter",
+    "count": 1
+  }
+}

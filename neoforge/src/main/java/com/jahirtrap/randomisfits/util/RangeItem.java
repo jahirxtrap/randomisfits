@@ -1,4 +1,4 @@
-package com.jahirtrap.randomisfits.item;
+package com.jahirtrap.randomisfits.util;
 
 import com.mojang.serialization.Codec;
 import net.minecraft.core.component.DataComponentType;

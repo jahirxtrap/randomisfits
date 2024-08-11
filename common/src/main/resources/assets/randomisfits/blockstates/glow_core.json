@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "randomisfits:block/glow_core",
+      "x": 180
+    },
+    "facing=up": {
+      "model": "randomisfits:block/glow_core"
+    },
+    "facing=north": {
+      "model": "randomisfits:block/glow_core",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "randomisfits:block/glow_core",
+      "x": 90,
+      "y": 180
+    },
+    "facing=east": {
+      "model": "randomisfits:block/glow_core",
+      "x": 90,
+      "y": 90
+    },
+    "facing=west": {
+      "model": "randomisfits:block/glow_core",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

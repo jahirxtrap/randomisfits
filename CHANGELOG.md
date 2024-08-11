@@ -1,2 +1,6 @@
-- Added Crafting Plate item
+- Added Glass Cutter items
+- Added Bulb and Glow Core blocks
+- Changed Lamp recipe
+- Lamp can now be placed in any direction
+- Handle can now be used as fuel
 - Tweaked some textures
