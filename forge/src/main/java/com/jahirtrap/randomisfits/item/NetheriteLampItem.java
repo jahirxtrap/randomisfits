@@ -11,7 +11,6 @@ import net.minecraft.world.level.block.Block;
 import java.util.UUID;
 
 public class NetheriteLampItem extends BaseWearableItem {
-
     public NetheriteLampItem(Block block, Properties properties) {
         super(block, properties.fireResistant());
     }

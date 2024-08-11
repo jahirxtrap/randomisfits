@@ -1,6 +1,7 @@
 package com.jahirtrap.randomisfits.item;
 
 import com.jahirtrap.randomisfits.init.ModConfig;
+import com.jahirtrap.randomisfits.util.RangeItem;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;

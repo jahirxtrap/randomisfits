@@ -1,6 +1,8 @@
 {
+  "block.randomisfits.bulb": "Bulb",
   "block.randomisfits.lamp": "Lamp",
   "block.randomisfits.netherite_lamp": "Netherite Lamp",
+  "block.randomisfits.glow_core": "Glow Core",
   "item.randomisfits.invisible_boots": "Invisible Boots",
   "item.randomisfits.invisible_chestplate": "Invisible Chestplate",
   "item.randomisfits.invisible_helmet": "Invisible Helmet",
@@ -22,6 +24,9 @@
   "item.randomisfits.iron_excavator": "Iron Excavator",
   "item.randomisfits.diamond_excavator": "Diamond Excavator",
   "item.randomisfits.netherite_excavator": "Netherite Excavator",
+  "item.randomisfits.glass_cutter": "Glass Cutter",
+  "item.randomisfits.diamond_glass_cutter": "Diamond Glass Cutter",
+  "item.randomisfits.netherite_glass_cutter": "Netherite Glass Cutter",
   "item.randomisfits.repair_kit": "Repair Kit",
   "item.randomisfits.diamond_repair_kit": "Diamond Repair Kit",
   "item.randomisfits.netherite_repair_kit": "Netherite Repair Kit",
