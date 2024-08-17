@@ -2,7 +2,6 @@ package com.jahirtrap.randomisfits;
 
 import com.jahirtrap.randomisfits.init.ModConfig;
 import com.jahirtrap.randomisfits.init.ModContent;
-import com.jahirtrap.randomisfits.init.ModTab;
 import com.jahirtrap.randomisfits.util.configlib.TXFConfig;
 import net.minecraftforge.client.ConfigGuiHandler;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -23,6 +22,5 @@ public class RandomisfitsMod {
                 new ConfigGuiHandler.ConfigGuiFactory((client, parent) -> TXFConfig.getScreen(parent, MODID)));
 
         ModContent.init(bus);
-        ModTab.init();
     }
 }

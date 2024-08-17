@@ -3,7 +3,9 @@
   "values": [
     "#forge:tools/axes",
     "#forge:tools/pickaxes",
+    "#forge:tools/axes",
     "#forge:tools/shovels",
+    "#forge:tools/hoes",
     "#randomisfits:glass_cutters",
     "#randomisfits:multitools"
   ]

@@ -3,16 +3,18 @@ package com.jahirtrap.randomisfits.init;
 import com.jahirtrap.randomisfits.block.BaseLightBlock;
 import com.jahirtrap.randomisfits.item.*;
 import net.minecraft.core.Registry;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.decoration.Motive;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Tiers;
+import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 
+import java.util.List;
 import java.util.function.Supplier;
 
 import static com.jahirtrap.randomisfits.RandomisfitsMod.MODID;
@@ -23,14 +25,12 @@ public class ModContent {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(Registry.ITEM_REGISTRY, MODID);
     public static final DeferredRegister<Motive> PAINTINGS = DeferredRegister.create(Registry.MOTIVE_REGISTRY, MODID);
 
-    public static final RegistryObject<Item> INVISIBLE_HELMET = registerItem("invisible_helmet", () -> new BaseArmorItem(ModMaterials.INVISIBLE, EquipmentSlot.HEAD, new Item.Properties()));
-    public static final RegistryObject<Item> INVISIBLE_CHESTPLATE = registerItem("invisible_chestplate", () -> new BaseArmorItem(ModMaterials.INVISIBLE, EquipmentSlot.CHEST, new Item.Properties()));
-    public static final RegistryObject<Item> INVISIBLE_LEGGINGS = registerItem("invisible_leggings", () -> new BaseArmorItem(ModMaterials.INVISIBLE, EquipmentSlot.LEGS, new Item.Properties()));
-    public static final RegistryObject<Item> INVISIBLE_BOOTS = registerItem("invisible_boots", () -> new BaseArmorItem(ModMaterials.INVISIBLE, EquipmentSlot.FEET, new Item.Properties()));
-    public static final RegistryObject<Item> REINFORCED_INVISIBLE_HELMET = registerItem("reinforced_invisible_helmet", () -> new BaseArmorItem(ModMaterials.REINFORCED_INVISIBLE, EquipmentSlot.HEAD, new Item.Properties()));
-    public static final RegistryObject<Item> REINFORCED_INVISIBLE_CHESTPLATE = registerItem("reinforced_invisible_chestplate", () -> new BaseArmorItem(ModMaterials.REINFORCED_INVISIBLE, EquipmentSlot.CHEST, new Item.Properties()));
-    public static final RegistryObject<Item> REINFORCED_INVISIBLE_LEGGINGS = registerItem("reinforced_invisible_leggings", () -> new BaseArmorItem(ModMaterials.REINFORCED_INVISIBLE, EquipmentSlot.LEGS, new Item.Properties()));
-    public static final RegistryObject<Item> REINFORCED_INVISIBLE_BOOTS = registerItem("reinforced_invisible_boots", () -> new BaseArmorItem(ModMaterials.REINFORCED_INVISIBLE, EquipmentSlot.FEET, new Item.Properties()));
+    public static final RegistryObject<Item> ZURITE_INGOT = registerItem("zurite_ingot", () -> new BaseItem(new Item.Properties().fireResistant()));
+    public static final RegistryObject<Block> ZURITE_BLOCK = registerBlock("zurite_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK)), new Item.Properties().fireResistant());
+    public static final List<RegistryObject<Item>> ZURITE_TOOLS = registerTools("zurite", ModTiers.ZURITE, new float[]{5f, -3f, -4f, 0f}, new Item.Properties().fireResistant());
+    public static final List<RegistryObject<Item>> ZURITE_ARMOR = registerArmor(ModMaterials.ZURITE, new Item.Properties().fireResistant());
+    public static final List<RegistryObject<Item>> INVISIBLE_ARMOR = registerArmor(ModMaterials.INVISIBLE, new Item.Properties());
+    public static final List<RegistryObject<Item>> REINFORCED_INVISIBLE_ARMOR = registerArmor(ModMaterials.REINFORCED_INVISIBLE, new Item.Properties());
     public static final RegistryObject<Item> HANDLE = registerItem("handle", () -> new BaseFuelItem(new Item.Properties(), 200));
     public static final RegistryObject<Item> IRON_MULTITOOL = registerItem("iron_multitool", () -> new BaseMultitoolItem(ModTiers.IRON_HARD, new Item.Properties()));
     public static final RegistryObject<Item> DIAMOND_MULTITOOL = registerItem("diamond_multitool", () -> new BaseMultitoolItem(ModTiers.DIAMOND_HARD, new Item.Properties()));
@@ -63,9 +63,9 @@ public class ModContent {
     public static final RegistryObject<Motive> MISFIT_PAINTING = registerPainting("misfit", () -> new Motive(16, 16));
 
     public static RegistryObject<Block> registerBlock(String name, Supplier<Block> supplier, Item.Properties properties) {
-        var Block = registerBlock(name, supplier);
-        registerItem(name, () -> new BlockItem(Block.get(), properties.tab(TAB_RANDOMISFITS)));
-        return Block;
+        var blockReg = registerBlock(name, supplier);
+        registerItem(name, () -> new BlockItem(blockReg.get(), properties.tab(TAB_RANDOMISFITS)));
+        return blockReg;
     }
 
     public static RegistryObject<Block> registerBlock(String name, Supplier<Block> supplier) {
@@ -74,6 +74,26 @@ public class ModContent {
 
     public static RegistryObject<Item> registerItem(String name, Supplier<Item> supplier) {
         return ITEMS.register(name, supplier);
+    }
+
+    private static List<RegistryObject<Item>> registerTools(String name, Tier tier, float[] attr, Item.Properties properties) {
+        return List.of(
+                registerItem(name + "_sword", () -> new SwordItem(tier, 3, -2.4f, properties.tab(TAB_RANDOMISFITS))),
+                registerItem(name + "_pickaxe", () -> new PickaxeItem(tier, 1, -2.8f, properties.tab(TAB_RANDOMISFITS))),
+                registerItem(name + "_axe", () -> new AxeItem(tier, attr[0], attr[1], properties.tab(TAB_RANDOMISFITS))),
+                registerItem(name + "_shovel", () -> new ShovelItem(tier, 1.5f, -3f, properties.tab(TAB_RANDOMISFITS))),
+                registerItem(name + "_hoe", () -> new HoeItem(tier, (int) attr[2], attr[3], properties.tab(TAB_RANDOMISFITS)))
+        );
+    }
+
+    private static List<RegistryObject<Item>> registerArmor(ArmorMaterial material, Item.Properties properties) {
+        String name = material.getName().substring(material.getName().indexOf(ResourceLocation.NAMESPACE_SEPARATOR) + 1);
+        return List.of(
+                registerItem(name + "_helmet", () -> new BaseArmorItem(material, EquipmentSlot.HEAD, properties)),
+                registerItem(name + "_chestplate", () -> new BaseArmorItem(material, EquipmentSlot.CHEST, properties)),
+                registerItem(name + "_leggings", () -> new BaseArmorItem(material, EquipmentSlot.LEGS, properties)),
+                registerItem(name + "_boots", () -> new BaseArmorItem(material, EquipmentSlot.FEET, properties))
+        );
     }
 
     private static RegistryObject<Motive> registerPainting(String name, Supplier<Motive> supplier) {
