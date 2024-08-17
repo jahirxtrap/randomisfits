@@ -4,6 +4,7 @@ import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 
 import static com.jahirtrap.randomisfits.RandomisfitsMod.MODID;
@@ -13,39 +14,8 @@ public class ModTab {
         CreativeModeTab TAB_RANDOMISFITS = FabricItemGroup.builder(new ResourceLocation(MODID, "tab_randomisfits"))
                 .icon(() -> new ItemStack(ModContent.NETHERITE_MULTITOOL))
                 .displayItems((features, event) -> {
-                    event.accept(ModContent.INVISIBLE_HELMET);
-                    event.accept(ModContent.INVISIBLE_CHESTPLATE);
-                    event.accept(ModContent.INVISIBLE_LEGGINGS);
-                    event.accept(ModContent.INVISIBLE_BOOTS);
-                    event.accept(ModContent.REINFORCED_INVISIBLE_HELMET);
-                    event.accept(ModContent.REINFORCED_INVISIBLE_CHESTPLATE);
-                    event.accept(ModContent.REINFORCED_INVISIBLE_LEGGINGS);
-                    event.accept(ModContent.REINFORCED_INVISIBLE_BOOTS);
-                    event.accept(ModContent.HANDLE);
-                    event.accept(ModContent.IRON_MULTITOOL);
-                    event.accept(ModContent.DIAMOND_MULTITOOL);
-                    event.accept(ModContent.NETHERITE_MULTITOOL);
-                    event.accept(ModContent.IRON_HAMMER);
-                    event.accept(ModContent.DIAMOND_HAMMER);
-                    event.accept(ModContent.NETHERITE_HAMMER);
-                    event.accept(ModContent.IRON_LUMBERAXE);
-                    event.accept(ModContent.DIAMOND_LUMBERAXE);
-                    event.accept(ModContent.NETHERITE_LUMBERAXE);
-                    event.accept(ModContent.IRON_EXCAVATOR);
-                    event.accept(ModContent.DIAMOND_EXCAVATOR);
-                    event.accept(ModContent.NETHERITE_EXCAVATOR);
-                    event.accept(ModContent.GLASS_CUTTER);
-                    event.accept(ModContent.DIAMOND_GLASS_CUTTER);
-                    event.accept(ModContent.NETHERITE_GLASS_CUTTER);
-                    event.accept(ModContent.REPAIR_KIT);
-                    event.accept(ModContent.DIAMOND_REPAIR_KIT);
-                    event.accept(ModContent.NETHERITE_REPAIR_KIT);
-                    event.accept(ModContent.CRAFTING_PLATE);
-                    event.accept(ModContent.ENDER_BAG);
-                    event.accept(ModContent.BULB);
-                    event.accept(ModContent.LAMP);
-                    event.accept(ModContent.NETHERITE_LAMP);
-                    event.accept(ModContent.GLOW_CORE);
+                    for (Item item : ModContent.ITEMS)
+                        event.accept(item);
                 })
                 .title(Component.translatable("itemGroup.randomisfits.tab_randomisfits"))
                 .build();
