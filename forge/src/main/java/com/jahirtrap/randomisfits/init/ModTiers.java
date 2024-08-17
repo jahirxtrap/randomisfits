@@ -1,5 +1,6 @@
 package com.jahirtrap.randomisfits.init;
 
+import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.Tiers;
@@ -9,6 +10,7 @@ import net.minecraft.world.level.block.Block;
 import java.util.function.Supplier;
 
 public enum ModTiers implements Tier {
+    ZURITE(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 1320, 8.5f, 4f, 16, () -> Ingredient.of(ModContent.ZURITE_INGOT.get())),
     IRON_HARD(Tiers.IRON, 2, 0),
     DIAMOND_HARD(Tiers.DIAMOND, 2, 0),
     NETHERITE_HARD(Tiers.NETHERITE, 2, 0);
@@ -20,7 +22,7 @@ public enum ModTiers implements Tier {
     private final int enchantmentValue;
     private final Supplier<Ingredient> ingredient;
 
-    ModTiers(TagKey<Block> incorrect, int uses, int speed, float damage, int enchantmentValue, Supplier<Ingredient> ingredient) {
+    ModTiers(TagKey<Block> incorrect, int uses, float speed, float damage, int enchantmentValue, Supplier<Ingredient> ingredient) {
         this.incorrect = incorrect;
         this.uses = uses;
         this.speed = speed;

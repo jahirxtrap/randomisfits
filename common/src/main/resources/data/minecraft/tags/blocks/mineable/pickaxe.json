@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "randomisfits:zurite_block",
     "randomisfits:bulb",
     "randomisfits:lamp",
     "randomisfits:netherite_lamp",

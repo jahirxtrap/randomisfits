@@ -2,6 +2,7 @@ package com.jahirtrap.randomisfits;
 
 import com.jahirtrap.randomisfits.init.ModConfig;
 import com.jahirtrap.randomisfits.init.ModContent;
+import com.jahirtrap.randomisfits.init.ModMaterials;
 import com.jahirtrap.randomisfits.init.ModTab;
 import com.jahirtrap.randomisfits.util.configlib.TXFConfig;
 import net.minecraftforge.client.ConfigScreenHandler;
@@ -22,6 +23,7 @@ public class RandomisfitsMod {
         ModLoadingContext.get().registerExtensionPoint(ConfigScreenHandler.ConfigScreenFactory.class, () ->
                 new ConfigScreenHandler.ConfigScreenFactory((client, parent) -> TXFConfig.getScreen(parent, MODID)));
 
+        ModMaterials.init(bus);
         ModContent.init(bus);
         ModTab.init(bus);
     }

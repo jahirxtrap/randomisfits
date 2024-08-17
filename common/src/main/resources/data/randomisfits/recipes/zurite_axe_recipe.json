@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "base": {
+    "item": "minecraft:iron_axe"
+  },
+  "addition": {
+    "item": "randomisfits:zurite_ingot"
+  },
+  "result": {
+    "id": "randomisfits:zurite_axe"
+  },
+  "template": {
+    "item": "randomisfits:zurite_upgrade_smithing_template"
+  }
+}
