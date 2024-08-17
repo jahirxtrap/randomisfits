@@ -1,7 +1,9 @@
 package com.jahirtrap.randomisfits.init;
 
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.item.ArmorItem.Type;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -9,12 +11,15 @@ import net.minecraft.world.item.crafting.Ingredient;
 import java.util.EnumMap;
 import java.util.function.Supplier;
 
+import static com.jahirtrap.randomisfits.RandomisfitsMod.MODID;
 import static com.jahirtrap.randomisfits.util.CommonUtils.itemTag;
 
-public enum ModMaterials implements ArmorMaterial {
-    INVISIBLE("randomisfits:invisible", 15, createMap(new int[]{2, 5, 6, 2}),
+public enum ModMaterials implements StringRepresentable, ArmorMaterial {
+    ZURITE("zurite", 31, createMap(new int[]{3, 6, 8, 3}),
+            16, SoundEvents.ARMOR_EQUIP_GENERIC, 2.5f, 0.1f, () -> Ingredient.of(ModContent.ZURITE_INGOT.get())),
+    INVISIBLE("invisible", 15, createMap(new int[]{2, 5, 6, 2}),
             9, SoundEvents.ARMOR_EQUIP_GENERIC, 0f, 0f, () -> Ingredient.of(itemTag("forge:glass/colorless"))),
-    REINFORCED_INVISIBLE("randomisfits:invisible", 30, createMap(new int[]{3, 6, 8, 3}),
+    REINFORCED_INVISIBLE("reinforced_invisible", 30, createMap(new int[]{3, 6, 8, 3}),
             10, SoundEvents.ARMOR_EQUIP_GENERIC, 2f, 0f, () -> Ingredient.of(itemTag("forge:glass/colorless")));
 
     private static EnumMap<Type, Integer> createMap(int[] values) {
@@ -23,6 +28,8 @@ public enum ModMaterials implements ArmorMaterial {
         return enumMap;
     }
 
+    public static final StringRepresentable.EnumCodec<ModMaterials> CODEC = StringRepresentable.fromEnum(ModMaterials::values);
+    private static final EnumMap<Type, Integer> durability = createMap(new int[]{13, 15, 16, 11});
     private final String name;
     private final int durabilityMultiplier;
     private final EnumMap<Type, Integer> defense;
@@ -33,7 +40,7 @@ public enum ModMaterials implements ArmorMaterial {
     private final Supplier<Ingredient> ingredient;
 
     ModMaterials(String name, int durabilityMultiplier, EnumMap<Type, Integer> defense, int enchantmentValue, SoundEvent sound, float toughness, float knockbackResistance, Supplier<Ingredient> ingredient) {
-        this.name = name;
+        this.name = new ResourceLocation(MODID, name).toString();
         this.durabilityMultiplier = durabilityMultiplier;
         this.defense = defense;
         this.enchantmentValue = enchantmentValue;
@@ -44,34 +51,39 @@ public enum ModMaterials implements ArmorMaterial {
     }
 
     public int getDurabilityForType(Type type) {
-        return createMap(new int[]{13, 15, 16, 11}).get(type) * this.durabilityMultiplier;
+        return durability.get(type) * durabilityMultiplier;
     }
 
     public int getDefenseForType(Type type) {
-        return this.defense.get(type);
+        return defense.get(type);
     }
 
     public int getEnchantmentValue() {
-        return this.enchantmentValue;
+        return enchantmentValue;
     }
 
     public SoundEvent getEquipSound() {
-        return this.sound;
+        return sound;
     }
 
     public Ingredient getRepairIngredient() {
-        return this.ingredient.get();
+        return ingredient.get();
     }
 
     public String getName() {
-        return this.name;
+        return name;
     }
 
     public float getToughness() {
-        return this.toughness;
+        return toughness;
     }
 
     public float getKnockbackResistance() {
-        return this.knockbackResistance;
+        return knockbackResistance;
+    }
+
+    @Override
+    public String getSerializedName() {
+        return name;
     }
 }

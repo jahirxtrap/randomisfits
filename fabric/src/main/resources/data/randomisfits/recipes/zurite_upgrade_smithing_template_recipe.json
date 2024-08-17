@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BBB",
+    "BIB",
+    "BLB"
+  ],
+  "key": {
+    "B": {
+      "item": "minecraft:blackstone"
+    },
+    "I": {
+      "tag": "c:iron_ingots"
+    },
+    "L": {
+      "tag": "c:lapis"
+    }
+  },
+  "result": {
+    "item": "randomisfits:zurite_upgrade_smithing_template",
+    "count": 1
+  }
+}

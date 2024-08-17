@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "III",
+    "GGG"
+  ],
+  "key": {
+    "I": {
+      "tag": "forge:nuggets/iron"
+    },
+    "G": {
+      "tag": "forge:dusts/glowstone"
+    }
+  },
+  "result": {
+    "item": "randomisfits:lamp",
+    "count": 1
+  }
+}

@@ -12,7 +12,7 @@ public class RepairItemEvent {
     }
 
     private static boolean attemptRepair(Player player, ItemStack kit, ItemStack item, int amount) {
-        if (kit.getItem() instanceof BaseRepairKitItem && item.getDamageValue() > 0 && item.getCount() == 1) {
+        if (kit.getItem() instanceof BaseRepairKitItem && item.isDamaged()) {
             item.setDamageValue(item.getDamageValue() - amount);
             if (!player.getAbilities().instabuild) kit.shrink(1);
             player.playSound(SoundEvents.ANVIL_USE, 1, 1);

@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "randomisfits:zurite_chestplate",
     "randomisfits:invisible_chestplate",
     "randomisfits:reinforced_invisible_chestplate"
   ]

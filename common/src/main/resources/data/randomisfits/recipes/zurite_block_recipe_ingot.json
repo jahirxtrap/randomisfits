@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "randomisfits:zurite_ingot"
+    },
+    {
+      "item": "randomisfits:zurite_ingot"
+    },
+    {
+      "item": "randomisfits:zurite_ingot"
+    },
+    {
+      "item": "randomisfits:zurite_ingot"
+    },
+    {
+      "item": "randomisfits:zurite_ingot"
+    },
+    {
+      "item": "randomisfits:zurite_ingot"
+    },
+    {
+      "item": "randomisfits:zurite_ingot"
+    },
+    {
+      "item": "randomisfits:zurite_ingot"
+    },
+    {
+      "item": "randomisfits:zurite_ingot"
+    }
+  ],
+  "result": {
+    "item": "randomisfits:zurite_block",
+    "count": 1
+  }
+}
