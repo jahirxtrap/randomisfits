@@ -8,6 +8,6 @@ import static com.jahirtrap.randomisfits.init.ModTab.TAB_RANDOMISFITS;
 
 public class BaseArmorItem extends ArmorItem {
     public BaseArmorItem(ArmorMaterial material, EquipmentSlot slot, Properties properties) {
-        super(material, slot, properties.tab(TAB_RANDOMISFITS));
+        super(material, slot, properties.durability(material.getDurabilityForSlot(slot)).tab(TAB_RANDOMISFITS));
     }
 }

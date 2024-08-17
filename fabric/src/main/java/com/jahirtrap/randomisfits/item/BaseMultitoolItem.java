@@ -25,7 +25,7 @@ import static com.jahirtrap.randomisfits.util.CommonUtils.blueBar;
 import static com.jahirtrap.randomisfits.util.CommonUtils.coloredTextComponent;
 
 public class BaseMultitoolItem extends DiggerItem {
-    public static final TagKey<Block> MINEABLE_WITH_MULTITOOL = TagKey.create(Registry.BLOCK_REGISTRY, new ResourceLocation(MODID, "mineable/multitool"));
+    private static final TagKey<Block> MINEABLE_WITH_MULTITOOL = TagKey.create(Registry.BLOCK_REGISTRY, new ResourceLocation(MODID, "mineable/multitool"));
     private static final Item[] items = {Items.WOODEN_AXE, Items.WOODEN_PICKAXE, Items.WOODEN_SHOVEL, Items.WOODEN_HOE};
     private static final String MODE_KEY = "MultitoolMode";
     private static final String SHOVEL_MODE = "Shovel";
