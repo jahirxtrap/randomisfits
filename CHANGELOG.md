@@ -1,6 +1,3 @@
-- Added Glass Cutter items
-- Added Bulb and Glow Core blocks
-- Changed Lamp recipe
-- Lamp can now be placed in any direction
-- Handle can now be used as fuel
-- Tweaked some textures
+- Added the Zurite set, which includes a new ingot, block, armor, and tools
+- Items tagged with `randomisfits:autorepairable_items` (including `randomisfits:zurite_items`) will have the autorepairing feature
+- Updated Ender Bag texture

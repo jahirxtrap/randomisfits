@@ -2,16 +2,21 @@ package com.jahirtrap.randomisfits.init;
 
 import com.jahirtrap.randomisfits.block.BaseLightBlock;
 import com.jahirtrap.randomisfits.item.*;
+import net.minecraft.core.Holder;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.decoration.PaintingVariant;
 import net.minecraft.world.item.ArmorItem.Type;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Tiers;
+import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
+import java.util.List;
 import java.util.function.Supplier;
 
 import static com.jahirtrap.randomisfits.RandomisfitsMod.MODID;
@@ -19,15 +24,15 @@ import static com.jahirtrap.randomisfits.RandomisfitsMod.MODID;
 public class ModContent {
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(MODID);
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(MODID);
+    public static final DeferredRegister<PaintingVariant> PAINTINGS = DeferredRegister.create(Registries.PAINTING_VARIANT, MODID);
 
-    public static final DeferredItem<Item> INVISIBLE_HELMET = registerItem("invisible_helmet", () -> new BaseArmorItem(ModMaterials.INVISIBLE, Type.HELMET, 15, new Item.Properties()));
-    public static final DeferredItem<Item> INVISIBLE_CHESTPLATE = registerItem("invisible_chestplate", () -> new BaseArmorItem(ModMaterials.INVISIBLE, Type.CHESTPLATE, 15, new Item.Properties()));
-    public static final DeferredItem<Item> INVISIBLE_LEGGINGS = registerItem("invisible_leggings", () -> new BaseArmorItem(ModMaterials.INVISIBLE, Type.LEGGINGS, 15, new Item.Properties()));
-    public static final DeferredItem<Item> INVISIBLE_BOOTS = registerItem("invisible_boots", () -> new BaseArmorItem(ModMaterials.INVISIBLE, Type.BOOTS, 15, new Item.Properties()));
-    public static final DeferredItem<Item> REINFORCED_INVISIBLE_HELMET = registerItem("reinforced_invisible_helmet", () -> new BaseArmorItem(ModMaterials.REINFORCED_INVISIBLE, Type.HELMET, 30, new Item.Properties()));
-    public static final DeferredItem<Item> REINFORCED_INVISIBLE_CHESTPLATE = registerItem("reinforced_invisible_chestplate", () -> new BaseArmorItem(ModMaterials.REINFORCED_INVISIBLE, Type.CHESTPLATE, 30, new Item.Properties()));
-    public static final DeferredItem<Item> REINFORCED_INVISIBLE_LEGGINGS = registerItem("reinforced_invisible_leggings", () -> new BaseArmorItem(ModMaterials.REINFORCED_INVISIBLE, Type.LEGGINGS, 30, new Item.Properties()));
-    public static final DeferredItem<Item> REINFORCED_INVISIBLE_BOOTS = registerItem("reinforced_invisible_boots", () -> new BaseArmorItem(ModMaterials.REINFORCED_INVISIBLE, Type.BOOTS, 30, new Item.Properties()));
+    public static final DeferredItem<Item> ZURITE_INGOT = registerItem("zurite_ingot", () -> new Item(new Item.Properties().fireResistant()));
+    public static final DeferredBlock<Block> ZURITE_BLOCK = registerBlock("zurite_block", () -> new Block(BlockBehaviour.Properties.ofLegacyCopy(Blocks.NETHERITE_BLOCK)), new Item.Properties().fireResistant());
+    public static final DeferredItem<Item> ZURITE_UPGRADE_SMITHING_TEMPLATE = registerItem("zurite_upgrade_smithing_template", () -> BaseSmithingTemplateItem.createUpgradeTemplate("zurite"));
+    public static final List<DeferredItem<Item>> ZURITE_TOOLS = registerTools("zurite", ModTiers.ZURITE, new float[]{5f, -3f, -4f, 0f}, new Item.Properties().fireResistant());
+    public static final List<DeferredItem<Item>> ZURITE_ARMOR = registerArmor(ModMaterials.ZURITE, 31, new Item.Properties().fireResistant());
+    public static final List<DeferredItem<Item>> INVISIBLE_ARMOR = registerArmor(ModMaterials.INVISIBLE, 15, new Item.Properties());
+    public static final List<DeferredItem<Item>> REINFORCED_INVISIBLE_ARMOR = registerArmor(ModMaterials.REINFORCED_INVISIBLE, 30, new Item.Properties());
     public static final DeferredItem<Item> HANDLE = registerItem("handle", () -> new BaseFuelItem(new Item.Properties(), 200));
     public static final DeferredItem<Item> IRON_MULTITOOL = registerItem("iron_multitool", () -> new BaseMultitoolItem(ModTiers.IRON_HARD, new Item.Properties()));
     public static final DeferredItem<Item> DIAMOND_MULTITOOL = registerItem("diamond_multitool", () -> new BaseMultitoolItem(ModTiers.DIAMOND_HARD, new Item.Properties()));
@@ -59,9 +64,9 @@ public class ModContent {
     public static final DeferredItem<Item> GLOW_CORE = registerItem("glow_core", () -> new BaseWearableItem(GLOW_CORE_BLOCK.get(), new Item.Properties()));
 
     public static DeferredBlock<Block> registerBlock(String name, Supplier<Block> supplier, Item.Properties properties) {
-        var Block = registerBlock(name, supplier);
-        registerItem(name, () -> new BlockItem(Block.get(), properties));
-        return Block;
+        var blockReg = registerBlock(name, supplier);
+        registerItem(name, () -> new BlockItem(blockReg.get(), properties));
+        return blockReg;
     }
 
     public static DeferredBlock<Block> registerBlock(String name, Supplier<Block> supplier) {
@@ -72,8 +77,29 @@ public class ModContent {
         return ITEMS.register(name, supplier);
     }
 
+    private static List<DeferredItem<Item>> registerTools(String name, Tier tier, float[] attr, Item.Properties properties) {
+        return List.of(
+                registerItem(name + "_sword", () -> new SwordItem(tier, properties.attributes(SwordItem.createAttributes(tier, 3, -2.4f)))),
+                registerItem(name + "_pickaxe", () -> new PickaxeItem(tier, properties.attributes(PickaxeItem.createAttributes(tier, 1f, -2.8f)))),
+                registerItem(name + "_axe", () -> new AxeItem(tier, properties.attributes(AxeItem.createAttributes(tier, attr[0], attr[1])))),
+                registerItem(name + "_shovel", () -> new ShovelItem(tier, properties.attributes(ShovelItem.createAttributes(tier, 1.5f, -3f)))),
+                registerItem(name + "_hoe", () -> new HoeItem(tier, properties.attributes(HoeItem.createAttributes(tier, attr[2], attr[3]))))
+        );
+    }
+
+    private static List<DeferredItem<Item>> registerArmor(Holder<ArmorMaterial> material, int durabilityMultiplier, Item.Properties properties) {
+        String name = material.getRegisteredName().substring(material.getRegisteredName().indexOf(ResourceLocation.NAMESPACE_SEPARATOR) + 1);
+        return List.of(
+                registerItem(name + "_helmet", () -> new BaseArmorItem(material, Type.HELMET, durabilityMultiplier, properties)),
+                registerItem(name + "_chestplate", () -> new BaseArmorItem(material, Type.CHESTPLATE, durabilityMultiplier, properties)),
+                registerItem(name + "_leggings", () -> new BaseArmorItem(material, Type.LEGGINGS, durabilityMultiplier, properties)),
+                registerItem(name + "_boots", () -> new BaseArmorItem(material, Type.BOOTS, durabilityMultiplier, properties))
+        );
+    }
+
     public static void init(IEventBus bus) {
         BLOCKS.register(bus);
         ITEMS.register(bus);
+        PAINTINGS.register(bus);
     }
 }
