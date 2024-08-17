@@ -9,22 +9,26 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.decoration.PaintingVariant;
 import net.minecraft.world.item.ArmorItem.Type;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Tiers;
+import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static com.jahirtrap.randomisfits.RandomisfitsMod.MODID;
 
 public class ModContent {
-    public static final Item INVISIBLE_HELMET = registerItem("invisible_helmet", new BaseArmorItem(ModMaterials.INVISIBLE, Type.HELMET, new Item.Properties()));
-    public static final Item INVISIBLE_CHESTPLATE = registerItem("invisible_chestplate", new BaseArmorItem(ModMaterials.INVISIBLE, Type.CHESTPLATE, new Item.Properties()));
-    public static final Item INVISIBLE_LEGGINGS = registerItem("invisible_leggings", new BaseArmorItem(ModMaterials.INVISIBLE, Type.LEGGINGS, new Item.Properties()));
-    public static final Item INVISIBLE_BOOTS = registerItem("invisible_boots", new BaseArmorItem(ModMaterials.INVISIBLE, Type.BOOTS, new Item.Properties()));
-    public static final Item REINFORCED_INVISIBLE_HELMET = registerItem("reinforced_invisible_helmet", new BaseArmorItem(ModMaterials.REINFORCED_INVISIBLE, Type.HELMET, new Item.Properties()));
-    public static final Item REINFORCED_INVISIBLE_CHESTPLATE = registerItem("reinforced_invisible_chestplate", new BaseArmorItem(ModMaterials.REINFORCED_INVISIBLE, Type.CHESTPLATE, new Item.Properties()));
-    public static final Item REINFORCED_INVISIBLE_LEGGINGS = registerItem("reinforced_invisible_leggings", new BaseArmorItem(ModMaterials.REINFORCED_INVISIBLE, Type.LEGGINGS, new Item.Properties()));
-    public static final Item REINFORCED_INVISIBLE_BOOTS = registerItem("reinforced_invisible_boots", new BaseArmorItem(ModMaterials.REINFORCED_INVISIBLE, Type.BOOTS, new Item.Properties()));
+    public static final List<Item> ITEMS = new ArrayList<>();
+
+    public static final Item ZURITE_INGOT = registerItem("zurite_ingot", new Item(new Item.Properties().fireResistant()));
+    public static final Block ZURITE_BLOCK = registerBlock("zurite_block", new Block(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK)), new Item.Properties().fireResistant());
+    public static final Item ZURITE_UPGRADE_SMITHING_TEMPLATE = registerItem("zurite_upgrade_smithing_template", BaseSmithingTemplateItem.createUpgradeTemplate("zurite"));
+    public static final List<Item> ZURITE_TOOLS = registerTools("zurite", ModTiers.ZURITE, new float[]{5f, -3f, -4f, 0f}, new Item.Properties().fireResistant());
+    public static final List<Item> ZURITE_ARMOR = registerArmor(ModMaterials.ZURITE, new Item.Properties().fireResistant());
+    public static final List<Item> INVISIBLE_ARMOR = registerArmor(ModMaterials.INVISIBLE, new Item.Properties());
+    public static final List<Item> REINFORCED_INVISIBLE_ARMOR = registerArmor(ModMaterials.REINFORCED_INVISIBLE, new Item.Properties());
     public static final Item HANDLE = registerItem("handle", new BaseFuelItem(new Item.Properties(), 200));
     public static final Item IRON_MULTITOOL = registerItem("iron_multitool", new BaseMultitoolItem(ModTiers.IRON_HARD, new Item.Properties()));
     public static final Item DIAMOND_MULTITOOL = registerItem("diamond_multitool", new BaseMultitoolItem(ModTiers.DIAMOND_HARD, new Item.Properties()));
@@ -66,10 +70,31 @@ public class ModContent {
     }
 
     public static Item registerItem(String name, Item item) {
-        var Item = Registry.register(BuiltInRegistries.ITEM, new ResourceLocation(MODID, name), item);
-        if (Item instanceof FuelItem fuelItem)
-            FuelRegistry.INSTANCE.add(Item, fuelItem.getBurnTime(Item.getDefaultInstance()));
-        return Item;
+        var itemReg = Registry.register(BuiltInRegistries.ITEM, new ResourceLocation(MODID, name), item);
+        if (itemReg instanceof FuelItem fuelItem)
+            FuelRegistry.INSTANCE.add(itemReg, fuelItem.getBurnTime(itemReg.getDefaultInstance()));
+        ITEMS.add(itemReg);
+        return itemReg;
+    }
+
+    private static List<Item> registerTools(String name, Tier tier, float[] attr, Item.Properties properties) {
+        return List.of(
+                registerItem(name + "_sword", new SwordItem(tier, 3, -2.4f, properties)),
+                registerItem(name + "_pickaxe", new PickaxeItem(tier, 1, -2.8f, properties)),
+                registerItem(name + "_axe", new AxeItem(tier, attr[0], attr[1], properties)),
+                registerItem(name + "_shovel", new ShovelItem(tier, 1.5f, -3f, properties)),
+                registerItem(name + "_hoe", new HoeItem(tier, (int) attr[2], attr[3], properties))
+        );
+    }
+
+    private static List<Item> registerArmor(ArmorMaterial material, Item.Properties properties) {
+        String name = material.getName().substring(material.getName().indexOf(ResourceLocation.NAMESPACE_SEPARATOR) + 1);
+        return List.of(
+                registerItem(name + "_helmet", new BaseArmorItem(material, Type.HELMET, properties)),
+                registerItem(name + "_chestplate", new BaseArmorItem(material, Type.CHESTPLATE, properties)),
+                registerItem(name + "_leggings", new BaseArmorItem(material, Type.LEGGINGS, properties)),
+                registerItem(name + "_boots", new BaseArmorItem(material, Type.BOOTS, properties))
+        );
     }
 
     private static PaintingVariant registerPainting(String name, PaintingVariant variant) {

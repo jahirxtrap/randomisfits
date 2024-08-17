@@ -5,6 +5,7 @@ Armor, multitools & other random things
 
 <strong>This mod adds:</strong>
 
+- Zurite => A material with some Netherite properties, including fire and knockback resistance. While it is less durable, it is cheaper to craft and has the autorepairing feature.
 - Invisible Armor => Armor that provides protection while allowing your skin to be visible.
 - Handle => Used to craft tools of this mod, can also be used as fuel.
 - Multitool => A combined axe, pickaxe, shovel, and hoe in one tool (Crouch + right-click to switch between shovel and hoe actions).
@@ -26,6 +27,6 @@ Armor, multitools & other random things
 <details>
   <summary>Spoiler</summary>
 
-<img src="https://cdn.modrinth.com/data/sdjh3tKn/images/cca95504a5fa77bb07122c9b5e92f22fa243bc57.png" width="500">
+<img src="https://cdn.modrinth.com/data/sdjh3tKn/images/794a538cb12496260a0c117e9c735c3622ab2eb8.png" width="500">
 
 </details>

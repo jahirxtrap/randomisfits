@@ -7,6 +7,7 @@ import net.minecraft.world.item.crafting.Ingredient;
 import java.util.function.Supplier;
 
 public enum ModTiers implements Tier {
+    ZURITE(4, 1320, 8.5f, 4f, 16, () -> Ingredient.of(ModContent.ZURITE_INGOT)),
     IRON_HARD(Tiers.IRON, 2, 0),
     DIAMOND_HARD(Tiers.DIAMOND, 2, 0),
     NETHERITE_HARD(Tiers.NETHERITE, 2, 0);
@@ -18,7 +19,7 @@ public enum ModTiers implements Tier {
     private final int enchantmentValue;
     private final Supplier<Ingredient> ingredient;
 
-    ModTiers(int level, int uses, int speed, float damage, int enchantmentValue, Supplier<Ingredient> ingredient) {
+    ModTiers(int level, int uses, float speed, float damage, int enchantmentValue, Supplier<Ingredient> ingredient) {
         this.level = level;
         this.uses = uses;
         this.speed = speed;
