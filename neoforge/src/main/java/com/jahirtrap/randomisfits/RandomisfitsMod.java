@@ -3,6 +3,7 @@ package com.jahirtrap.randomisfits;
 import com.jahirtrap.randomisfits.init.ModConfig;
 import com.jahirtrap.randomisfits.init.ModContent;
 import com.jahirtrap.randomisfits.init.ModTab;
+import com.jahirtrap.randomisfits.network.PacketHandler;
 import com.jahirtrap.randomisfits.util.configlib.TXFConfig;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModLoadingContext;
@@ -21,5 +22,6 @@ public class RandomisfitsMod {
 
         ModContent.init(bus);
         ModTab.init(bus);
+        PacketHandler.init(bus);
     }
 }
