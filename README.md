@@ -13,8 +13,8 @@ Armor, multitools & other random things
 - Lumberaxe => An axe that can chopping down a configurable number of nearby blocks, useful for felling entire trees (Crouch + right-click to toggle felling mode).
 - Glass Cutter = A tool that can quickly mine glass blocks and panes without the need for Silk Touch.
 - Repair Kit => Repair a configurable amount of durability to items (Used by holding a kit in one hand, the item to be repaired in the other hand, and right-clicking).
-- Crafting Plate => A portable item that grants access to the Crafting Table menu by right-clicking.
-- Ender Bag => A portable item that grants access to the player's Ender Chest inventory by right-clicking.
+- Crafting Plate => A portable item that grants access to the Crafting Table menu when right-clicked from the hotbar or inventory.
+- Ender Bag => A portable item that grants access to the player's Ender Chest inventory when right-clicked from the hotbar or inventory.
 - Bulb, Lamp, Glow Core => Light source blocks, can also be equipped on the head (Useful with dynamic lighting mods).
 - Misfit painting => The first mod logo in a 1x1 painting.
 
@@ -27,6 +27,6 @@ Armor, multitools & other random things
 <details>
   <summary>Spoiler</summary>
 
-<img src="https://cdn.modrinth.com/data/sdjh3tKn/images/794a538cb12496260a0c117e9c735c3622ab2eb8.png" width="500">
+<img src="https://cdn.modrinth.com/data/sdjh3tKn/images/c2ca24527325c9589ca2a6e69381a2c369f5210d.png" width="500">
 
 </details>
