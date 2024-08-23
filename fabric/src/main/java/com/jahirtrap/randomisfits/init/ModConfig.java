@@ -21,6 +21,8 @@ public class ModConfig extends TXFConfig {
     public static int netheriteKitRepairAmount = 900;
     @Entry(name = "Wearable Light Blocks")
     public static boolean wearableLightBlocks = true;
+    @Entry(name = "Right Click Slot Open Menu")
+    public static boolean rightClickSlotOpenMenu = true;
     @Entry(name = "Item Autorepair Interval", min = 0, max = Integer.MAX_VALUE)
     public static int itemAutorepairInterval = 30;
     @Entry(name = "Item Autorepair Amount", min = 0, max = Integer.MAX_VALUE)

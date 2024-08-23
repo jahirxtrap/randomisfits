@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "randomisfits:glass_cutter"
+  },
+  "addition": {
+    "item": "randomisfits:zurite_ingot"
+  },
+  "result": {
+    "item": "randomisfits:zurite_glass_cutter"
+  }
+}
