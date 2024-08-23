@@ -13,7 +13,8 @@ public enum ModTiers implements Tier {
     ZURITE(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 1320, 8.5f, 4f, 16, () -> Ingredient.of(ModContent.ZURITE_INGOT)),
     IRON_HARD(Tiers.IRON, 2, 0),
     DIAMOND_HARD(Tiers.DIAMOND, 2, 0),
-    NETHERITE_HARD(Tiers.NETHERITE, 2, 0);
+    NETHERITE_HARD(Tiers.NETHERITE, 2, 0),
+    ZURITE_HARD(ZURITE, 2, 0);
 
     private final TagKey<Block> incorrect;
     private final int uses;
