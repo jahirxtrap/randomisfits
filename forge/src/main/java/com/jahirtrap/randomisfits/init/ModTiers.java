@@ -10,7 +10,8 @@ public enum ModTiers implements Tier {
     ZURITE(4, 1320, 8.5f, 4f, 16, () -> Ingredient.of(ModContent.ZURITE_INGOT.get())),
     IRON_HARD(Tiers.IRON, 2, 0),
     DIAMOND_HARD(Tiers.DIAMOND, 2, 0),
-    NETHERITE_HARD(Tiers.NETHERITE, 2, 0);
+    NETHERITE_HARD(Tiers.NETHERITE, 2, 0),
+    ZURITE_HARD(ZURITE, 2, 0);
 
     private final int level;
     private final int uses;

@@ -24,7 +24,7 @@ public class EnderBagItem extends BaseItem {
 
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
-        player.playSound(SoundEvents.ENDER_CHEST_OPEN, 0.5f, level.random.nextFloat() * 0.1f + 0.9f);
+        level.playSound(null, player.blockPosition(), SoundEvents.ENDER_CHEST_OPEN, SoundSource.PLAYERS, 0.5f, level.random.nextFloat() * 0.1f + 0.9f);
         player.openMenu(new SimpleMenuProvider(EnderBagMenu::new, Component.translatable("item.randomisfits.ender_bag")));
 
         return new InteractionResultHolder<>(InteractionResult.SUCCESS, player.getItemInHand(hand));

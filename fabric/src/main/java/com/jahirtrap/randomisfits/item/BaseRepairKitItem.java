@@ -1,8 +1,8 @@
 package com.jahirtrap.randomisfits.item;
 
-import com.jahirtrap.randomisfits.event.RepairItemEvent;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionResultHolder;
@@ -27,7 +27,8 @@ public class BaseRepairKitItem extends BaseItem {
 
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
-        if (RepairItemEvent.execute(player, amount))
+        ItemStack kit = player.getItemInHand(hand), item = player.getItemInHand(hand == InteractionHand.MAIN_HAND ? InteractionHand.OFF_HAND : InteractionHand.MAIN_HAND);
+        if (attemptRepair(player, kit, item, amount))
             return new InteractionResultHolder<>(InteractionResult.SUCCESS, player.getItemInHand(hand));
 
         return super.use(level, player, hand);
@@ -36,5 +37,16 @@ public class BaseRepairKitItem extends BaseItem {
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
         tooltip.add(coloredTextComponent(Component.translatable("randomisfits.repair_kit.amount").getString() + formatText(amount), ChatFormatting.GRAY));
+    }
+
+    private static boolean attemptRepair(Player player, ItemStack kit, ItemStack item, int amount) {
+        if (item.isDamaged()) {
+            item.setDamageValue(item.getDamageValue() - amount);
+            if (!player.getAbilities().instabuild) kit.shrink(1);
+            player.playSound(SoundEvents.ANVIL_USE, 1, 1);
+            return true;
+        }
+
+        return false;
     }
 }
