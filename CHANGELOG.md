@@ -1,3 +1,2 @@
-- Added the Zurite set, which includes a new ingot, block, armor, and tools
-- Items tagged with `randomisfits:autorepairable_items` (including `randomisfits:zurite_items`) will have the autorepairing feature
-- Updated Ender Bag texture
+- Now you can right-click the Crafting Plate or Ender Bag in the inventory to open their menus
+- Added Zurite Multitool, Hammer, Lumberaxe, Excavator and Glass Cutter
