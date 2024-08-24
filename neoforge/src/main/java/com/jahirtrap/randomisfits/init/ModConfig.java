@@ -1,6 +1,6 @@
 package com.jahirtrap.randomisfits.init;
 
-import com.jahirtrap.randomisfits.util.configlib.TXFConfig;
+import com.jahirtrap.configlib.TXFConfig;
 
 public class ModConfig extends TXFConfig {
     @Entry(name = "Multitool Interactions")

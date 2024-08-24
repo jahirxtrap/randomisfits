@@ -1,2 +1,1 @@
-- Now you can right-click the Crafting Plate or Ender Bag in the inventory to open their menus
-- Added Zurite Multitool, Hammer, Lumberaxe, Excavator and Glass Cutter
+- Updated config lib
