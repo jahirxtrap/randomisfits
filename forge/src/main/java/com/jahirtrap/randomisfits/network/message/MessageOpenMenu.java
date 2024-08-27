@@ -35,6 +35,7 @@ public record MessageOpenMenu(int menu) implements CustomPacketPayload {
                 }
             }
         });
+        context.setPacketHandled(true);
     }
 
     @Override
