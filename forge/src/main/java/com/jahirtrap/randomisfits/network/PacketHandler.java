@@ -20,4 +20,8 @@ public class PacketHandler {
     public static void init() {
         INSTANCE.registerMessage(nextId++, MessageOpenMenu.class, MessageOpenMenu::encode, MessageOpenMenu::decode, MessageOpenMenu::handle);
     }
+
+    public static <T> void sendToServer(T message) {
+        INSTANCE.sendToServer(message);
+    }
 }
