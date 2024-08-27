@@ -33,7 +33,7 @@ public abstract class AbstractContainerScreenMixin {
             else if (item instanceof CraftingPlateItem) menu = 2;
 
             if (menu != 0) {
-                PacketHandler.INSTANCE.sendToServer(new MessageOpenMenu(menu));
+                PacketHandler.sendToServer(new MessageOpenMenu(menu));
                 cir.setReturnValue(true);
             }
         }

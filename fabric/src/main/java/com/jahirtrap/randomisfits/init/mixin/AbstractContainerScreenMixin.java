@@ -35,9 +35,9 @@ public abstract class AbstractContainerScreenMixin {
             else if (item instanceof CraftingPlateItem) menu = 2;
 
             if (menu != 0) {
-                FriendlyByteBuf passedData = new FriendlyByteBuf(Unpooled.buffer());
-                passedData.writeInt(menu);
-                ClientPlayNetworking.send(MessageOpenMenu.ID, passedData);
+                FriendlyByteBuf buffer = new FriendlyByteBuf(Unpooled.buffer());
+                buffer.writeInt(menu);
+                ClientPlayNetworking.send(MessageOpenMenu.ID, buffer);
                 cir.setReturnValue(true);
             }
         }
