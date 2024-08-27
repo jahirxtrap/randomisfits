@@ -3,6 +3,7 @@ package com.jahirtrap.randomisfits.init.mixin;
 import com.jahirtrap.randomisfits.init.ModConfig;
 import com.jahirtrap.randomisfits.item.CraftingPlateItem;
 import com.jahirtrap.randomisfits.item.EnderBagItem;
+import com.jahirtrap.randomisfits.network.PacketHandler;
 import com.jahirtrap.randomisfits.network.message.MessageOpenMenu;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.world.inventory.Slot;
@@ -33,7 +34,7 @@ public abstract class AbstractContainerScreenMixin {
             else if (item instanceof CraftingPlateItem) menu = 2;
 
             if (menu != 0) {
-                PacketDistributor.SERVER.noArg().send(new MessageOpenMenu(menu));
+                PacketHandler.sendToServer(new MessageOpenMenu(menu));
                 cir.setReturnValue(true);
             }
         }
