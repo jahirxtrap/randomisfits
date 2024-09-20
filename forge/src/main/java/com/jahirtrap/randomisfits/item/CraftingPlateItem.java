@@ -20,10 +20,12 @@ public class CraftingPlateItem extends BaseItem {
 
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
-        if (!level.isClientSide())
+        if (!level.isClientSide()) {
             player.openMenu(new SimpleMenuProvider((i, inventory, p) -> new CraftingPlateMenu(i, inventory, ContainerLevelAccess.create(level, player.blockPosition())), Component.translatable("container.crafting")));
+            return new InteractionResultHolder<>(InteractionResult.SUCCESS, player.getItemInHand(hand));
+        }
 
-        return new InteractionResultHolder<>(InteractionResult.SUCCESS, player.getItemInHand(hand));
+        return super.use(level, player, hand);
     }
 
     private static class CraftingPlateMenu extends CraftingMenu {
