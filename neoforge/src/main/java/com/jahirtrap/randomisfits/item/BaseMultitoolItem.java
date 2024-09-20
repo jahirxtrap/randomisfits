@@ -40,7 +40,7 @@ public class BaseMultitoolItem extends DiggerItem {
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
         ItemStack stack = player.getItemInHand(hand);
 
-        if (ModConfig.multitoolInteractions && !level.isClientSide && player.isShiftKeyDown()) {
+        if (ModConfig.multitoolInteractions && !level.isClientSide() && player.isShiftKeyDown()) {
             String mode = getMode(stack);
 
             if (Objects.equals(mode, SHOVEL_MODE)) mode = HOE_MODE;
