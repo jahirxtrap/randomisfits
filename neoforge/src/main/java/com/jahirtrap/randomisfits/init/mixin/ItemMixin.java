@@ -25,7 +25,7 @@ public abstract class ItemMixin {
 
     @Inject(method = "inventoryTick", at = @At("HEAD"))
     public void inventoryTick(ItemStack stack, Level level, Entity entity, int i, boolean bl, CallbackInfo ci) {
-        if (!level.isClientSide && stack.is(AUTOREPAIRABLE_ITEMS) && stack.isDamaged()) {
+        if (!level.isClientSide() && stack.is(AUTOREPAIRABLE_ITEMS) && stack.isDamaged()) {
             if (!(ModConfig.itemAutorepairInterval <= 0) && level.getGameTime() % ModConfig.itemAutorepairInterval == 0) {
                 if (entity instanceof Player player)
                     if ((player.getUseItem() == stack) || (player.swinging && player.getItemInHand(player.swingingArm) == stack))
