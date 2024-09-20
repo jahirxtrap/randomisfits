@@ -28,7 +28,7 @@ public class BaseGlassCutterItem extends DiggerItem {
         if (state.is(MINEABLE_WITH_GLASS_CUTTER) && Block.getDrops(state, (ServerLevel) level, pos, null, entity, stack).isEmpty()) {
             ItemEntity itemEntity = new ItemEntity(level, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, new ItemStack(state.getBlock()));
             itemEntity.setDefaultPickUpDelay();
-            if (!level.isClientSide) level.addFreshEntity(itemEntity);
+            if (!level.isClientSide()) level.addFreshEntity(itemEntity);
         }
 
         return super.mineBlock(stack, level, state, pos, entity);
