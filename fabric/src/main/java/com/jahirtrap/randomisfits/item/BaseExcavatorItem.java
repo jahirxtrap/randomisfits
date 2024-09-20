@@ -29,7 +29,7 @@ public class BaseExcavatorItem extends ShovelItem implements RangeItem {
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
         ItemStack stack = player.getItemInHand(hand);
 
-        if (ModConfig.toggleExcavatorMode && !level.isClientSide && player.isShiftKeyDown()) {
+        if (ModConfig.toggleExcavatorMode && !level.isClientSide() && player.isShiftKeyDown()) {
             setMode(stack, !getMode(stack));
             player.displayClientMessage(coloredTextComponent(getModeText(getMode(stack)), ChatFormatting.GOLD), true);
             return new InteractionResultHolder<>(InteractionResult.SUCCESS, stack);
