@@ -1,12 +1,10 @@
 package com.jahirtrap.randomisfits.item;
 
+import com.jahirtrap.randomisfits.init.ModComponents;
 import com.jahirtrap.randomisfits.init.ModConfig;
-import com.mojang.serialization.Codec;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.component.DataComponentType;
-import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionResultHolder;
@@ -23,7 +21,7 @@ import static com.jahirtrap.randomisfits.util.CommonUtils.blueBar;
 import static com.jahirtrap.randomisfits.util.CommonUtils.coloredTextComponent;
 
 public class BaseLumberaxeItem extends AxeItem {
-    private static final DataComponentType<Boolean> FELLING_KEY = DataComponents.register("felling", (builder) -> builder.persistent(Codec.BOOL).networkSynchronized(ByteBufCodecs.BOOL));
+    private static final DataComponentType<Boolean> FELLING_KEY = ModComponents.FELLING_KEY.get();
 
     public BaseLumberaxeItem(Tier tier, Properties properties) {
         super(tier, properties.attributes(createAttributes(tier, 6f, -3f)));

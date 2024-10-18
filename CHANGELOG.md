@@ -1,1 +1,2 @@
-- Some fixes
+- Fixed DataComponents
+- Updated Forge version
