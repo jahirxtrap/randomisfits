@@ -1,13 +1,11 @@
 package com.jahirtrap.randomisfits.item;
 
+import com.jahirtrap.randomisfits.init.ModComponents;
 import com.jahirtrap.randomisfits.init.ModConfig;
-import com.mojang.serialization.Codec;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.component.DataComponentType;
-import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.InteractionHand;
@@ -31,7 +29,7 @@ import static com.jahirtrap.randomisfits.util.CommonUtils.coloredTextComponent;
 public class BaseMultitoolItem extends DiggerItem {
     private static final TagKey<Block> MINEABLE_WITH_MULTITOOL = TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(MODID, "mineable/multitool"));
     private static final Item[] items = {Items.WOODEN_AXE, Items.WOODEN_PICKAXE, Items.WOODEN_SHOVEL, Items.WOODEN_HOE};
-    private static final DataComponentType<String> MODE_KEY = DataComponents.register("multitool_mode", (builder) -> builder.persistent(Codec.STRING).networkSynchronized(ByteBufCodecs.STRING_UTF8));
+    private static final DataComponentType<String> MODE_KEY = ModComponents.MODE_KEY.get();
     private static final String SHOVEL_MODE = "shovel";
     private static final String HOE_MODE = "hoe";
 

@@ -15,6 +15,7 @@ public class RandomisfitsMod implements ModInitializer {
     @Override
     public void onInitialize() {
         TXFConfig.init(MODID, ModConfig.class);
+        ModContent.init();
         ModMaterials.init();
         ModContent.init();
         ModTab.init();

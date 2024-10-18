@@ -1,14 +1,12 @@
 package com.jahirtrap.randomisfits.util;
 
-import com.mojang.serialization.Codec;
+import com.jahirtrap.randomisfits.init.ModComponents;
 import net.minecraft.core.component.DataComponentType;
-import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.world.item.ItemStack;
 
 public interface RangeItem {
-    DataComponentType<Boolean> RANGE_KEY = DataComponents.register("range", (builder) -> builder.persistent(Codec.BOOL).networkSynchronized(ByteBufCodecs.BOOL));
+    DataComponentType<Boolean> RANGE_KEY = ModComponents.RANGE_KEY;
 
     default boolean getMode(ItemStack stack) {
         if (!stack.getComponents().has(RANGE_KEY))
