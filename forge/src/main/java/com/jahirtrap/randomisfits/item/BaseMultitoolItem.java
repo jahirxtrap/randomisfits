@@ -1,11 +1,9 @@
 package com.jahirtrap.randomisfits.item;
 
 import com.jahirtrap.randomisfits.init.ModConfig;
+import com.jahirtrap.randomisfits.init.ModTags;
 import net.minecraft.ChatFormatting;
-import net.minecraft.core.Registry;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.TagKey;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionResultHolder;
@@ -13,28 +11,25 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.ToolAction;
 import net.minecraftforge.common.ToolActions;
+import org.jetbrains.annotations.Nullable;
 
-import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Objects;
 
-import static com.jahirtrap.randomisfits.RandomisfitsMod.MODID;
 import static com.jahirtrap.randomisfits.init.ModTab.TAB_RANDOMISFITS;
 import static com.jahirtrap.randomisfits.util.CommonUtils.blueBar;
 import static com.jahirtrap.randomisfits.util.CommonUtils.coloredTextComponent;
 
 public class BaseMultitoolItem extends DiggerItem {
-    private static final TagKey<Block> MINEABLE_WITH_MULTITOOL = TagKey.create(Registry.BLOCK_REGISTRY, new ResourceLocation(MODID, "mineable/multitool"));
     private static final Item[] items = {Items.WOODEN_AXE, Items.WOODEN_PICKAXE, Items.WOODEN_SHOVEL, Items.WOODEN_HOE};
     private static final String MODE_KEY = "MultitoolMode";
     private static final String SHOVEL_MODE = "Shovel";
     private static final String HOE_MODE = "Hoe";
 
     public BaseMultitoolItem(Tier tier, Properties properties) {
-        super(6, -3f, tier, MINEABLE_WITH_MULTITOOL, properties.tab(TAB_RANDOMISFITS));
+        super(6, -3f, tier, ModTags.Blocks.MINEABLE_WITH_MULTITOOL, properties.tab(TAB_RANDOMISFITS));
     }
 
     @Override
