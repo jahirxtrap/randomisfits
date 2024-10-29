@@ -29,7 +29,7 @@ public class ModContent {
     public static final List<Item> ZURITE_ARMOR = registerArmor(ModMaterials.ZURITE, 31, new Item.Properties().fireResistant());
     public static final List<Item> INVISIBLE_ARMOR = registerArmor(ModMaterials.INVISIBLE, 15, new Item.Properties());
     public static final List<Item> REINFORCED_INVISIBLE_ARMOR = registerArmor(ModMaterials.REINFORCED_INVISIBLE, 30, new Item.Properties());
-    public static final Item HANDLE = registerItem("handle", new BaseFuelItem(new Item.Properties(), 200));
+    public static final Item HANDLE = registerItem("handle", new BaseFuelItem(200, new Item.Properties()));
     public static final Item IRON_MULTITOOL = registerItem("iron_multitool", new BaseMultitoolItem(ModTiers.IRON_HARD, new Item.Properties()));
     public static final Item DIAMOND_MULTITOOL = registerItem("diamond_multitool", new BaseMultitoolItem(ModTiers.DIAMOND_HARD, new Item.Properties()));
     public static final Item NETHERITE_MULTITOOL = registerItem("netherite_multitool", new BaseMultitoolItem(ModTiers.NETHERITE_HARD, new Item.Properties().fireResistant()));
@@ -50,9 +50,9 @@ public class ModContent {
     public static final Item DIAMOND_GLASS_CUTTER = registerItem("diamond_glass_cutter", new BaseGlassCutterItem(Tiers.DIAMOND, new Item.Properties()));
     public static final Item NETHERITE_GLASS_CUTTER = registerItem("netherite_glass_cutter", new BaseGlassCutterItem(Tiers.NETHERITE, new Item.Properties().fireResistant()));
     public static final Item ZURITE_GLASS_CUTTER = registerItem("zurite_glass_cutter", new BaseGlassCutterItem(ModTiers.ZURITE, new Item.Properties().fireResistant()));
-    public static final Item REPAIR_KIT = registerItem("repair_kit", new BaseRepairKitItem(new Item.Properties(), ModConfig.kitRepairAmount));
-    public static final Item DIAMOND_REPAIR_KIT = registerItem("diamond_repair_kit", new BaseRepairKitItem(new Item.Properties(), ModConfig.diamondKitRepairAmount));
-    public static final Item NETHERITE_REPAIR_KIT = registerItem("netherite_repair_kit", new BaseRepairKitItem(new Item.Properties().fireResistant(), ModConfig.netheriteKitRepairAmount));
+    public static final Item REPAIR_KIT = registerItem("repair_kit", new BaseRepairKitItem(ModConfig.kitRepairAmount, new Item.Properties()));
+    public static final Item DIAMOND_REPAIR_KIT = registerItem("diamond_repair_kit", new BaseRepairKitItem(ModConfig.diamondKitRepairAmount, new Item.Properties()));
+    public static final Item NETHERITE_REPAIR_KIT = registerItem("netherite_repair_kit", new BaseRepairKitItem(ModConfig.netheriteKitRepairAmount, new Item.Properties().fireResistant()));
     public static final Item CRAFTING_PLATE = registerItem("crafting_plate", new CraftingPlateItem());
     public static final Item ENDER_BAG = registerItem("ender_bag", new EnderBagItem());
     public static final Block BULB_BLOCK = registerBlock("bulb", new BaseLightBlock(4, 2));
@@ -64,8 +64,8 @@ public class ModContent {
     public static final Block GLOW_CORE_BLOCK = registerBlock("glow_core", new BaseLightBlock(8, 8));
     public static final Item GLOW_CORE = registerItem("glow_core", new BaseWearableItem(GLOW_CORE_BLOCK, new Item.Properties()));
 
-    public static Block registerBlock(String name, Block block, Item.Properties properties) {
-        registerItem(name, new BlockItem(block, properties));
+    public static Block registerBlock(String name, Block block, Item.Properties itemProp) {
+        registerItem(name, new BlockItem(block, itemProp));
         return registerBlock(name, block);
     }
 
@@ -81,23 +81,23 @@ public class ModContent {
         return itemReg;
     }
 
-    private static List<Item> registerTools(String name, Tier tier, float[] attr, Item.Properties properties) {
+    private static List<Item> registerTools(String name, Tier tier, float[] attr, Item.Properties itemProp) {
         return List.of(
-                registerItem(name + "_sword", new SwordItem(tier, properties.attributes(SwordItem.createAttributes(tier, 3, -2.4f)))),
-                registerItem(name + "_pickaxe", new PickaxeItem(tier, properties.attributes(PickaxeItem.createAttributes(tier, 1f, -2.8f)))),
-                registerItem(name + "_axe", new AxeItem(tier, properties.attributes(AxeItem.createAttributes(tier, attr[0], attr[1])))),
-                registerItem(name + "_shovel", new ShovelItem(tier, properties.attributes(ShovelItem.createAttributes(tier, 1.5f, -3f)))),
-                registerItem(name + "_hoe", new HoeItem(tier, properties.attributes(HoeItem.createAttributes(tier, attr[2], attr[3]))))
+                registerItem(name + "_sword", new SwordItem(tier, itemProp.attributes(SwordItem.createAttributes(tier, 3, -2.4f)))),
+                registerItem(name + "_pickaxe", new PickaxeItem(tier, itemProp.attributes(PickaxeItem.createAttributes(tier, 1f, -2.8f)))),
+                registerItem(name + "_axe", new AxeItem(tier, itemProp.attributes(AxeItem.createAttributes(tier, attr[0], attr[1])))),
+                registerItem(name + "_shovel", new ShovelItem(tier, itemProp.attributes(ShovelItem.createAttributes(tier, 1.5f, -3f)))),
+                registerItem(name + "_hoe", new HoeItem(tier, itemProp.attributes(HoeItem.createAttributes(tier, attr[2], attr[3]))))
         );
     }
 
-    private static List<Item> registerArmor(Holder<ArmorMaterial> material, int durabilityMultiplier, Item.Properties properties) {
+    private static List<Item> registerArmor(Holder<ArmorMaterial> material, int durabilityMultiplier, Item.Properties itemProp) {
         String name = material.getRegisteredName().substring(material.getRegisteredName().indexOf(ResourceLocation.NAMESPACE_SEPARATOR) + 1);
         return List.of(
-                registerItem(name + "_helmet", new BaseArmorItem(material, Type.HELMET, durabilityMultiplier, properties)),
-                registerItem(name + "_chestplate", new BaseArmorItem(material, Type.CHESTPLATE, durabilityMultiplier, properties)),
-                registerItem(name + "_leggings", new BaseArmorItem(material, Type.LEGGINGS, durabilityMultiplier, properties)),
-                registerItem(name + "_boots", new BaseArmorItem(material, Type.BOOTS, durabilityMultiplier, properties))
+                registerItem(name + "_helmet", new BaseArmorItem(material, Type.HELMET, durabilityMultiplier, itemProp)),
+                registerItem(name + "_chestplate", new BaseArmorItem(material, Type.CHESTPLATE, durabilityMultiplier, itemProp)),
+                registerItem(name + "_leggings", new BaseArmorItem(material, Type.LEGGINGS, durabilityMultiplier, itemProp)),
+                registerItem(name + "_boots", new BaseArmorItem(material, Type.BOOTS, durabilityMultiplier, itemProp))
         );
     }
 

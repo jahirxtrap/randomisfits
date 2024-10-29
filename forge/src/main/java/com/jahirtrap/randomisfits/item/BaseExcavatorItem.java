@@ -38,7 +38,7 @@ public class BaseExcavatorItem extends ShovelItem implements RangeItem {
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, TooltipContext tooltipContext, List<Component> tooltip, TooltipFlag flag) {
+    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag flag) {
         if (ModConfig.toggleExcavatorMode)
             tooltip.add(coloredTextComponent(getModeText(getMode(stack)), ChatFormatting.GRAY));
     }

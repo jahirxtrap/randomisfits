@@ -9,6 +9,7 @@ import net.minecraft.world.item.ArmorItem.Type;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.EnumMap;
@@ -16,17 +17,16 @@ import java.util.List;
 import java.util.function.Supplier;
 
 import static com.jahirtrap.randomisfits.RandomisfitsMod.MODID;
-import static com.jahirtrap.randomisfits.util.CommonUtils.itemTag;
 
 public class ModMaterials {
     public static final DeferredRegister<ArmorMaterial> MATERIALS = DeferredRegister.create(Registries.ARMOR_MATERIAL, MODID);
 
     public static final Holder<ArmorMaterial> ZURITE = register("zurite", createMap(new int[]{3, 6, 8, 3, 11}),
-            16, SoundEvents.ARMOR_EQUIP_GENERIC, 2.5f, 0.1f, () -> Ingredient.of(ModContent.ZURITE_INGOT));
+            16, SoundEvents.ARMOR_EQUIP_NETHERITE, 2.5f, 0.1f, () -> Ingredient.of(ModContent.ZURITE_INGOT));
     public static final Holder<ArmorMaterial> INVISIBLE = register("invisible", createMap(new int[]{2, 5, 6, 2, 5}),
-            9, SoundEvents.ARMOR_EQUIP_GENERIC, 0f, 0f, () -> Ingredient.of(itemTag("c:glass_blocks/colorless")));
+            9, SoundEvents.ARMOR_EQUIP_GENERIC, 0f, 0f, () -> Ingredient.of(Tags.Items.GLASS_BLOCKS_COLORLESS));
     public static final Holder<ArmorMaterial> REINFORCED_INVISIBLE = register("reinforced_invisible", createMap(new int[]{3, 6, 8, 3, 11}),
-            10, SoundEvents.ARMOR_EQUIP_GENERIC, 2f, 0f, () -> Ingredient.of(itemTag("c:glass_blocks/colorless")));
+            10, SoundEvents.ARMOR_EQUIP_GENERIC, 2f, 0f, () -> Ingredient.of(Tags.Items.GLASS_BLOCKS_COLORLESS));
 
     private static EnumMap<Type, Integer> createMap(int[] values) {
         EnumMap<Type, Integer> enumMap = new EnumMap<>(Type.class);

@@ -38,7 +38,7 @@ public class BaseHammerItem extends PickaxeItem implements RangeItem {
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, TooltipContext tooltipContext, List<Component> tooltip, TooltipFlag flag) {
+    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag flag) {
         if (ModConfig.toggleHammerMode)
             tooltip.add(coloredTextComponent(getModeText(getMode(stack)), ChatFormatting.GRAY));
     }
