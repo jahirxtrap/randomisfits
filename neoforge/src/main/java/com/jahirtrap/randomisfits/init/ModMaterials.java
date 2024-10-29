@@ -7,20 +7,20 @@ import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.item.ArmorItem.Type;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.neoforged.neoforge.common.Tags;
 
 import java.util.EnumMap;
 import java.util.function.Supplier;
 
 import static com.jahirtrap.randomisfits.RandomisfitsMod.MODID;
-import static com.jahirtrap.randomisfits.util.CommonUtils.itemTag;
 
 public enum ModMaterials implements StringRepresentable, ArmorMaterial {
     ZURITE("zurite", 31, createMap(new int[]{3, 6, 8, 3}),
-            16, SoundEvents.ARMOR_EQUIP_GENERIC, 2.5f, 0.1f, () -> Ingredient.of(ModContent.ZURITE_INGOT)),
+            16, SoundEvents.ARMOR_EQUIP_NETHERITE, 2.5f, 0.1f, () -> Ingredient.of(ModContent.ZURITE_INGOT)),
     INVISIBLE("invisible", 15, createMap(new int[]{2, 5, 6, 2}),
-            9, SoundEvents.ARMOR_EQUIP_GENERIC, 0f, 0f, () -> Ingredient.of(itemTag("forge:glass/colorless"))),
+            9, SoundEvents.ARMOR_EQUIP_GENERIC, 0f, 0f, () -> Ingredient.of(Tags.Items.GLASS_COLORLESS)),
     REINFORCED_INVISIBLE("reinforced_invisible", 30, createMap(new int[]{3, 6, 8, 3}),
-            10, SoundEvents.ARMOR_EQUIP_GENERIC, 2f, 0f, () -> Ingredient.of(itemTag("forge:glass/colorless")));
+            10, SoundEvents.ARMOR_EQUIP_GENERIC, 2f, 0f, () -> Ingredient.of(Tags.Items.GLASS_COLORLESS));
 
     private static EnumMap<Type, Integer> createMap(int[] values) {
         EnumMap<Type, Integer> enumMap = new EnumMap<>(Type.class);
