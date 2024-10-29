@@ -6,12 +6,8 @@
     "GGG"
   ],
   "key": {
-    "G": {
-      "tag": "c:glass_blocks/colorless"
-    },
-    "D": {
-      "item": "minecraft:diamond_helmet"
-    }
+    "G": "#c:glass_blocks/colorless",
+    "D": "minecraft:diamond_helmet"
   },
   "result": {
     "id": "randomisfits:reinforced_invisible_helmet",

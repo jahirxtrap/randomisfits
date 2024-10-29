@@ -6,12 +6,8 @@
     "GGG"
   ],
   "key": {
-    "G": {
-      "tag": "c:glass_blocks/colorless"
-    },
-    "I": {
-      "item": "minecraft:iron_boots"
-    }
+    "G": "#c:glass_blocks/colorless",
+    "I": "minecraft:iron_boots"
   },
   "result": {
     "id": "randomisfits:invisible_boots",

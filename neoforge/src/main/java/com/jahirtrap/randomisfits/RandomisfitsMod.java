@@ -14,7 +14,6 @@ public class RandomisfitsMod {
     public RandomisfitsMod(IEventBus bus) {
         TXFConfig.init(MODID, ModConfig.class);
         ModComponents.init(bus);
-        ModMaterials.init(bus);
         ModContent.init(bus);
         ModTab.init(bus);
         PacketHandler.init(bus);

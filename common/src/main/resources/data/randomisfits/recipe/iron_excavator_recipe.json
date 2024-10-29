@@ -6,12 +6,8 @@
     "R"
   ],
   "key": {
-    "B": {
-      "tag": "c:storage_blocks/iron"
-    },
-    "R": {
-      "item": "randomisfits:handle"
-    }
+    "B": "#c:storage_blocks/iron",
+    "R": "randomisfits:handle"
   },
   "result": {
     "id": "randomisfits:iron_excavator",

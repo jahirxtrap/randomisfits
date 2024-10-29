@@ -6,7 +6,6 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.SimpleMenuProvider;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Inventory;
@@ -18,16 +17,16 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
 public class EnderBagItem extends Item {
-    public EnderBagItem() {
-        super(new Item.Properties().stacksTo(1));
+    public EnderBagItem(Properties properties) {
+        super(properties.stacksTo(1));
     }
 
     @Override
-    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
+    public InteractionResult use(Level level, Player player, InteractionHand hand) {
         if (!level.isClientSide()) {
             level.playSound(null, player.blockPosition(), SoundEvents.ENDER_CHEST_OPEN, SoundSource.PLAYERS, 0.5f, level.random.nextFloat() * 0.1f + 0.9f);
             player.openMenu(new SimpleMenuProvider(EnderBagMenu::new, Component.translatable("item.randomisfits.ender_bag")));
-            return new InteractionResultHolder<>(InteractionResult.SUCCESS, player.getItemInHand(hand));
+            return InteractionResult.SUCCESS_SERVER;
         }
 
         return super.use(level, player, hand);

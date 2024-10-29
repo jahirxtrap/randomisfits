@@ -6,15 +6,9 @@
     "R"
   ],
   "key": {
-    "A": {
-      "tag": "c:gems/amethyst"
-    },
-    "I": {
-      "tag": "c:gems/diamond"
-    },
-    "R": {
-      "item": "randomisfits:handle"
-    }
+    "A": "#c:gems/amethyst",
+    "I": "#c:gems/diamond",
+    "R": "randomisfits:handle"
   },
   "result": {
     "id": "randomisfits:diamond_glass_cutter",

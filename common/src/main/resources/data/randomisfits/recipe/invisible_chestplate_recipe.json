@@ -6,12 +6,8 @@
     "GGG"
   ],
   "key": {
-    "G": {
-      "tag": "c:glass_blocks/colorless"
-    },
-    "I": {
-      "item": "minecraft:iron_chestplate"
-    }
+    "G": "#c:glass_blocks/colorless",
+    "I": "minecraft:iron_chestplate"
   },
   "result": {
     "id": "randomisfits:invisible_chestplate",

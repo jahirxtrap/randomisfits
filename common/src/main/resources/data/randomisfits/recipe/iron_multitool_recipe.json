@@ -6,21 +6,11 @@
     " R "
   ],
   "key": {
-    "A": {
-      "item": "minecraft:iron_axe"
-    },
-    "S": {
-      "item": "minecraft:iron_shovel"
-    },
-    "P": {
-      "item": "minecraft:iron_pickaxe"
-    },
-    "H": {
-      "item": "minecraft:iron_hoe"
-    },
-    "R": {
-      "item": "randomisfits:handle"
-    }
+    "A": "minecraft:iron_axe",
+    "S": "minecraft:iron_shovel",
+    "P": "minecraft:iron_pickaxe",
+    "H": "minecraft:iron_hoe",
+    "R": "randomisfits:handle"
   },
   "result": {
     "id": "randomisfits:iron_multitool",

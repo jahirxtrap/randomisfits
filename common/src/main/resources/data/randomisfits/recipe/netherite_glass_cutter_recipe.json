@@ -1,15 +1,9 @@
 {
   "type": "minecraft:smithing_transform",
-  "base": {
-    "item": "randomisfits:diamond_glass_cutter"
-  },
-  "addition": {
-    "tag": "c:ingots/netherite"
-  },
+  "base": "randomisfits:diamond_glass_cutter",
+  "addition": "#c:ingots/netherite",
   "result": {
     "id": "randomisfits:netherite_glass_cutter"
   },
-  "template": {
-    "item": "minecraft:netherite_upgrade_smithing_template"
-  }
+  "template": "minecraft:netherite_upgrade_smithing_template"
 }

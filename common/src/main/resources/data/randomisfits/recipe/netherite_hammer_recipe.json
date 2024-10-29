@@ -1,15 +1,9 @@
 {
   "type": "minecraft:smithing_transform",
-  "base": {
-    "item": "randomisfits:diamond_hammer"
-  },
-  "addition": {
-    "tag": "c:storage_blocks/netherite"
-  },
+  "base": "randomisfits:diamond_hammer",
+  "addition": "#c:storage_blocks/netherite",
   "result": {
     "id": "randomisfits:netherite_hammer"
   },
-  "template": {
-    "item": "minecraft:netherite_upgrade_smithing_template"
-  }
+  "template": "minecraft:netherite_upgrade_smithing_template"
 }

@@ -6,12 +6,8 @@
     "##"
   ],
   "key": {
-    "#": {
-      "tag": "c:ingots/iron"
-    },
-    "N": {
-      "tag": "c:nuggets/iron"
-    }
+    "#": "#c:ingots/iron",
+    "N": "#c:nuggets/iron"
   },
   "result": {
     "id": "randomisfits:repair_kit",

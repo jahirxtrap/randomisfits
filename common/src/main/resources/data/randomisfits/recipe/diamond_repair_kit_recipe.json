@@ -6,12 +6,8 @@
     " # "
   ],
   "key": {
-    "#": {
-      "tag": "c:gems/diamond"
-    },
-    "K": {
-      "item": "randomisfits:repair_kit"
-    }
+    "#": "#c:gems/diamond",
+    "K": "randomisfits:repair_kit"
   },
   "result": {
     "id": "randomisfits:diamond_repair_kit",

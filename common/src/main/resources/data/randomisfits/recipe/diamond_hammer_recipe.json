@@ -6,15 +6,9 @@
     " R "
   ],
   "key": {
-    "B": {
-      "tag": "c:storage_blocks/diamond"
-    },
-    "I": {
-      "tag": "c:gems/diamond"
-    },
-    "R": {
-      "item": "randomisfits:handle"
-    }
+    "B": "#c:storage_blocks/diamond",
+    "I": "#c:gems/diamond",
+    "R": "randomisfits:handle"
   },
   "result": {
     "id": "randomisfits:diamond_hammer",

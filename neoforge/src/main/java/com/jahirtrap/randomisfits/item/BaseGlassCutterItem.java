@@ -7,14 +7,14 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.DiggerItem;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.ToolMaterial;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class BaseGlassCutterItem extends DiggerItem {
-    public BaseGlassCutterItem(Tier tier, Properties properties) {
-        super(tier, ModTags.Blocks.MINEABLE_WITH_GLASS_CUTTER, properties.attributes(createAttributes(tier, -1f, -2f)));
+    public BaseGlassCutterItem(ToolMaterial material, Properties properties) {
+        super(material, ModTags.Blocks.MINEABLE_WITH_GLASS_CUTTER, -1f, -2f, properties);
     }
 
     @Override

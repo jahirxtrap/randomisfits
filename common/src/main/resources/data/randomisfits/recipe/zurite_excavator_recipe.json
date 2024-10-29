@@ -1,15 +1,9 @@
 {
   "type": "minecraft:smithing_transform",
-  "base": {
-    "item": "randomisfits:iron_excavator"
-  },
-  "addition": {
-    "item": "randomisfits:zurite_block"
-  },
+  "base": "randomisfits:iron_excavator",
+  "addition": "randomisfits:zurite_block",
   "result": {
     "id": "randomisfits:zurite_excavator"
   },
-  "template": {
-    "item": "randomisfits:zurite_upgrade_smithing_template"
-  }
+  "template": "randomisfits:zurite_upgrade_smithing_template"
 }

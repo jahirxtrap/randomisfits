@@ -6,21 +6,11 @@
     " R "
   ],
   "key": {
-    "A": {
-      "item": "randomisfits:zurite_axe"
-    },
-    "S": {
-      "item": "randomisfits:zurite_shovel"
-    },
-    "P": {
-      "item": "randomisfits:zurite_pickaxe"
-    },
-    "H": {
-      "item": "randomisfits:zurite_hoe"
-    },
-    "R": {
-      "item": "randomisfits:handle"
-    }
+    "A": "randomisfits:zurite_axe",
+    "S": "randomisfits:zurite_shovel",
+    "P": "randomisfits:zurite_pickaxe",
+    "H": "randomisfits:zurite_hoe",
+    "R": "randomisfits:handle"
   },
   "result": {
     "id": "randomisfits:zurite_multitool",

@@ -6,12 +6,8 @@
     "NNN"
   ],
   "key": {
-    "N": {
-      "tag": "c:nuggets/iron"
-    },
-    "C": {
-      "item": "minecraft:crafting_table"
-    }
+    "N": "#c:nuggets/iron",
+    "C": "minecraft:crafting_table"
   },
   "result": {
     "id": "randomisfits:crafting_plate",

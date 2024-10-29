@@ -9,7 +9,7 @@ import net.minecraft.world.level.block.Block;
 
 public class BaseWearableItem extends BlockItem implements WearableItem {
     public BaseWearableItem(Block block, Properties properties) {
-        super(block, properties);
+        super(block, properties.useBlockDescriptionPrefix());
     }
 
     @Override

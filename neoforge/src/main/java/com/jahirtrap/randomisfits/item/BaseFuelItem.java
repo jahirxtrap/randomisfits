@@ -3,6 +3,7 @@ package com.jahirtrap.randomisfits.item;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeType;
+import net.minecraft.world.level.block.entity.FuelValues;
 
 public class BaseFuelItem extends Item {
     private final int burnTime;
@@ -13,7 +14,7 @@ public class BaseFuelItem extends Item {
     }
 
     @Override
-    public int getBurnTime(ItemStack stack, RecipeType<?> recipeType) {
+    public int getBurnTime(ItemStack stack, RecipeType<?> recipeType, FuelValues fuelValues) {
         return burnTime;
     }
 }

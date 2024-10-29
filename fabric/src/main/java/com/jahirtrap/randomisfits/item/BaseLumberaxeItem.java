@@ -7,11 +7,10 @@ import net.minecraft.core.component.DataComponentType;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.ToolMaterial;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 
@@ -23,18 +22,18 @@ import static com.jahirtrap.randomisfits.util.CommonUtils.coloredTextComponent;
 public class BaseLumberaxeItem extends AxeItem {
     private static final DataComponentType<Boolean> FELLING_KEY = ModComponents.FELLING_KEY;
 
-    public BaseLumberaxeItem(Tier tier, Properties properties) {
-        super(tier, properties.attributes(createAttributes(tier, 6f, -3f)));
+    public BaseLumberaxeItem(ToolMaterial material, Properties properties) {
+        super(material, 6f, -3f, properties);
     }
 
     @Override
-    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
+    public InteractionResult use(Level level, Player player, InteractionHand hand) {
         ItemStack stack = player.getItemInHand(hand);
 
         if (ModConfig.toggleLumberaxeFelling && !level.isClientSide() && player.isShiftKeyDown()) {
             setMode(stack, !getMode(stack));
             player.displayClientMessage(coloredTextComponent(getModeText(getMode(stack)), ChatFormatting.GOLD), true);
-            return new InteractionResultHolder<>(InteractionResult.SUCCESS, stack);
+            return InteractionResult.SUCCESS_SERVER;
         }
 
         return super.use(level, player, hand);

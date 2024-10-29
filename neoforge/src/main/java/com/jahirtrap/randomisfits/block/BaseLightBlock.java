@@ -2,19 +2,19 @@ package com.jahirtrap.randomisfits.block;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.ScheduledTickAccess;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.SoundType;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.material.PushReaction;
@@ -22,11 +22,11 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class BaseLightBlock extends Block implements SimpleWaterloggedBlock {
-    private static final DirectionProperty FACING = BlockStateProperties.FACING;
+    private static final EnumProperty<Direction> FACING = BlockStateProperties.FACING;
     private final float width, height;
 
-    public BaseLightBlock(float width, float height) {
-        super(BlockBehaviour.Properties.of().pushReaction(PushReaction.DESTROY).sound(SoundType.METAL).strength(0.5f).lightLevel($ -> 15));
+    public BaseLightBlock(float width, float height, Properties properties) {
+        super(properties.pushReaction(PushReaction.DESTROY).sound(SoundType.METAL).strength(0.5f).lightLevel($ -> 15));
         this.registerDefaultState(stateDefinition.any().setValue(FACING, Direction.UP).setValue(BlockStateProperties.WATERLOGGED, false));
         this.width = width;
         this.height = height;
@@ -59,8 +59,8 @@ public class BaseLightBlock extends Block implements SimpleWaterloggedBlock {
     }
 
     @Override
-    public BlockState updateShape(BlockState state, Direction facing, BlockState facingState, LevelAccessor accessor, BlockPos currentPos, BlockPos facingPos) {
-        return (facing == state.getValue(FACING).getOpposite() && !state.canSurvive(accessor, currentPos)) ? Blocks.AIR.defaultBlockState() : super.updateShape(state, facing, facingState, accessor, currentPos, facingPos);
+    public BlockState updateShape(BlockState state, LevelReader level, ScheduledTickAccess tickAccess, BlockPos currentPos, Direction facing, BlockPos facingPos, BlockState facingState, RandomSource random) {
+        return (facing == state.getValue(FACING).getOpposite() && !state.canSurvive(level, currentPos)) ? Blocks.AIR.defaultBlockState() : super.updateShape(state, level, tickAccess, currentPos, facing, facingPos, facingState, random);
     }
 
     @Override

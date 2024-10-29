@@ -6,9 +6,7 @@
     "III"
   ],
   "key": {
-    "I": {
-      "item": "randomisfits:zurite_ingot"
-    }
+    "I": "randomisfits:zurite_ingot"
   },
   "result": {
     "id": "randomisfits:zurite_block",

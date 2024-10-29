@@ -6,21 +6,11 @@
     " R "
   ],
   "key": {
-    "A": {
-      "item": "minecraft:netherite_axe"
-    },
-    "S": {
-      "item": "minecraft:netherite_shovel"
-    },
-    "P": {
-      "item": "minecraft:netherite_pickaxe"
-    },
-    "H": {
-      "item": "minecraft:netherite_hoe"
-    },
-    "R": {
-      "item": "randomisfits:handle"
-    }
+    "A": "minecraft:netherite_axe",
+    "S": "minecraft:netherite_shovel",
+    "P": "minecraft:netherite_pickaxe",
+    "H": "minecraft:netherite_hoe",
+    "R": "randomisfits:handle"
   },
   "result": {
     "id": "randomisfits:netherite_multitool",

@@ -1,15 +1,9 @@
 {
   "type": "minecraft:smithing_transform",
-  "base": {
-    "item": "randomisfits:iron_lumberaxe"
-  },
-  "addition": {
-    "item": "randomisfits:zurite_block"
-  },
+  "base": "randomisfits:iron_lumberaxe",
+  "addition": "randomisfits:zurite_block",
   "result": {
     "id": "randomisfits:zurite_lumberaxe"
   },
-  "template": {
-    "item": "randomisfits:zurite_upgrade_smithing_template"
-  }
+  "template": "randomisfits:zurite_upgrade_smithing_template"
 }

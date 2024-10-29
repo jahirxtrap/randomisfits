@@ -6,21 +6,11 @@
     " R "
   ],
   "key": {
-    "A": {
-      "item": "minecraft:diamond_axe"
-    },
-    "S": {
-      "item": "minecraft:diamond_shovel"
-    },
-    "P": {
-      "item": "minecraft:diamond_pickaxe"
-    },
-    "H": {
-      "item": "minecraft:diamond_hoe"
-    },
-    "R": {
-      "item": "randomisfits:handle"
-    }
+    "A": "minecraft:diamond_axe",
+    "S": "minecraft:diamond_shovel",
+    "P": "minecraft:diamond_pickaxe",
+    "H": "minecraft:diamond_hoe",
+    "R": "randomisfits:handle"
   },
   "result": {
     "id": "randomisfits:diamond_multitool",

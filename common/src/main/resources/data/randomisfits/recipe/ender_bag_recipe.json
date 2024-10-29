@@ -6,15 +6,9 @@
     "LLL"
   ],
   "key": {
-    "S": {
-      "tag": "c:strings"
-    },
-    "L": {
-      "tag": "c:leathers"
-    },
-    "C": {
-      "item": "minecraft:ender_chest"
-    }
+    "S": "#c:strings",
+    "L": "#c:leathers",
+    "C": "minecraft:ender_chest"
   },
   "result": {
     "id": "randomisfits:ender_bag",

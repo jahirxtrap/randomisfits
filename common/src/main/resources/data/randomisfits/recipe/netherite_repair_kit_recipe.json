@@ -1,15 +1,9 @@
 {
   "type": "minecraft:smithing_transform",
-  "base": {
-    "item": "randomisfits:diamond_repair_kit"
-  },
-  "addition": {
-    "tag": "c:ingots/netherite"
-  },
+  "base": "randomisfits:diamond_repair_kit",
+  "addition": "#c:ingots/netherite",
   "result": {
     "id": "randomisfits:netherite_repair_kit"
   },
-  "template": {
-    "item": "minecraft:netherite_upgrade_smithing_template"
-  }
+  "template": "minecraft:netherite_upgrade_smithing_template"
 }

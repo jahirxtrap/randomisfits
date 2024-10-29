@@ -1,0 +1,19 @@
+{
+  "layers": {
+    "horse_body": [
+      {
+        "texture": "randomisfits:reinforced_invisible"
+      }
+    ],
+    "humanoid": [
+      {
+        "texture": "randomisfits:reinforced_invisible"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "randomisfits:reinforced_invisible"
+      }
+    ]
+  }
+}

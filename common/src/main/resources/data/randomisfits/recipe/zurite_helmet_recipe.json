@@ -1,15 +1,9 @@
 {
   "type": "minecraft:smithing_transform",
-  "base": {
-    "item": "minecraft:iron_helmet"
-  },
-  "addition": {
-    "item": "randomisfits:zurite_ingot"
-  },
+  "base": "minecraft:iron_helmet",
+  "addition": "randomisfits:zurite_ingot",
   "result": {
     "id": "randomisfits:zurite_helmet"
   },
-  "template": {
-    "item": "randomisfits:zurite_upgrade_smithing_template"
-  }
+  "template": "randomisfits:zurite_upgrade_smithing_template"
 }

@@ -6,12 +6,8 @@
     "R"
   ],
   "key": {
-    "B": {
-      "tag": "c:storage_blocks/diamond"
-    },
-    "R": {
-      "item": "randomisfits:handle"
-    }
+    "B": "#c:storage_blocks/diamond",
+    "R": "randomisfits:handle"
   },
   "result": {
     "id": "randomisfits:diamond_excavator",

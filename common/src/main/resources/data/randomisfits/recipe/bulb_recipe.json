@@ -5,12 +5,8 @@
     "G"
   ],
   "key": {
-    "I": {
-      "tag": "c:nuggets/iron"
-    },
-    "G": {
-      "tag": "c:dusts/glowstone"
-    }
+    "I": "#c:nuggets/iron",
+    "G": "#c:dusts/glowstone"
   },
   "result": {
     "id": "randomisfits:bulb",
