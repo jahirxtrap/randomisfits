@@ -21,7 +21,7 @@ import static com.jahirtrap.randomisfits.util.CommonUtils.formatText;
 public class BaseRepairKitItem extends Item {
     private final int amount;
 
-    public BaseRepairKitItem(Properties properties, int repairAmount) {
+    public BaseRepairKitItem(int repairAmount, Properties properties) {
         super(properties.stacksTo(16));
         this.amount = repairAmount;
     }
@@ -36,7 +36,7 @@ public class BaseRepairKitItem extends Item {
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, TooltipContext tooltipContext, List<Component> tooltip, TooltipFlag flag) {
+    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag flag) {
         tooltip.add(coloredTextComponent(Component.translatable("randomisfits.repair_kit.amount").getString() + formatText(amount), ChatFormatting.GRAY));
     }
 
