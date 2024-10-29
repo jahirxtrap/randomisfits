@@ -1,13 +1,9 @@
 package com.jahirtrap.randomisfits.util;
 
 import net.minecraft.ChatFormatting;
-import net.minecraft.core.Registry;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextComponent;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.TagKey;
 import net.minecraft.util.Mth;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 
 public class CommonUtils {
@@ -23,10 +19,6 @@ public class CommonUtils {
         } else {
             return String.valueOf(amount);
         }
-    }
-
-    public static TagKey<Item> itemTag(String string) {
-        return TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation(string));
     }
 
     public static int blueBar(ItemStack stack) {

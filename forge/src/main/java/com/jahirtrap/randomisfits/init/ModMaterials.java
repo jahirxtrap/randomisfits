@@ -6,19 +6,19 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraftforge.common.Tags;
 
 import java.util.function.Supplier;
 
 import static com.jahirtrap.randomisfits.RandomisfitsMod.MODID;
-import static com.jahirtrap.randomisfits.util.CommonUtils.itemTag;
 
 public enum ModMaterials implements ArmorMaterial {
     ZURITE("zurite", 31, new int[]{3, 6, 8, 3},
-            16, SoundEvents.ARMOR_EQUIP_GENERIC, 2.5f, 0.1f, () -> Ingredient.of(ModContent.ZURITE_INGOT.get())),
+            16, SoundEvents.ARMOR_EQUIP_NETHERITE, 2.5f, 0.1f, () -> Ingredient.of(ModContent.ZURITE_INGOT.get())),
     INVISIBLE("invisible", 15, new int[]{2, 5, 6, 2},
-            9, SoundEvents.ARMOR_EQUIP_GENERIC, 0f, 0f, () -> Ingredient.of(itemTag("forge:glass/colorless"))),
+            9, SoundEvents.ARMOR_EQUIP_GENERIC, 0f, 0f, () -> Ingredient.of(Tags.Items.GLASS_COLORLESS)),
     REINFORCED_INVISIBLE("reinforced_invisible", 30, new int[]{3, 6, 8, 3},
-            10, SoundEvents.ARMOR_EQUIP_GENERIC, 2f, 0f, () -> Ingredient.of(itemTag("forge:glass/colorless")));
+            10, SoundEvents.ARMOR_EQUIP_GENERIC, 2f, 0f, () -> Ingredient.of(Tags.Items.GLASS_COLORLESS));
 
     private static final int[] durability = new int[]{13, 15, 16, 11};
     private final String name;

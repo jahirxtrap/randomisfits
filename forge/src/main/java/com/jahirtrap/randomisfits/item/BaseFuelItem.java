@@ -6,7 +6,7 @@ import net.minecraft.world.item.crafting.RecipeType;
 public class BaseFuelItem extends BaseItem {
     private final int burnTime;
 
-    public BaseFuelItem(Properties properties, int burnTime) {
+    public BaseFuelItem(int burnTime, Properties properties) {
         super(properties);
         this.burnTime = burnTime;
     }

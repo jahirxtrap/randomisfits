@@ -6,7 +6,7 @@ import net.minecraft.world.item.ItemStack;
 public class BaseFuelItem extends BaseItem implements FuelItem {
     private final int burnTime;
 
-    public BaseFuelItem(Properties properties, int burnTime) {
+    public BaseFuelItem(int burnTime, Properties properties) {
         super(properties);
         this.burnTime = burnTime;
     }

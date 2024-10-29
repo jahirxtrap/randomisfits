@@ -10,6 +10,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -25,7 +26,7 @@ public class BaseLightBlock extends Block implements SimpleWaterloggedBlock {
     private final float width, height;
 
     public BaseLightBlock(float width, float height) {
-        super(Properties.of(Material.DECORATION).sound(SoundType.METAL).strength(0.5f).lightLevel($ -> 15));
+        super(BlockBehaviour.Properties.of(Material.DECORATION).sound(SoundType.METAL).strength(0.5f).lightLevel($ -> 15));
         this.registerDefaultState(stateDefinition.any().setValue(FACING, Direction.UP).setValue(BlockStateProperties.WATERLOGGED, false));
         this.width = width;
         this.height = height;
