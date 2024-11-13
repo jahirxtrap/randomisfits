@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BBB",
+    "BIB",
+    "BBB"
+  ],
+  "key": {
+    "B": "minecraft:polished_blackstone",
+    "I": "randomisfits:zurite_ingot"
+  },
+  "result": {
+    "id": "randomisfits:anchor_stone",
+    "count": 1
+  }
+}

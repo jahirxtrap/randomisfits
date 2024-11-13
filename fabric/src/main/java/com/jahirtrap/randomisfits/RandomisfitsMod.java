@@ -1,6 +1,7 @@
 package com.jahirtrap.randomisfits;
 
 import com.jahirtrap.configlib.TXFConfig;
+import com.jahirtrap.randomisfits.init.ModComponents;
 import com.jahirtrap.randomisfits.init.ModConfig;
 import com.jahirtrap.randomisfits.init.ModContent;
 import com.jahirtrap.randomisfits.init.ModTab;
@@ -14,7 +15,7 @@ public class RandomisfitsMod implements ModInitializer {
     @Override
     public void onInitialize() {
         TXFConfig.init(MODID, ModConfig.class);
-        ModContent.init();
+        ModComponents.init();
         ModContent.init();
         ModTab.init();
         PacketHandler.init();

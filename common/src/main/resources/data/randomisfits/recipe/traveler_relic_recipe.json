@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "IEI",
+    "ESE",
+    "IEI"
+  ],
+  "key": {
+    "I": "randomisfits:zurite_ingot",
+    "E": "minecraft:ender_eye",
+    "S": "minecraft:nether_star"
+  },
+  "result": {
+    "id": "randomisfits:traveler_relic",
+    "count": 1
+  }
+}

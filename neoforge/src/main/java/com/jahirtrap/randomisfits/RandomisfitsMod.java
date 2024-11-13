@@ -1,7 +1,10 @@
 package com.jahirtrap.randomisfits;
 
 import com.jahirtrap.configlib.TXFConfig;
-import com.jahirtrap.randomisfits.init.*;
+import com.jahirtrap.randomisfits.init.ModComponents;
+import com.jahirtrap.randomisfits.init.ModConfig;
+import com.jahirtrap.randomisfits.init.ModContent;
+import com.jahirtrap.randomisfits.init.ModTab;
 import com.jahirtrap.randomisfits.network.PacketHandler;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
