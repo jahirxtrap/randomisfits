@@ -21,6 +21,15 @@ public class CommonUtils {
         }
     }
 
+    public static String snakeToTitleCase(String string) {
+        var result = new StringBuilder();
+        for (String word : string.split("_"))
+            if (!word.isEmpty())
+                result.append(Character.toUpperCase(word.charAt(0))).append(word.substring(1).toLowerCase()).append(" ");
+
+        return result.toString().trim();
+    }
+
     public static int blueBar(ItemStack stack) {
         float f = Math.max(0, (float) (stack.getMaxDamage() - stack.getDamageValue()) / stack.getMaxDamage());
         return Mth.hsvToRgb(1 - (f / 3), 1, 1);

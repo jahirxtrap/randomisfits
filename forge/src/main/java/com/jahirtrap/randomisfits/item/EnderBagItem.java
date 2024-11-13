@@ -38,7 +38,7 @@ public class EnderBagItem extends BaseItem {
         if (level.isClientSide() && entity instanceof Player player) {
             if (bl || player.getOffhandItem() == stack) {
                 for (int j = 0; j < 2; j++)
-                    player.level.addParticle(ParticleTypes.PORTAL, player.getRandomX(0.5), player.getRandomY() - 0.25, player.getRandomZ(0.5), (level.random.nextDouble() - 0.5) * 2, -level.random.nextDouble(), (level.random.nextDouble() - 0.5) * 2);
+                    player.getLevel().addParticle(ParticleTypes.PORTAL, player.getRandomX(0.5), player.getRandomY() - 0.25, player.getRandomZ(0.5), (level.random.nextDouble() - 0.5) * 2, -level.random.nextDouble(), (level.random.nextDouble() - 0.5) * 2);
             }
         }
     }
@@ -50,7 +50,7 @@ public class EnderBagItem extends BaseItem {
 
         @Override
         public void removed(Player player) {
-            player.level.playSound(null, player.blockPosition(), SoundEvents.ENDER_CHEST_CLOSE, SoundSource.PLAYERS, 0.5f, player.level.random.nextFloat() * 0.1f + 0.9f);
+            player.getLevel().playSound(null, player.blockPosition(), SoundEvents.ENDER_CHEST_CLOSE, SoundSource.PLAYERS, 0.5f, player.getLevel().random.nextFloat() * 0.1f + 0.9f);
             super.removed(player);
         }
     }
