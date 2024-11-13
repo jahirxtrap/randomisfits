@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "randomisfits:traveler_relic_fragment"
+    },
+    {
+      "item": "randomisfits:traveler_relic_fragment"
+    },
+    {
+      "item": "randomisfits:traveler_relic_fragment"
+    }
+  ],
+  "result": {
+    "id": "randomisfits:traveler_relic",
+    "count": 1
+  }
+}

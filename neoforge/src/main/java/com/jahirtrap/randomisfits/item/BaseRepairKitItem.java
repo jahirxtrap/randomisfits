@@ -44,7 +44,7 @@ public class BaseRepairKitItem extends Item {
         if (item.isDamaged()) {
             item.setDamageValue(item.getDamageValue() - amount);
             if (!player.getAbilities().instabuild) kit.shrink(1);
-            level.playSound(null, player.blockPosition(), SoundEvents.ANVIL_USE, SoundSource.PLAYERS, 1, 1);
+            level.playSound(null, player.blockPosition(), SoundEvents.ANVIL_USE, SoundSource.PLAYERS);
             return true;
         } else return false;
     }
