@@ -1,5 +1,6 @@
 {
   "block.randomisfits.zurite_block": "Zurite Block",
+  "block.randomisfits.anchor_stone": "Anchor Stone",
   "block.randomisfits.bulb": "Bulb",
   "block.randomisfits.lamp": "Lamp",
   "block.randomisfits.netherite_lamp": "Netherite Lamp",
@@ -54,6 +55,9 @@
   "item.randomisfits.netherite_repair_kit": "Netherite Repair Kit",
   "item.randomisfits.crafting_plate": "Crafting Plate",
   "item.randomisfits.ender_bag": "Ender Bag",
+  "item.randomisfits.traveler_relic_fragment": "Traveler's Stone Fragment",
+  "item.randomisfits.traveler_relic": "Traveler's Stone",
+  "item.randomisfits.link_relic": "Link Stone",
   "painting.randomisfits.misfit.author": "jahirtrap",
   "painting.randomisfits.misfit.title": "Misfit",
   "itemGroup.randomisfits.tab_randomisfits": "Random Misfits",
@@ -65,5 +69,6 @@
   "randomisfits.range.mode.yes": "Mode: 3x3",
   "randomisfits.range.mode.no": "Mode: 1x1",
   "randomisfits.lumberaxe.felling.yes": "Felling: Yes",
-  "randomisfits.lumberaxe.felling.no": "Felling: No"
+  "randomisfits.lumberaxe.felling.no": "Felling: No",
+  "randomisfits.link_relic.linked": "linked"
 }
