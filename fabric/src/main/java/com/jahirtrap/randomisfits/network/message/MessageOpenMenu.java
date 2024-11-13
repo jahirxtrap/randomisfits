@@ -20,9 +20,9 @@ public class MessageOpenMenu {
         server.execute(() -> {
             if (ModConfig.rightClickSlotOpenMenu) {
                 if (menu == 1) {
-                    ModContent.ENDER_BAG.use(player.level, player, InteractionHand.MAIN_HAND);
+                    ModContent.ENDER_BAG.use(player.getLevel(), player, InteractionHand.MAIN_HAND);
                 } else if (menu == 2) {
-                    ModContent.CRAFTING_PLATE.use(player.level, player, InteractionHand.MAIN_HAND);
+                    ModContent.CRAFTING_PLATE.use(player.getLevel(), player, InteractionHand.MAIN_HAND);
                 }
             }
         });

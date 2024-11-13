@@ -1,5 +1,6 @@
 {
   "block.randomisfits.zurite_block": "Bloque de zurita",
+  "block.randomisfits.anchor_stone": "Piedra de anclaje",
   "block.randomisfits.bulb": "Bombilla",
   "block.randomisfits.lamp": "Lámpara",
   "block.randomisfits.netherite_lamp": "Lámpara de netherita",
@@ -48,6 +49,9 @@
   "item.randomisfits.netherite_repair_kit": "Kit de reparación de netherita",
   "item.randomisfits.crafting_plate": "Placa de trabajo",
   "item.randomisfits.ender_bag": "Bolsa de ender",
+  "item.randomisfits.traveler_relic_fragment": "Fragmento de reliquia del viajero",
+  "item.randomisfits.traveler_relic": "Reliquia del viajero",
+  "item.randomisfits.link_relic": "Reliquia de enlace",
   "itemGroup.randomisfits.tab_randomisfits": "Random Misfits",
   "randomisfits.config.title": "Random Misfits",
   "randomisfits.repair_kit.amount": "Cantidad: ",
@@ -56,5 +60,6 @@
   "randomisfits.range.mode.yes": "Modo: 3x3",
   "randomisfits.range.mode.no": "Modo: 1x1",
   "randomisfits.lumberaxe.felling.yes": "Talar: Sí",
-  "randomisfits.lumberaxe.felling.no": "Talar: No"
+  "randomisfits.lumberaxe.felling.no": "Talar: No",
+  "randomisfits.link_relic.linked": "enlazado/a"
 }
