@@ -1,3 +1,1 @@
-- Added Traveler's Relic, Fragment and Link Relic items
-- Added Anchor Stone block
-- Blocks tagged with `randomisfits:anchor_blocks` will work as a link point for Traveler´s Relic
+- Fixed Anchor Stone strength
