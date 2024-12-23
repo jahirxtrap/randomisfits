@@ -30,6 +30,6 @@ Armor, multitools, relics & other random utilities
 <details>
   <summary>Spoiler</summary>
 
-<img src="https://cdn.modrinth.com/data/sdjh3tKn/images/e6a151558a9ae816aca791746950f1525f36376d.png" width="500">
+<img src="https://cdn.modrinth.com/data/sdjh3tKn/images/b274c9c65e4cc5ec7f1611c183de37032941ab0f.png" width="500">
 
 </details>
