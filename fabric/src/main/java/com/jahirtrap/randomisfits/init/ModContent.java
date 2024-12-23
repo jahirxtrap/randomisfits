@@ -2,7 +2,6 @@ package com.jahirtrap.randomisfits.init;
 
 import com.jahirtrap.randomisfits.block.BaseLightBlock;
 import com.jahirtrap.randomisfits.item.*;
-import com.jahirtrap.randomisfits.util.FuelItem;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -10,6 +9,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.decoration.PaintingVariant;
 import net.minecraft.world.item.ArmorItem.Type;
 import net.minecraft.world.item.*;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
@@ -17,12 +17,14 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import static com.jahirtrap.randomisfits.RandomisfitsMod.MODID;
 
 public class ModContent {
     public static final List<Item> ITEMS = new ArrayList<>();
+    public static final HashMap<ItemLike, Integer> FUEL_ITEMS = new HashMap<>();
 
     public static final Item ZURITE_INGOT = registerItem("zurite_ingot", new Item(new Item.Properties().fireResistant()));
     public static final Block ZURITE_BLOCK = registerBlock("zurite_block", new Block(BlockBehaviour.Properties.ofLegacyCopy(Blocks.NETHERITE_BLOCK)), new Item.Properties().fireResistant());
@@ -31,7 +33,7 @@ public class ModContent {
     public static final List<Item> ZURITE_ARMOR = registerArmor(ModMaterials.ZURITE, new Item.Properties().fireResistant());
     public static final List<Item> INVISIBLE_ARMOR = registerArmor(ModMaterials.INVISIBLE, new Item.Properties());
     public static final List<Item> REINFORCED_INVISIBLE_ARMOR = registerArmor(ModMaterials.REINFORCED_INVISIBLE, new Item.Properties());
-    public static final Item HANDLE = registerItem("handle", new BaseFuelItem(200, new Item.Properties()));
+    public static final Item HANDLE = registerItem("handle", new Item(new Item.Properties()));
     public static final Item IRON_MULTITOOL = registerItem("iron_multitool", new BaseMultitoolItem(ModTiers.IRON_HARD, new Item.Properties()));
     public static final Item DIAMOND_MULTITOOL = registerItem("diamond_multitool", new BaseMultitoolItem(ModTiers.DIAMOND_HARD, new Item.Properties()));
     public static final Item NETHERITE_MULTITOOL = registerItem("netherite_multitool", new BaseMultitoolItem(ModTiers.NETHERITE_HARD, new Item.Properties().fireResistant()));
@@ -71,19 +73,17 @@ public class ModContent {
     public static final Item GLOW_CORE = registerItem("glow_core", new BaseWearableItem(GLOW_CORE_BLOCK, new Item.Properties()));
     public static final PaintingVariant MISFIT_PAINTING = registerPainting("misfit", new PaintingVariant(16, 16));
 
-    public static Block registerBlock(String name, Block block, Item.Properties itemProp) {
+    private static Block registerBlock(String name, Block block, Item.Properties itemProp) {
         registerItem(name, new BlockItem(block, itemProp));
         return registerBlock(name, block);
     }
 
-    public static Block registerBlock(String name, Block block) {
+    private static Block registerBlock(String name, Block block) {
         return Registry.register(BuiltInRegistries.BLOCK, new ResourceLocation(MODID, name), block);
     }
 
-    public static Item registerItem(String name, Item item) {
+    private static Item registerItem(String name, Item item) {
         var itemReg = Registry.register(BuiltInRegistries.ITEM, new ResourceLocation(MODID, name), item);
-        if (itemReg instanceof FuelItem fuelItem)
-            FuelRegistry.INSTANCE.add(itemReg, fuelItem.getBurnTime(itemReg.getDefaultInstance()));
         ITEMS.add(itemReg);
         return itemReg;
     }
@@ -113,5 +113,8 @@ public class ModContent {
     }
 
     public static void init() {
+        FUEL_ITEMS.put(HANDLE, 200);
+
+        FUEL_ITEMS.forEach(FuelRegistry.INSTANCE::add);
     }
 }

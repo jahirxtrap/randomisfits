@@ -64,7 +64,7 @@ public class BaseLightBlock extends Block implements SimpleWaterloggedBlock {
     }
 
     @Override
-    public boolean canSurvive(final BlockState state, final LevelReader level, final BlockPos pos) {
+    public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
         Direction direction = state.getValue(FACING);
         return canSupportCenter(level, pos.relative(direction.getOpposite()), direction);
     }

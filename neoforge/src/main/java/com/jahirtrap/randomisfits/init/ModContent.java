@@ -7,16 +7,21 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.decoration.PaintingVariant;
 import net.minecraft.world.item.ArmorItem.Type;
 import net.minecraft.world.item.*;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.event.furnace.FurnaceFuelBurnTimeEvent;
 import net.neoforged.neoforge.registries.DeferredBlock;
+import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.function.Supplier;
 
@@ -26,6 +31,7 @@ public class ModContent {
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(MODID);
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(MODID);
     public static final DeferredRegister<PaintingVariant> PAINTINGS = DeferredRegister.create(Registries.PAINTING_VARIANT, MODID);
+    public static final HashMap<DeferredHolder<?, ? extends ItemLike>, Integer> FUEL_ITEMS = new HashMap<>();
 
     public static final DeferredItem<Item> ZURITE_INGOT = registerItem("zurite_ingot", () -> new Item(new Item.Properties().fireResistant()));
     public static final DeferredBlock<Block> ZURITE_BLOCK = registerBlock("zurite_block", () -> new Block(BlockBehaviour.Properties.ofLegacyCopy(Blocks.NETHERITE_BLOCK)), new Item.Properties().fireResistant());
@@ -34,7 +40,7 @@ public class ModContent {
     public static final List<DeferredItem<Item>> ZURITE_ARMOR = registerArmor(ModMaterials.ZURITE, new Item.Properties().fireResistant());
     public static final List<DeferredItem<Item>> INVISIBLE_ARMOR = registerArmor(ModMaterials.INVISIBLE, new Item.Properties());
     public static final List<DeferredItem<Item>> REINFORCED_INVISIBLE_ARMOR = registerArmor(ModMaterials.REINFORCED_INVISIBLE, new Item.Properties());
-    public static final DeferredItem<Item> HANDLE = registerItem("handle", () -> new BaseFuelItem(200, new Item.Properties()));
+    public static final DeferredItem<Item> HANDLE = registerItem("handle", () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> IRON_MULTITOOL = registerItem("iron_multitool", () -> new BaseMultitoolItem(ModTiers.IRON_HARD, new Item.Properties()));
     public static final DeferredItem<Item> DIAMOND_MULTITOOL = registerItem("diamond_multitool", () -> new BaseMultitoolItem(ModTiers.DIAMOND_HARD, new Item.Properties()));
     public static final DeferredItem<Item> NETHERITE_MULTITOOL = registerItem("netherite_multitool", () -> new BaseMultitoolItem(ModTiers.NETHERITE_HARD, new Item.Properties().fireResistant()));
@@ -74,17 +80,17 @@ public class ModContent {
     public static final DeferredItem<Item> GLOW_CORE = registerItem("glow_core", () -> new BaseWearableItem(GLOW_CORE_BLOCK.get(), new Item.Properties()));
     public static final Supplier<PaintingVariant> MISFIT_PAINTING = registerPainting("misfit", () -> new PaintingVariant(16, 16));
 
-    public static DeferredBlock<Block> registerBlock(String name, Supplier<Block> supplier, Item.Properties itemProp) {
+    private static DeferredBlock<Block> registerBlock(String name, Supplier<Block> supplier, Item.Properties itemProp) {
         var blockReg = registerBlock(name, supplier);
         registerItem(name, () -> new BlockItem(blockReg.get(), itemProp));
         return blockReg;
     }
 
-    public static DeferredBlock<Block> registerBlock(String name, Supplier<Block> supplier) {
+    private static DeferredBlock<Block> registerBlock(String name, Supplier<Block> supplier) {
         return BLOCKS.register(name, supplier);
     }
 
-    public static DeferredItem<Item> registerItem(String name, Supplier<Item> supplier) {
+    private static DeferredItem<Item> registerItem(String name, Supplier<Item> supplier) {
         return ITEMS.register(name, supplier);
     }
 
@@ -116,5 +122,11 @@ public class ModContent {
         BLOCKS.register(bus);
         ITEMS.register(bus);
         PAINTINGS.register(bus);
+
+        FUEL_ITEMS.put(HANDLE, 200);
+
+        NeoForge.EVENT_BUS.addListener((FurnaceFuelBurnTimeEvent event) -> FUEL_ITEMS.forEach((item, burnTime) -> {
+            if (item.get() == event.getItemStack().getItem()) event.setBurnTime(burnTime);
+        }));
     }
 }
