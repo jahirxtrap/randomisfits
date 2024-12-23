@@ -30,7 +30,7 @@ public class BaseHammerItem extends PickaxeItem implements RangeItem {
         if (ModConfig.toggleHammerMode && !level.isClientSide() && player.isShiftKeyDown()) {
             setMode(stack, !getMode(stack));
             player.displayClientMessage(coloredTextComponent(getModeText(getMode(stack)), ChatFormatting.GOLD), true);
-            return InteractionResult.SUCCESS;
+            return InteractionResult.SUCCESS_SERVER;
         }
 
         return super.use(level, player, hand);
