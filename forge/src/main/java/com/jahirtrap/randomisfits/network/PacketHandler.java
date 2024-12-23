@@ -8,7 +8,7 @@ import net.minecraftforge.network.simple.SimpleChannel;
 import static com.jahirtrap.randomisfits.RandomisfitsMod.MODID;
 
 public class PacketHandler {
-    public static final String PROTOCOL_VERSION = "1";
+    private static final String PROTOCOL_VERSION = "1";
     private static int nextId = 0;
     public static final SimpleChannel INSTANCE = NetworkRegistry.ChannelBuilder
             .named(new ResourceLocation(MODID, "network"))
