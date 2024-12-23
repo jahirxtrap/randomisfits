@@ -2,7 +2,6 @@ package com.jahirtrap.randomisfits.init;
 
 import com.jahirtrap.randomisfits.block.BaseLightBlock;
 import com.jahirtrap.randomisfits.item.*;
-import com.jahirtrap.randomisfits.util.FuelItem;
 import net.fabricmc.fabric.api.registry.FuelRegistryEvents;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -12,6 +11,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.equipment.ArmorMaterial;
 import net.minecraft.world.item.equipment.ArmorType;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
@@ -19,6 +19,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.function.Function;
 
@@ -26,6 +27,7 @@ import static com.jahirtrap.randomisfits.RandomisfitsMod.MODID;
 
 public class ModContent {
     public static final List<Item> ITEMS = new ArrayList<>();
+    public static final HashMap<ItemLike, Integer> FUEL_ITEMS = new HashMap<>();
 
     public static final Item ZURITE_INGOT = registerItem("zurite_ingot", Item::new, new Item.Properties().fireResistant());
     public static final Block ZURITE_BLOCK = registerBlock("zurite_block", Block::new, BlockBehaviour.Properties.ofLegacyCopy(Blocks.NETHERITE_BLOCK).mapColor(MapColor.COLOR_GRAY), new Item.Properties().fireResistant());
@@ -34,7 +36,7 @@ public class ModContent {
     public static final List<Item> ZURITE_ARMOR = registerArmor(ModMaterials.Armor.ZURITE, new Item.Properties().fireResistant());
     public static final List<Item> INVISIBLE_ARMOR = registerArmor(ModMaterials.Armor.INVISIBLE, new Item.Properties());
     public static final List<Item> REINFORCED_INVISIBLE_ARMOR = registerArmor(ModMaterials.Armor.REINFORCED_INVISIBLE, new Item.Properties());
-    public static final Item HANDLE = registerItem("handle", (p) -> new BaseFuelItem(200, p), new Item.Properties());
+    public static final Item HANDLE = registerItem("handle", Item::new, new Item.Properties());
     public static final Item IRON_MULTITOOL = registerItem("iron_multitool", (p) -> new BaseMultitoolItem(ModMaterials.Tool.IRON_HARD, p), new Item.Properties());
     public static final Item DIAMOND_MULTITOOL = registerItem("diamond_multitool", (p) -> new BaseMultitoolItem(ModMaterials.Tool.DIAMOND_HARD, p), new Item.Properties());
     public static final Item NETHERITE_MULTITOOL = registerItem("netherite_multitool", (p) -> new BaseMultitoolItem(ModMaterials.Tool.NETHERITE_HARD, p), new Item.Properties().fireResistant());
@@ -73,20 +75,18 @@ public class ModContent {
     public static final Block GLOW_CORE_BLOCK = registerBlock("glow_core", (p) -> new BaseLightBlock(8, 8, p), BlockBehaviour.Properties.of());
     public static final Item GLOW_CORE = registerItem("glow_core", (p) -> new BaseWearableItem(GLOW_CORE_BLOCK, p), new Item.Properties());
 
-    public static Block registerBlock(String name, Function<BlockBehaviour.Properties, Block> function, BlockBehaviour.Properties blockProp, Item.Properties itemProp) {
+    private static Block registerBlock(String name, Function<BlockBehaviour.Properties, Block> function, BlockBehaviour.Properties blockProp, Item.Properties itemProp) {
         var blockReg = registerBlock(name, function, blockProp);
         registerItem(name, (p) -> new BlockItem(blockReg, p), itemProp.useBlockDescriptionPrefix());
         return blockReg;
     }
 
-    public static Block registerBlock(String name, Function<BlockBehaviour.Properties, Block> function, BlockBehaviour.Properties blockProp) {
+    private static Block registerBlock(String name, Function<BlockBehaviour.Properties, Block> function, BlockBehaviour.Properties blockProp) {
         return Registry.register(BuiltInRegistries.BLOCK, ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(MODID, name)), function.apply(blockProp.setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(MODID, name)))));
     }
 
-    public static Item registerItem(String name, Function<Item.Properties, Item> function, Item.Properties itemProp) {
+    private static Item registerItem(String name, Function<Item.Properties, Item> function, Item.Properties itemProp) {
         var itemReg = Registry.register(BuiltInRegistries.ITEM, ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MODID, name)), function.apply(itemProp.setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MODID, name)))));
-        if (itemReg instanceof FuelItem fuelItem)
-            FuelRegistryEvents.BUILD.register((builder, context) -> builder.add(itemReg, fuelItem.getBurnTime(itemReg.getDefaultInstance())));
         ITEMS.add(itemReg);
         return itemReg;
     }
@@ -112,5 +112,8 @@ public class ModContent {
     }
 
     public static void init() {
+        FUEL_ITEMS.put(HANDLE, 200);
+
+        FuelRegistryEvents.BUILD.register((builder, context) -> FUEL_ITEMS.forEach(builder::add));
     }
 }
