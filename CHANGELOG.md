@@ -1,1 +1,2 @@
-- Fixed Anchor Stone strength
+- Updated config lib
+- Some fixes
