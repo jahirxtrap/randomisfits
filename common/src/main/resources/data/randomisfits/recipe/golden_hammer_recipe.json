@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "IBI",
+    "IRI",
+    " R "
+  ],
+  "key": {
+    "B": "#c:storage_blocks/gold",
+    "I": "#c:ingots/gold",
+    "R": "randomisfits:handle"
+  },
+  "result": {
+    "id": "randomisfits:golden_hammer",
+    "count": 1
+  }
+}

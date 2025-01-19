@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ASP",
+    "HR ",
+    " R "
+  ],
+  "key": {
+    "A": "ingotcraft:steel_axe",
+    "S": "ingotcraft:steel_shovel",
+    "P": "ingotcraft:steel_pickaxe",
+    "H": "ingotcraft:steel_hoe",
+    "R": "randomisfits:handle"
+  },
+  "result": {
+    "id": "randomisfits:steel_multitool",
+    "count": 1
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:any_mod_loaded",
+      "values": [
+        "ingotcraft"
+      ]
+    }
+  ]
+}

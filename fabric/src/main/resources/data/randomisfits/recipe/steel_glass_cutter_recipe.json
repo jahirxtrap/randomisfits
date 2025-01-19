@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "I",
+    "A",
+    "R"
+  ],
+  "key": {
+    "A": "#c:gems/amethyst",
+    "I": "#c:ingots/steel",
+    "R": "randomisfits:handle"
+  },
+  "result": {
+    "id": "randomisfits:steel_glass_cutter",
+    "count": 1
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:tags_populated",
+      "values": [
+        "c:ingots/steel"
+      ]
+    }
+  ]
+}

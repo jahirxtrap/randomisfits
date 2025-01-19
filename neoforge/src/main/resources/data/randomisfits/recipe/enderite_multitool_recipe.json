@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ASP",
+    "HR ",
+    " R "
+  ],
+  "key": {
+    "A": "enderitemod:enderite_axe",
+    "S": "enderitemod:enderite_shovel",
+    "P": "enderitemod:enderite_pickaxe",
+    "H": "enderitemod:enderite_hoe",
+    "R": "randomisfits:handle"
+  },
+  "result": {
+    "id": "randomisfits:enderite_multitool",
+    "count": 1
+  },
+  "conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "enderitemod"
+    }
+  ]
+}

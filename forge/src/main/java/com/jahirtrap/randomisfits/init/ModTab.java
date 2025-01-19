@@ -15,7 +15,7 @@ public class ModTab {
     public static final DeferredRegister<CreativeModeTab> TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MODID);
 
     public static final RegistryObject<CreativeModeTab> TAB_RANDOMISFITS = TABS.register("tab_randomisfits", () -> CreativeModeTab.builder()
-            .icon(() -> new ItemStack(ModContent.NETHERITE_MULTITOOL.get()))
+            .icon(() -> new ItemStack(ModContent.NETHERITE_EXTRA_TOOLS.getFirst().get()))
             .displayItems((features, event) -> {
                 for (RegistryObject<Item> item : ModContent.ITEMS.getEntries())
                     event.accept(item.get());

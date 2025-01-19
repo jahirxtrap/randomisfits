@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "IB",
+    "IR",
+    " R"
+  ],
+  "key": {
+    "B": "#c:storage_blocks/steel",
+    "I": "#c:ingots/steel",
+    "R": "randomisfits:handle"
+  },
+  "result": {
+    "id": "randomisfits:steel_lumberaxe",
+    "count": 1
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:tags_populated",
+      "values": [
+        "c:ingots/steel",
+	"c:storage_blocks/steel"
+      ]
+    }
+  ]
+}

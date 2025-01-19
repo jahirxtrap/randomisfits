@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "B",
+    "R",
+    "R"
+  ],
+  "key": {
+    "B": "#c:storage_blocks/bronze",
+    "R": "randomisfits:handle"
+  },
+  "result": {
+    "id": "randomisfits:bronze_excavator",
+    "count": 1
+  },
+  "conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:storage_blocks/bronze"
+      }
+    }
+  ]
+}

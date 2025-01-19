@@ -1,6 +1,6 @@
 {
   "type": "minecraft:smithing_transform",
-  "base": "randomisfits:glass_cutter",
+  "base": "randomisfits:iron_glass_cutter",
   "addition": "randomisfits:zurite_ingot",
   "result": {
     "id": "randomisfits:zurite_glass_cutter"

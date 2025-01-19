@@ -10,10 +10,13 @@ import static com.jahirtrap.randomisfits.RandomisfitsMod.MODID;
 
 public class ModTags {
     public interface Items {
-        TagKey<Item> REPAIRS_ZURITE_SET = modTag("repairs_zurite_set");
+        TagKey<Item> ZURITE_INGOTS = create(ResourceLocation.parse("c:ingots/zurite"));
+        TagKey<Item> STEEL_INGOTS = create(ResourceLocation.parse("c:ingots/steel"));
+        TagKey<Item> BRONZE_INGOTS = create(ResourceLocation.parse("c:ingots/bronze"));
+        TagKey<Item> ENDERITE_INGOTS = create(ResourceLocation.parse("c:ingots/enderite"));
 
-        private static TagKey<Item> modTag(String name) {
-            return TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MODID, name));
+        private static TagKey<Item> create(ResourceLocation name) {
+            return TagKey.create(Registries.ITEM, name);
         }
     }
 

@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "IB",
+    "IR",
+    " R"
+  ],
+  "key": {
+    "B": "#c:storage_blocks/bronze",
+    "I": "#c:ingots/bronze",
+    "R": "randomisfits:handle"
+  },
+  "result": {
+    "id": "randomisfits:bronze_lumberaxe",
+    "count": 1
+  },
+  "condition": {
+    "type": "forge:not",
+    "value": {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "forge:tag_empty",
+          "tag": "c:ingots/bronze"
+        },
+        {
+          "type": "forge:tag_empty",
+          "tag": "c:storage_blocks/bronze"
+        }
+      ]
+    }
+  }
+}
