@@ -9,5 +9,5 @@ import static com.jahirtrap.randomisfits.RandomisfitsMod.MODID;
 
 public class ModTab {
     public static final CreativeModeTab TAB_RANDOMISFITS = FabricItemGroupBuilder.build(
-            new ResourceLocation(MODID, "tab_randomisfits"), () -> new ItemStack(ModContent.NETHERITE_MULTITOOL));
+            new ResourceLocation(MODID, "tab_randomisfits"), () -> new ItemStack(ModContent.NETHERITE_EXTRA_TOOLS.get(0)));
 }

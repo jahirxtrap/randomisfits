@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "IBI",
+    "IRI",
+    " R "
+  ],
+  "key": {
+    "B": {
+      "tag": "c:bronze_blocks"
+    },
+    "I": {
+      "tag": "c:bronze_ingots"
+    },
+    "R": {
+      "item": "randomisfits:handle"
+    }
+  },
+  "result": {
+    "item": "randomisfits:bronze_hammer",
+    "count": 1
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:bronze_ingots",
+	"c:bronze_blocks"
+      ]
+    }
+  ]
+}

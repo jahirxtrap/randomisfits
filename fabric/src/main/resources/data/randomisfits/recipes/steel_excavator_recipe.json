@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "B",
+    "R",
+    "R"
+  ],
+  "key": {
+    "B": {
+      "tag": "c:steel_blocks"
+    },
+    "R": {
+      "item": "randomisfits:handle"
+    }
+  },
+  "result": {
+    "item": "randomisfits:steel_excavator",
+    "count": 1
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:item_tags_populated",
+      "values": [
+	"c:steel_blocks"
+      ]
+    }
+  ]
+}

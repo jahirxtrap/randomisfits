@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "IBI",
+    "IRI",
+    " R "
+  ],
+  "key": {
+    "B": {
+      "tag": "c:steel_blocks"
+    },
+    "I": {
+      "tag": "c:steel_ingots"
+    },
+    "R": {
+      "item": "randomisfits:handle"
+    }
+  },
+  "result": {
+    "item": "randomisfits:steel_hammer",
+    "count": 1
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:steel_ingots",
+	"c:steel_blocks"
+      ]
+    }
+  ]
+}

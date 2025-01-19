@@ -1,9 +1,13 @@
 {
   "replace": false,
   "values": [
-    "randomisfits:glass_cutter",
+    "randomisfits:iron_glass_cutter",
+    "randomisfits:golden_glass_cutter",
     "randomisfits:diamond_glass_cutter",
     "randomisfits:netherite_glass_cutter",
-    "randomisfits:zurite_glass_cutter"
+    "randomisfits:zurite_glass_cutter",
+    "randomisfits:enderite_glass_cutter",
+    "randomisfits:steel_glass_cutter",
+    "randomisfits:bronze_glass_cutter"
   ]
 }

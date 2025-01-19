@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "randomisfits:netherite_glass_cutter"
+  },
+  "addition": {
+    "item": "enderitemod:enderite_ingot"
+  },
+  "result": {
+    "item": "randomisfits:enderite_glass_cutter"
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "enderitemod"
+    }
+  ]
+}

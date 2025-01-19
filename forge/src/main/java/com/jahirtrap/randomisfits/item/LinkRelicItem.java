@@ -11,7 +11,6 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.UseAnim;
@@ -22,7 +21,7 @@ import java.util.List;
 
 import static com.jahirtrap.randomisfits.util.CommonUtils.coloredTextComponent;
 
-public class LinkRelicItem extends Item {
+public class LinkRelicItem extends BaseItem {
     private static final String PLAYER_NAME_KEY = "PlayerName";
 
     public LinkRelicItem(Properties properties) {

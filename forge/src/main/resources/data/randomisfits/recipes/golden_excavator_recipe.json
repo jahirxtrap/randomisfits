@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "B",
+    "R",
+    "R"
+  ],
+  "key": {
+    "B": {
+      "tag": "forge:storage_blocks/gold"
+    },
+    "R": {
+      "item": "randomisfits:handle"
+    }
+  },
+  "result": {
+    "item": "randomisfits:golden_excavator",
+    "count": 1
+  }
+}
