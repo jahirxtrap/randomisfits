@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "IBI",
+    "IRI",
+    " R "
+  ],
+  "key": {
+    "B": "#c:storage_blocks/bronze",
+    "I": "#c:ingots/bronze",
+    "R": "randomisfits:handle"
+  },
+  "result": {
+    "id": "randomisfits:bronze_hammer",
+    "count": 1
+  },
+  "condition": {
+    "type": "neoforge:not",
+    "value": {
+      "type": "neoforge:or",
+      "values": [
+        {
+          "type": "neoforge:tag_empty",
+          "tag": "c:ingots/bronze"
+        },
+        {
+          "type": "neoforge:tag_empty",
+          "tag": "c:storage_blocks/bronze"
+        }
+      ]
+    }
+  }
+}

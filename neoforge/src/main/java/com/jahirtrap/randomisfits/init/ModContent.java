@@ -41,27 +41,15 @@ public class ModContent {
     public static final List<DeferredItem<Item>> INVISIBLE_ARMOR = registerArmor(ModMaterials.Armor.INVISIBLE, new Item.Properties());
     public static final List<DeferredItem<Item>> REINFORCED_INVISIBLE_ARMOR = registerArmor(ModMaterials.Armor.REINFORCED_INVISIBLE, new Item.Properties());
     public static final DeferredItem<Item> HANDLE = registerItem("handle", Item::new, new Item.Properties());
-    public static final DeferredItem<Item> IRON_MULTITOOL = registerItem("iron_multitool", (p) -> new BaseMultitoolItem(ModMaterials.Tool.IRON_HARD, p), new Item.Properties());
-    public static final DeferredItem<Item> DIAMOND_MULTITOOL = registerItem("diamond_multitool", (p) -> new BaseMultitoolItem(ModMaterials.Tool.DIAMOND_HARD, p), new Item.Properties());
-    public static final DeferredItem<Item> NETHERITE_MULTITOOL = registerItem("netherite_multitool", (p) -> new BaseMultitoolItem(ModMaterials.Tool.NETHERITE_HARD, p), new Item.Properties().fireResistant());
-    public static final DeferredItem<Item> ZURITE_MULTITOOL = registerItem("zurite_multitool", (p) -> new BaseMultitoolItem(ModMaterials.Tool.ZURITE_HARD, p), new Item.Properties().fireResistant());
-    public static final DeferredItem<Item> IRON_HAMMER = registerItem("iron_hammer", (p) -> new BaseHammerItem(ModMaterials.Tool.IRON_HARD, p), new Item.Properties());
-    public static final DeferredItem<Item> DIAMOND_HAMMER = registerItem("diamond_hammer", (p) -> new BaseHammerItem(ModMaterials.Tool.DIAMOND_HARD, p), new Item.Properties());
-    public static final DeferredItem<Item> NETHERITE_HAMMER = registerItem("netherite_hammer", (p) -> new BaseHammerItem(ModMaterials.Tool.NETHERITE_HARD, p), new Item.Properties().fireResistant());
-    public static final DeferredItem<Item> ZURITE_HAMMER = registerItem("zurite_hammer", (p) -> new BaseHammerItem(ModMaterials.Tool.ZURITE_HARD, p), new Item.Properties().fireResistant());
-    public static final DeferredItem<Item> IRON_LUMBERAXE = registerItem("iron_lumberaxe", (p) -> new BaseLumberaxeItem(ModMaterials.Tool.IRON_HARD, p), new Item.Properties());
-    public static final DeferredItem<Item> DIAMOND_LUMBERAXE = registerItem("diamond_lumberaxe", (p) -> new BaseLumberaxeItem(ModMaterials.Tool.DIAMOND_HARD, p), new Item.Properties());
-    public static final DeferredItem<Item> NETHERITE_LUMBERAXE = registerItem("netherite_lumberaxe", (p) -> new BaseLumberaxeItem(ModMaterials.Tool.NETHERITE_HARD, p), new Item.Properties().fireResistant());
-    public static final DeferredItem<Item> ZURITE_LUMBERAXE = registerItem("zurite_lumberaxe", (p) -> new BaseLumberaxeItem(ModMaterials.Tool.ZURITE_HARD, p), new Item.Properties().fireResistant());
-    public static final DeferredItem<Item> IRON_EXCAVATOR = registerItem("iron_excavator", (p) -> new BaseExcavatorItem(ModMaterials.Tool.IRON_HARD, p), new Item.Properties());
-    public static final DeferredItem<Item> DIAMOND_EXCAVATOR = registerItem("diamond_excavator", (p) -> new BaseExcavatorItem(ModMaterials.Tool.DIAMOND_HARD, p), new Item.Properties());
-    public static final DeferredItem<Item> NETHERITE_EXCAVATOR = registerItem("netherite_excavator", (p) -> new BaseExcavatorItem(ModMaterials.Tool.NETHERITE_HARD, p), new Item.Properties().fireResistant());
-    public static final DeferredItem<Item> ZURITE_EXCAVATOR = registerItem("zurite_excavator", (p) -> new BaseExcavatorItem(ModMaterials.Tool.ZURITE_HARD, p), new Item.Properties().fireResistant());
-    public static final DeferredItem<Item> GLASS_CUTTER = registerItem("glass_cutter", (p) -> new BaseGlassCutterItem(ToolMaterial.IRON, p), new Item.Properties());
-    public static final DeferredItem<Item> DIAMOND_GLASS_CUTTER = registerItem("diamond_glass_cutter", (p) -> new BaseGlassCutterItem(ToolMaterial.DIAMOND, p), new Item.Properties());
-    public static final DeferredItem<Item> NETHERITE_GLASS_CUTTER = registerItem("netherite_glass_cutter", (p) -> new BaseGlassCutterItem(ToolMaterial.NETHERITE, p), new Item.Properties().fireResistant());
-    public static final DeferredItem<Item> ZURITE_GLASS_CUTTER = registerItem("zurite_glass_cutter", (p) -> new BaseGlassCutterItem(ModMaterials.Tool.ZURITE, p), new Item.Properties().fireResistant());
-    public static final DeferredItem<Item> REPAIR_KIT = registerItem("repair_kit", (p) -> new BaseRepairKitItem(ModConfig.kitRepairAmount, p), new Item.Properties());
+    public static final List<DeferredItem<Item>> IRON_EXTRA_TOOLS = registerExtraTools("iron", ToolMaterial.IRON, ModMaterials.Tool.IRON_HARD, new Item.Properties());
+    public static final List<DeferredItem<Item>> GOLDEN_EXTRA_TOOLS = registerExtraTools("golden", ToolMaterial.GOLD, ModMaterials.Tool.GOLD_HARD, new Item.Properties());
+    public static final List<DeferredItem<Item>> DIAMOND_EXTRA_TOOLS = registerExtraTools("diamond", ToolMaterial.DIAMOND, ModMaterials.Tool.DIAMOND_HARD, new Item.Properties());
+    public static final List<DeferredItem<Item>> NETHERITE_EXTRA_TOOLS = registerExtraTools("netherite", ToolMaterial.NETHERITE, ModMaterials.Tool.NETHERITE_HARD, new Item.Properties().fireResistant());
+    public static final List<DeferredItem<Item>> ENDERITE_EXTRA_TOOLS = registerExtraTools("enderite", ModMaterials.Tool.ENDERITE, ModMaterials.Tool.ENDERITE_HARD, new Item.Properties().fireResistant());
+    public static final List<DeferredItem<Item>> STEEL_EXTRA_TOOLS = registerExtraTools("steel", ModMaterials.Tool.STEEL, ModMaterials.Tool.STEEL_HARD, new Item.Properties());
+    public static final List<DeferredItem<Item>> BRONZE_EXTRA_TOOLS = registerExtraTools("bronze", ModMaterials.Tool.BRONZE, ModMaterials.Tool.BRONZE_HARD, new Item.Properties());
+    public static final List<DeferredItem<Item>> ZURITE_EXTRA_TOOLS = registerExtraTools("zurite", ModMaterials.Tool.ZURITE, ModMaterials.Tool.ZURITE_HARD, new Item.Properties().fireResistant());
+    public static final DeferredItem<Item> IRON_REPAIR_KIT = registerItem("iron_repair_kit", (p) -> new BaseRepairKitItem(ModConfig.ironKitRepairAmount, p), new Item.Properties());
     public static final DeferredItem<Item> DIAMOND_REPAIR_KIT = registerItem("diamond_repair_kit", (p) -> new BaseRepairKitItem(ModConfig.diamondKitRepairAmount, p), new Item.Properties());
     public static final DeferredItem<Item> NETHERITE_REPAIR_KIT = registerItem("netherite_repair_kit", (p) -> new BaseRepairKitItem(ModConfig.netheriteKitRepairAmount, p), new Item.Properties().fireResistant());
     public static final DeferredItem<Item> CRAFTING_PLATE = registerItem("crafting_plate", CraftingPlateItem::new, new Item.Properties());
@@ -100,6 +88,16 @@ public class ModContent {
                 registerItem(name + "_axe", (p) -> new AxeItem(material, attr[0], attr[1], p), itemProp),
                 registerItem(name + "_shovel", (p) -> new ShovelItem(material, 1.5f, -3f, p), itemProp),
                 registerItem(name + "_hoe", (p) -> new HoeItem(material, attr[2], attr[3], p), itemProp)
+        );
+    }
+
+    private static List<DeferredItem<Item>> registerExtraTools(String name, ToolMaterial material, ToolMaterial materialHard, Item.Properties itemProp) {
+        return List.of(
+                registerItem(name + "_multitool", (p) -> new BaseMultitoolItem(materialHard, p), itemProp),
+                registerItem(name + "_hammer", (p) -> new BaseHammerItem(materialHard, p), itemProp),
+                registerItem(name + "_lumberaxe", (p) -> new BaseLumberaxeItem(materialHard, p), itemProp),
+                registerItem(name + "_excavator", (p) -> new BaseExcavatorItem(materialHard, p), itemProp),
+                registerItem(name + "_glass_cutter", (p) -> new BaseGlassCutterItem(material, p), itemProp)
         );
     }
 

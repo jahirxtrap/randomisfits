@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ASP",
+    "HR ",
+    " R "
+  ],
+  "key": {
+    "A": "minecraft:golden_axe",
+    "S": "minecraft:golden_shovel",
+    "P": "minecraft:golden_pickaxe",
+    "H": "minecraft:golden_hoe",
+    "R": "randomisfits:handle"
+  },
+  "result": {
+    "id": "randomisfits:golden_multitool",
+    "count": 1
+  }
+}

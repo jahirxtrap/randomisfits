@@ -2,8 +2,12 @@
   "replace": false,
   "values": [
     "randomisfits:iron_multitool",
+    "randomisfits:golden_multitool",
     "randomisfits:diamond_multitool",
     "randomisfits:netherite_multitool",
-    "randomisfits:zurite_multitool"
+    "randomisfits:zurite_multitool",
+    "randomisfits:enderite_multitool",
+    "randomisfits:steel_multitool",
+    "randomisfits:bronze_multitool"
   ]
 }

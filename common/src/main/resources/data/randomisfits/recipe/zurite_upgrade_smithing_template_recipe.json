@@ -1,14 +1,14 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "BBB",
-    "BIB",
-    "BLB"
+    "ILI",
+    "IBI",
+    "III"
   ],
   "key": {
-    "B": "minecraft:blackstone",
     "I": "#c:ingots/iron",
-    "L": "#c:gems/lapis"
+    "L": "#c:gems/lapis",
+    "B": "minecraft:blackstone"
   },
   "result": {
     "id": "randomisfits:zurite_upgrade_smithing_template",

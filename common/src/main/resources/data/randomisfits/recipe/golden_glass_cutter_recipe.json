@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "I",
+    "A",
+    "R"
+  ],
+  "key": {
+    "A": "#c:gems/amethyst",
+    "I": "#c:ingots/gold",
+    "R": "randomisfits:handle"
+  },
+  "result": {
+    "id": "randomisfits:golden_glass_cutter",
+    "count": 1
+  }
+}
