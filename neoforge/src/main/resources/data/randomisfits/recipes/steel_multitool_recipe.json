@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ASP",
+    "HR ",
+    " R "
+  ],
+  "key": {
+    "A": {
+      "item": "ingotcraft:steel_axe"
+    },
+    "S": {
+      "item": "ingotcraft:steel_shovel"
+    },
+    "P": {
+      "item": "ingotcraft:steel_pickaxe"
+    },
+    "H": {
+      "item": "ingotcraft:steel_hoe"
+    },
+    "R": {
+      "item": "randomisfits:handle"
+    }
+  },
+  "result": {
+    "item": "randomisfits:steel_multitool",
+    "count": 1
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "ingotcraft"
+    }
+  ]
+}

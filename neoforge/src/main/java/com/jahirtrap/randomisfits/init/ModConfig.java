@@ -13,8 +13,8 @@ public class ModConfig extends TXFConfig {
     public static boolean toggleLumberaxeFelling = true;
     @Entry(name = "Felling Limit", min = 1, max = Integer.MAX_VALUE, itemDisplay = "randomisfits:iron_lumberaxe")
     public static int fellingLimit = 512;
-    @Entry(name = "Kit Repair Amount", min = 1, max = Integer.MAX_VALUE, itemDisplay = "randomisfits:repair_kit")
-    public static int kitRepairAmount = 150;
+    @Entry(name = "Iron Kit Repair Amount", min = 1, max = Integer.MAX_VALUE, itemDisplay = "randomisfits:iron_repair_kit")
+    public static int ironKitRepairAmount = 150;
     @Entry(name = "Diamond Kit Repair Amount", min = 1, max = Integer.MAX_VALUE, itemDisplay = "randomisfits:diamond_repair_kit")
     public static int diamondKitRepairAmount = 600;
     @Entry(name = "Netherite Kit Repair Amount", min = 1, max = Integer.MAX_VALUE, itemDisplay = "randomisfits:netherite_repair_kit")
