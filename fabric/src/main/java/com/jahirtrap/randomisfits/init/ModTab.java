@@ -13,7 +13,7 @@ import static com.jahirtrap.randomisfits.RandomisfitsMod.MODID;
 
 public class ModTab {
     public static final CreativeModeTab TAB_RANDOMISFITS = FabricItemGroup.builder()
-            .icon(() -> new ItemStack(ModContent.NETHERITE_MULTITOOL))
+            .icon(() -> new ItemStack(ModContent.NETHERITE_EXTRA_TOOLS.getFirst()))
             .displayItems((features, event) -> {
                 for (Item item : ModContent.ITEMS)
                     event.accept(item);

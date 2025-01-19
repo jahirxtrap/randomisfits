@@ -10,14 +10,23 @@
       "tag": "c:gems/amethyst"
     },
     "I": {
-      "tag": "c:ingots/iron"
+      "tag": "c:ingots/bronze"
     },
     "R": {
       "item": "randomisfits:handle"
     }
   },
   "result": {
-    "id": "randomisfits:glass_cutter",
+    "id": "randomisfits:bronze_glass_cutter",
     "count": 1
-  }
+  },
+  "conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:ingots/bronze"
+      }
+    }
+  ]
 }
