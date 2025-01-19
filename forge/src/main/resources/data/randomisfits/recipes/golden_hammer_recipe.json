@@ -1,23 +1,23 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "I",
-    "A",
-    "R"
+    "IBI",
+    "IRI",
+    " R "
   ],
   "key": {
-    "A": {
-      "tag": "c:amethysts"
+    "B": {
+      "tag": "forge:storage_blocks/gold"
     },
     "I": {
-      "tag": "c:iron_ingots"
+      "tag": "forge:ingots/gold"
     },
     "R": {
       "item": "randomisfits:handle"
     }
   },
   "result": {
-    "item": "randomisfits:glass_cutter",
+    "item": "randomisfits:golden_hammer",
     "count": 1
   }
 }

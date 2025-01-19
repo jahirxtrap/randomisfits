@@ -7,14 +7,14 @@
   ],
   "key": {
     "#": {
-      "tag": "c:iron_ingots"
+      "tag": "forge:ingots/iron"
     },
     "N": {
-      "tag": "c:iron_nuggets"
+      "tag": "forge:nuggets/iron"
     }
   },
   "result": {
-    "item": "randomisfits:repair_kit",
+    "item": "randomisfits:iron_repair_kit",
     "count": 1
   }
 }

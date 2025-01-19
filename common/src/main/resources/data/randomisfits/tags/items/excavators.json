@@ -2,8 +2,12 @@
   "replace": false,
   "values": [
     "randomisfits:iron_excavator",
+    "randomisfits:golden_excavator",
     "randomisfits:diamond_excavator",
     "randomisfits:netherite_excavator",
-    "randomisfits:zurite_excavator"
+    "randomisfits:zurite_excavator",
+    "randomisfits:enderite_excavator",
+    "randomisfits:steel_excavator",
+    "randomisfits:bronze_excavator"
   ]
 }

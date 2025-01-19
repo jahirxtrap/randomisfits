@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ASP",
+    "HR ",
+    " R "
+  ],
+  "key": {
+    "A": {
+      "item": "ingotcraft:bronze_axe"
+    },
+    "S": {
+      "item": "ingotcraft:bronze_shovel"
+    },
+    "P": {
+      "item": "ingotcraft:bronze_pickaxe"
+    },
+    "H": {
+      "item": "ingotcraft:bronze_hoe"
+    },
+    "R": {
+      "item": "randomisfits:handle"
+    }
+  },
+  "result": {
+    "item": "randomisfits:bronze_multitool",
+    "count": 1
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "ingotcraft"
+    }
+  ]
+}

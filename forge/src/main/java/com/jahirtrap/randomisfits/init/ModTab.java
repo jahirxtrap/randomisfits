@@ -13,7 +13,7 @@ import static com.jahirtrap.randomisfits.RandomisfitsMod.MODID;
 
 public class ModTab {
     private static void register(CreativeModeTabEvent.Register register) {
-        CreativeModeTab TAB_RANDOMISFITS = register.registerCreativeModeTab(new ResourceLocation(MODID, "tab_randomisfits"), builder -> builder.icon(() -> new ItemStack(ModContent.NETHERITE_MULTITOOL.get()))
+        CreativeModeTab TAB_RANDOMISFITS = register.registerCreativeModeTab(new ResourceLocation(MODID, "tab_randomisfits"), builder -> builder.icon(() -> new ItemStack(ModContent.NETHERITE_EXTRA_TOOLS.get(0).get()))
                 .displayItems((features, event) -> {
                     for (RegistryObject<Item> item : ModContent.ITEMS.getEntries())
                         event.accept(item.get());

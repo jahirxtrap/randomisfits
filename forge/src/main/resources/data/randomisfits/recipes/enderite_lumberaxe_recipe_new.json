@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:smithing_transform",
+  "base": {
+    "item": "randomisfits:netherite_lumberaxe"
+  },
+  "addition": {
+    "item": "enderitemod:enderite_block"
+  },
+  "result": {
+    "item": "randomisfits:enderite_lumberaxe"
+  },
+  "template": {
+    "item": "minecraft:netherite_upgrade_smithing_template"
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "enderitemod"
+    }
+  ]
+}
