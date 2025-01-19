@@ -10,11 +10,18 @@ import net.minecraft.world.level.block.Block;
 import java.util.function.Supplier;
 
 public enum ModTiers implements Tier {
-    ZURITE(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 1320, 8.5f, 4f, 16, () -> Ingredient.of(ModContent.ZURITE_INGOT.get())),
+    ZURITE(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 1320, 8.5f, 4f, 16, () -> Ingredient.of(ModTags.Items.ZURITE_INGOTS)),
+    STEEL(BlockTags.INCORRECT_FOR_IRON_TOOL, 501, 6.5f, 2f, 14, () -> Ingredient.of(ModTags.Items.STEEL_INGOTS)),
+    BRONZE(BlockTags.INCORRECT_FOR_IRON_TOOL, 350, 7f, 2f, 16, () -> Ingredient.of(ModTags.Items.BRONZE_INGOTS)),
+    ENDERITE(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 4096, 15f, 5f, 17, () -> Ingredient.of(ModTags.Items.ENDERITE_INGOTS)),
     IRON_HARD(Tiers.IRON, 2, 0),
+    GOLD_HARD(Tiers.GOLD, 10, 0),
     DIAMOND_HARD(Tiers.DIAMOND, 2, 0),
     NETHERITE_HARD(Tiers.NETHERITE, 2, 0),
-    ZURITE_HARD(ZURITE, 2, 0);
+    ZURITE_HARD(ZURITE, 2, 0),
+    STEEL_HARD(STEEL, 2, 0),
+    BRONZE_HARD(BRONZE, 2, 0),
+    ENDERITE_HARD(ENDERITE, 2, 0);
 
     private final TagKey<Block> incorrect;
     private final int uses;

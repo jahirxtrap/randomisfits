@@ -10,14 +10,23 @@
       "tag": "forge:gems/amethyst"
     },
     "I": {
-      "tag": "forge:ingots/iron"
+      "tag": "forge:ingots/steel"
     },
     "R": {
       "item": "randomisfits:handle"
     }
   },
   "result": {
-    "id": "randomisfits:glass_cutter",
+    "id": "randomisfits:steel_glass_cutter",
     "count": 1
-  }
+  },
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:ingots/steel"
+      }
+    }
+  ]
 }

@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "#c:ingots/zurite"
+    "#c:ingots/zurite",
+    { "id": "#c:ingots/enderite", "required": false }
   ]
 }

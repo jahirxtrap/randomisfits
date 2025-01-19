@@ -1,19 +1,19 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "BBB",
-    "BIB",
-    "BLB"
+    "ILI",
+    "IBI",
+    "III"
   ],
   "key": {
-    "B": {
-      "item": "minecraft:blackstone"
-    },
     "I": {
       "tag": "forge:ingots/iron"
     },
     "L": {
       "tag": "forge:gems/lapis"
+    },
+    "B": {
+      "item": "minecraft:blackstone"
     }
   },
   "result": {

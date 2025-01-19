@@ -2,8 +2,12 @@
   "replace": false,
   "values": [
     "randomisfits:iron_hammer",
+    "randomisfits:golden_hammer",
     "randomisfits:diamond_hammer",
     "randomisfits:netherite_hammer",
-    "randomisfits:zurite_hammer"
+    "randomisfits:zurite_hammer",
+    "randomisfits:enderite_hammer",
+    "randomisfits:steel_hammer",
+    "randomisfits:bronze_hammer"
   ]
 }

@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "IB",
+    "IR",
+    " R"
+  ],
+  "key": {
+    "B": {
+      "tag": "c:storage_blocks/gold"
+    },
+    "I": {
+      "tag": "c:ingots/gold"
+    },
+    "R": {
+      "item": "randomisfits:handle"
+    }
+  },
+  "result": {
+    "id": "randomisfits:golden_lumberaxe",
+    "count": 1
+  }
+}

@@ -11,6 +11,10 @@ import static com.jahirtrap.randomisfits.RandomisfitsMod.MODID;
 public class ModTags {
     public interface Items {
         TagKey<Item> GLASS_BLOCKS_COLORLESS = create(new ResourceLocation("c:glass_blocks/colorless"));
+        TagKey<Item> ZURITE_INGOTS = create(new ResourceLocation("c:ingots/zurite"));
+        TagKey<Item> STEEL_INGOTS = create(new ResourceLocation("c:ingots/steel"));
+        TagKey<Item> BRONZE_INGOTS = create(new ResourceLocation("c:ingots/bronze"));
+        TagKey<Item> ENDERITE_INGOTS = create(new ResourceLocation("c:ingots/enderite"));
 
         private static TagKey<Item> create(ResourceLocation name) {
             return TagKey.create(Registries.ITEM, name);

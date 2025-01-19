@@ -1,0 +1,39 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "IBI",
+    "IRI",
+    " R "
+  ],
+  "key": {
+    "B": {
+      "tag": "c:storage_blocks/steel"
+    },
+    "I": {
+      "tag": "c:ingots/steel"
+    },
+    "R": {
+      "item": "randomisfits:handle"
+    }
+  },
+  "result": {
+    "id": "randomisfits:steel_hammer",
+    "count": 1
+  },
+  "condition": {
+    "type": "neoforge:not",
+    "value": {
+      "type": "neoforge:or",
+      "values": [
+        {
+          "type": "neoforge:tag_empty",
+          "tag": "c:ingots/steel"
+        },
+        {
+          "type": "neoforge:tag_empty",
+          "tag": "c:storage_blocks/steel"
+        }
+      ]
+    }
+  }
+}

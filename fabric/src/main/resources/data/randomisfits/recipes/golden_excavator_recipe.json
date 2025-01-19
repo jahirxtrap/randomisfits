@@ -1,23 +1,20 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "I",
-    "A",
+    "B",
+    "R",
     "R"
   ],
   "key": {
-    "A": {
-      "tag": "c:gems/amethyst"
-    },
-    "I": {
-      "tag": "c:ingots/iron"
+    "B": {
+      "tag": "c:storage_blocks/gold"
     },
     "R": {
       "item": "randomisfits:handle"
     }
   },
   "result": {
-    "id": "randomisfits:glass_cutter",
+    "id": "randomisfits:golden_excavator",
     "count": 1
   }
 }
