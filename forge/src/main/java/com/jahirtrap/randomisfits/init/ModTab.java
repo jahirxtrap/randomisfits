@@ -7,7 +7,7 @@ public class ModTab {
     public static final CreativeModeTab TAB_RANDOMISFITS = new CreativeModeTab("randomisfits.tab_randomisfits") {
         @Override
         public ItemStack makeIcon() {
-            return new ItemStack(ModContent.NETHERITE_MULTITOOL.get());
+            return new ItemStack(ModContent.NETHERITE_EXTRA_TOOLS.get(0).get());
         }
     };
 }

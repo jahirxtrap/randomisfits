@@ -2,8 +2,12 @@
   "replace": false,
   "values": [
     "randomisfits:iron_lumberaxe",
+    "randomisfits:golden_lumberaxe",
     "randomisfits:diamond_lumberaxe",
     "randomisfits:netherite_lumberaxe",
-    "randomisfits:zurite_lumberaxe"
+    "randomisfits:zurite_lumberaxe",
+    "randomisfits:enderite_lumberaxe",
+    "randomisfits:steel_lumberaxe",
+    "randomisfits:bronze_lumberaxe"
   ]
 }

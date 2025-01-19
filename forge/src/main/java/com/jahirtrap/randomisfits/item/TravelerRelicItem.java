@@ -17,7 +17,6 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.UseAnim;
@@ -31,7 +30,7 @@ import java.util.List;
 import static com.jahirtrap.randomisfits.util.CommonUtils.coloredTextComponent;
 import static com.jahirtrap.randomisfits.util.CommonUtils.snakeToTitleCase;
 
-public class TravelerRelicItem extends Item {
+public class TravelerRelicItem extends BaseItem {
     private static final String DIM_KEY = "RelicDim";
     private static final String POS_KEY = "RelicPos";
     private final boolean fragment;
