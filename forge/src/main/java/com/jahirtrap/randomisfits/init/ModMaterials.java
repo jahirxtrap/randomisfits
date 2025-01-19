@@ -16,7 +16,7 @@ import static com.jahirtrap.randomisfits.RandomisfitsMod.MODID;
 
 public enum ModMaterials implements StringRepresentable, ArmorMaterial {
     ZURITE("zurite", 31, createMap(new int[]{3, 6, 8, 3}),
-            16, SoundEvents.ARMOR_EQUIP_NETHERITE, 2.5f, 0.1f, () -> Ingredient.of(ModContent.ZURITE_INGOT.get())),
+            16, SoundEvents.ARMOR_EQUIP_NETHERITE, 2.5f, 0.1f, () -> Ingredient.of(ModTags.Items.ZURITE_INGOTS)),
     INVISIBLE("invisible", 15, createMap(new int[]{2, 5, 6, 2}),
             9, SoundEvents.ARMOR_EQUIP_GENERIC, 0f, 0f, () -> Ingredient.of(Tags.Items.GLASS_COLORLESS)),
     REINFORCED_INVISIBLE("reinforced_invisible", 30, createMap(new int[]{3, 6, 8, 3}),

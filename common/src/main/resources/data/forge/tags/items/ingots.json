@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "#forge:ingots/zurite"
+    "#forge:ingots/zurite",
+    { "id": "#forge:ingots/enderite", "required": false }
   ]
 }

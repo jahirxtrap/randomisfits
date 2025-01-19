@@ -1,23 +1,23 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "I",
-    "A",
-    "R"
+    "IB",
+    "IR",
+    " R"
   ],
   "key": {
-    "A": {
-      "tag": "forge:gems/amethyst"
+    "B": {
+      "tag": "c:gold_blocks"
     },
     "I": {
-      "tag": "forge:ingots/iron"
+      "tag": "c:gold_ingots"
     },
     "R": {
       "item": "randomisfits:handle"
     }
   },
   "result": {
-    "item": "randomisfits:glass_cutter",
+    "item": "randomisfits:golden_lumberaxe",
     "count": 1
   }
 }
