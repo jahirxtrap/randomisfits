@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smithing_transform",
-  "base": "minecraft:iron_sword",
-  "addition": "randomisfits:zurite_ingot",
-  "result": {
-    "id": "randomisfits:zurite_sword"
-  },
-  "template": "randomisfits:zurite_upgrade_smithing_template"
-}

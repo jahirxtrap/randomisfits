@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smithing_transform",
-  "base": "minecraft:iron_shovel",
-  "addition": "randomisfits:zurite_ingot",
-  "result": {
-    "id": "randomisfits:zurite_shovel"
-  },
-  "template": "randomisfits:zurite_upgrade_smithing_template"
-}

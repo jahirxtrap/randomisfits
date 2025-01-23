@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smithing_transform",
-  "base": "minecraft:iron_pickaxe",
-  "addition": "randomisfits:zurite_ingot",
-  "result": {
-    "id": "randomisfits:zurite_pickaxe"
-  },
-  "template": "randomisfits:zurite_upgrade_smithing_template"
-}

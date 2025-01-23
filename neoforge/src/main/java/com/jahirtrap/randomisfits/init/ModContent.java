@@ -10,10 +10,7 @@ import net.minecraft.world.item.equipment.ArmorMaterial;
 import net.minecraft.world.item.equipment.ArmorType;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.material.MapColor;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.furnace.FurnaceFuelBurnTimeEvent;
@@ -33,11 +30,6 @@ public class ModContent {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(MODID);
     public static final HashMap<DeferredHolder<?, ? extends ItemLike>, Integer> FUEL_ITEMS = new HashMap<>();
 
-    public static final DeferredItem<Item> ZURITE_INGOT = registerItem("zurite_ingot", Item::new, new Item.Properties().fireResistant());
-    public static final DeferredBlock<Block> ZURITE_BLOCK = registerBlock("zurite_block", Block::new, BlockBehaviour.Properties.ofLegacyCopy(Blocks.NETHERITE_BLOCK), new Item.Properties().fireResistant());
-    public static final DeferredItem<Item> ZURITE_UPGRADE_SMITHING_TEMPLATE = registerItem("zurite_upgrade_smithing_template", (p) -> BaseSmithingTemplateItem.createUpgradeTemplate("zurite", p), new Item.Properties());
-    public static final List<DeferredItem<Item>> ZURITE_TOOLS = registerTools("zurite", ModMaterials.Tool.ZURITE, new float[]{5f, -3f, -4f, 0f}, new Item.Properties().fireResistant());
-    public static final List<DeferredItem<Item>> ZURITE_ARMOR = registerArmor(ModMaterials.Armor.ZURITE, new Item.Properties().fireResistant());
     public static final List<DeferredItem<Item>> INVISIBLE_ARMOR = registerArmor(ModMaterials.Armor.INVISIBLE, new Item.Properties());
     public static final List<DeferredItem<Item>> REINFORCED_INVISIBLE_ARMOR = registerArmor(ModMaterials.Armor.REINFORCED_INVISIBLE, new Item.Properties());
     public static final DeferredItem<Item> HANDLE = registerItem("handle", Item::new, new Item.Properties());
@@ -54,10 +46,6 @@ public class ModContent {
     public static final DeferredItem<Item> NETHERITE_REPAIR_KIT = registerItem("netherite_repair_kit", (p) -> new BaseRepairKitItem(ModConfig.netheriteKitRepairAmount, p), new Item.Properties().fireResistant());
     public static final DeferredItem<Item> CRAFTING_PLATE = registerItem("crafting_plate", CraftingPlateItem::new, new Item.Properties());
     public static final DeferredItem<Item> ENDER_BAG = registerItem("ender_bag", EnderBagItem::new, new Item.Properties());
-    public static final DeferredItem<Item> TRAVELER_RELIC_FRAGMENT = registerItem("traveler_relic_fragment", (p) -> new TravelerRelicItem(true, p), new Item.Properties().fireResistant().rarity(Rarity.RARE));
-    public static final DeferredItem<Item> TRAVELER_RELIC = registerItem("traveler_relic", (p) -> new TravelerRelicItem(false, p), new Item.Properties().fireResistant().rarity(Rarity.RARE));
-    public static final DeferredItem<Item> LINK_RELIC = registerItem("link_relic", LinkRelicItem::new, new Item.Properties().fireResistant().rarity(Rarity.RARE));
-    public static final DeferredBlock<Block> ANCHOR_STONE = registerBlock("anchor_stone", Block::new, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLACK).strength(5f, 6f).sound(SoundType.LODESTONE).requiresCorrectToolForDrops(), new Item.Properties().fireResistant());
     public static final DeferredBlock<Block> BULB_BLOCK = registerBlock("bulb", (p) -> new BaseLightBlock(4, 2, p), BlockBehaviour.Properties.of());
     public static final DeferredItem<Item> BULB = registerItem("bulb", (p) -> new BaseWearableItem(BULB_BLOCK.get(), p), new Item.Properties());
     public static final DeferredBlock<Block> LAMP_BLOCK = registerBlock("lamp", (p) -> new BaseLightBlock(8, 2, p), BlockBehaviour.Properties.of());

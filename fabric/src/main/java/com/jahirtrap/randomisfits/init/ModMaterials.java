@@ -14,8 +14,6 @@ import static com.jahirtrap.randomisfits.RandomisfitsMod.MODID;
 
 public class ModMaterials {
     public interface Armor {
-        ArmorMaterial ZURITE = new ArmorMaterial(31, createMap(new int[]{3, 6, 8, 3, 11}),
-                16, SoundEvents.ARMOR_EQUIP_NETHERITE, 2.5f, 0.1f, ModTags.Items.ZURITE_INGOTS, ResourceLocation.fromNamespaceAndPath(MODID, "zurite"));
         ArmorMaterial INVISIBLE = new ArmorMaterial(15, createMap(new int[]{2, 5, 6, 2, 5}),
                 9, SoundEvents.ARMOR_EQUIP_GENERIC, 0f, 0f, ConventionalItemTags.GLASS_BLOCKS_COLORLESS, ResourceLocation.fromNamespaceAndPath(MODID, "invisible"));
         ArmorMaterial REINFORCED_INVISIBLE = new ArmorMaterial(30, createMap(new int[]{3, 6, 8, 3, 11}),
