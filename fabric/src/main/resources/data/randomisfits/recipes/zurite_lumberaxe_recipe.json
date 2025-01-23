@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "randomisfits:iron_lumberaxe"
+  },
+  "addition": {
+    "item": "kuromaterials:zurite_block"
+  },
+  "result": {
+    "item": "randomisfits:zurite_lumberaxe"
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:any_mod_loaded",
+      "values": [
+        "kuromaterials"
+      ]
+    }
+  ]
+}

@@ -1,7 +1,0 @@
-{
-  "parent": "block/cube_column",
-  "textures": {
-    "end": "randomisfits:block/anchor_stone_top",
-    "side": "randomisfits:block/anchor_stone_side"
-  }
-}

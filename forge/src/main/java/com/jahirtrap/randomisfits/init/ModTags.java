@@ -21,12 +21,11 @@ public class ModTags {
     }
 
     public interface Blocks {
-        TagKey<Block> MINEABLE_WITH_GLASS_CUTTER = modTag("mineable/glass_cutter");
-        TagKey<Block> MINEABLE_WITH_MULTITOOL = modTag("mineable/multitool");
-        TagKey<Block> ANCHOR_BLOCKS = modTag("anchor_blocks");
+        TagKey<Block> MINEABLE_WITH_GLASS_CUTTER = create(new ResourceLocation(MODID, "mineable/glass_cutter"));
+        TagKey<Block> MINEABLE_WITH_MULTITOOL = create(new ResourceLocation(MODID, "mineable/multitool"));
 
-        private static TagKey<Block> modTag(String name) {
-            return TagKey.create(Registry.BLOCK_REGISTRY, new ResourceLocation(MODID, name));
+        private static TagKey<Block> create(ResourceLocation name) {
+            return TagKey.create(Registry.BLOCK_REGISTRY, name);
         }
     }
 }
