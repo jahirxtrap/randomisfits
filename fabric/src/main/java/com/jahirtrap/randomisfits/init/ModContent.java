@@ -10,11 +10,6 @@ import net.minecraft.world.entity.decoration.Motive;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.SoundType;
-import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.material.Material;
-import net.minecraft.world.level.material.MaterialColor;
 
 import java.util.HashMap;
 import java.util.List;
@@ -25,10 +20,6 @@ import static com.jahirtrap.randomisfits.init.ModTab.TAB_RANDOMISFITS;
 public class ModContent {
     public static final HashMap<ItemLike, Integer> FUEL_ITEMS = new HashMap<>();
 
-    public static final Item ZURITE_INGOT = registerItem("zurite_ingot", new BaseItem(new Item.Properties().fireResistant()));
-    public static final Block ZURITE_BLOCK = registerBlock("zurite_block", new Block(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK)), new Item.Properties().fireResistant());
-    public static final List<Item> ZURITE_TOOLS = registerTools("zurite", ModTiers.ZURITE, new float[]{5f, -3f, -4f, 0f}, new Item.Properties().fireResistant());
-    public static final List<Item> ZURITE_ARMOR = registerArmor(ModMaterials.ZURITE, new Item.Properties().fireResistant());
     public static final List<Item> INVISIBLE_ARMOR = registerArmor(ModMaterials.INVISIBLE, new Item.Properties());
     public static final List<Item> REINFORCED_INVISIBLE_ARMOR = registerArmor(ModMaterials.REINFORCED_INVISIBLE, new Item.Properties());
     public static final Item HANDLE = registerItem("handle", new BaseItem(new Item.Properties()));
@@ -45,10 +36,6 @@ public class ModContent {
     public static final Item NETHERITE_REPAIR_KIT = registerItem("netherite_repair_kit", new BaseRepairKitItem(ModConfig.netheriteKitRepairAmount, new Item.Properties().fireResistant()));
     public static final Item CRAFTING_PLATE = registerItem("crafting_plate", new CraftingPlateItem());
     public static final Item ENDER_BAG = registerItem("ender_bag", new EnderBagItem());
-    public static final Item TRAVELER_RELIC_FRAGMENT = registerItem("traveler_relic_fragment", new TravelerRelicItem(true, new Item.Properties().fireResistant().rarity(Rarity.RARE)));
-    public static final Item TRAVELER_RELIC = registerItem("traveler_relic", new TravelerRelicItem(false, new Item.Properties().fireResistant().rarity(Rarity.RARE)));
-    public static final Item LINK_RELIC = registerItem("link_relic", new LinkRelicItem(new Item.Properties().fireResistant().rarity(Rarity.RARE)));
-    public static final Block ANCHOR_STONE = registerBlock("anchor_stone", new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_BLACK).strength(5f, 6f).sound(SoundType.LODESTONE).requiresCorrectToolForDrops()), new Item.Properties().fireResistant());
     public static final Block BULB_BLOCK = registerBlock("bulb", new BaseLightBlock(4, 2));
     public static final Item BULB = registerItem("bulb", new BaseWearableItem(BULB_BLOCK, new Item.Properties()));
     public static final Block LAMP_BLOCK = registerBlock("lamp", new BaseLightBlock(8, 2));

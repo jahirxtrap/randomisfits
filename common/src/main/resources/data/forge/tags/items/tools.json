@@ -2,10 +2,8 @@
   "replace": false,
   "values": [
     "#forge:tools/axes",
-    "#forge:tools/hoes",
     "#forge:tools/pickaxes",
     "#forge:tools/shovels",
-    "#forge:tools/swords",
     "#randomisfits:glass_cutters",
     "#randomisfits:multitools"
   ]

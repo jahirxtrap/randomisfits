@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "randomisfits:iron_hammer"
+  },
+  "addition": {
+    "item": "kuromaterials:zurite_block"
+  },
+  "result": {
+    "item": "randomisfits:zurite_hammer"
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:any_mod_loaded",
+      "values": [
+        "kuromaterials"
+      ]
+    }
+  ]
+}
