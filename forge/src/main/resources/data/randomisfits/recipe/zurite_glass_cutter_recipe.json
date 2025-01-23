@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "base": "randomisfits:iron_glass_cutter",
+  "addition": "kuromaterials:zurite_ingot",
+  "result": {
+    "id": "randomisfits:zurite_glass_cutter"
+  },
+  "template": "kuromaterials:zurite_upgrade_smithing_template",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "kuromaterials"
+    }
+  ]
+}

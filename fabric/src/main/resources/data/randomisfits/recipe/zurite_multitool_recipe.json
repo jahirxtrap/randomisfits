@@ -6,21 +6,21 @@
     " R "
   ],
   "key": {
-    "A": "enderitemod:enderite_axe",
-    "S": "enderitemod:enderite_shovel",
-    "P": "enderitemod:enderite_pickaxe",
-    "H": "enderitemod:enderite_hoe",
+    "A": "kuromaterials:zurite_axe",
+    "S": "kuromaterials:zurite_shovel",
+    "P": "kuromaterials:zurite_pickaxe",
+    "H": "kuromaterials:zurite_hoe",
     "R": "randomisfits:handle"
   },
   "result": {
-    "id": "randomisfits:enderite_multitool",
+    "id": "randomisfits:zurite_multitool",
     "count": 1
   },
   "fabric:load_conditions": [
     {
       "condition": "fabric:any_mods_loaded",
       "values": [
-        "enderitemod"
+        "kuromaterials"
       ]
     }
   ]

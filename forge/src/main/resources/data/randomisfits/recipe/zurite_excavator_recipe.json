@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "base": "randomisfits:iron_excavator",
+  "addition": "kuromaterials:zurite_block",
+  "result": {
+    "id": "randomisfits:zurite_excavator"
+  },
+  "template": "kuromaterials:zurite_upgrade_smithing_template",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "kuromaterials"
+    }
+  ]
+}

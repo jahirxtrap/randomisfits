@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:smithing_transform",
+  "base": "randomisfits:iron_lumberaxe",
+  "addition": "kuromaterials:zurite_block",
+  "result": {
+    "id": "randomisfits:zurite_lumberaxe"
+  },
+  "template": "kuromaterials:zurite_upgrade_smithing_template",
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:any_mods_loaded",
+      "values": [
+        "kuromaterials"
+      ]
+    }
+  ]
+}
