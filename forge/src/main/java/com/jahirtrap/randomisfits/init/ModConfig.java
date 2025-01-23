@@ -23,8 +23,4 @@ public class ModConfig extends TXFConfig {
     public static boolean wearableLightBlocks = true;
     @Entry(name = "Right Click Slot Open Menu", itemDisplay = "randomisfits:crafting_plate")
     public static boolean rightClickSlotOpenMenu = true;
-    @Entry(name = "Item Autorepair Interval", min = 0, max = Integer.MAX_VALUE, itemDisplay = "randomisfits:zurite_ingot")
-    public static int itemAutorepairInterval = 30;
-    @Entry(name = "Item Autorepair Amount", min = 0, max = Integer.MAX_VALUE, itemDisplay = "randomisfits:zurite_ingot")
-    public static int itemAutorepairAmount = 1;
 }
