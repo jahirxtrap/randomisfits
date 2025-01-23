@@ -1,1 +1,2 @@
-- Updated config lib
+- Removed zurite and moved to [Kuro Materials mod](https://www.curseforge.com/minecraft/mc-mods/kuro-materials)
+- More extra tool tiers (Gold, Enderite, Steel, Bronze)

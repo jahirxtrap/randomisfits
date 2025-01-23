@@ -1,10 +1,6 @@
 {
   "replace": false,
   "values": [
-    "randomisfits:zurite_helmet",
-    "randomisfits:zurite_chestplate",
-    "randomisfits:zurite_leggings",
-    "randomisfits:zurite_boots",
     "randomisfits:invisible_helmet",
     "randomisfits:invisible_chestplate",
     "randomisfits:invisible_leggings",
