@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ASP",
+    "HR ",
+    " R "
+  ],
+  "key": {
+    "A": {
+      "item": "kuromaterials:zurite_axe"
+    },
+    "S": {
+      "item": "kuromaterials:zurite_shovel"
+    },
+    "P": {
+      "item": "kuromaterials:zurite_pickaxe"
+    },
+    "H": {
+      "item": "kuromaterials:zurite_hoe"
+    },
+    "R": {
+      "item": "randomisfits:handle"
+    }
+  },
+  "result": {
+    "id": "randomisfits:zurite_multitool",
+    "count": 1
+  },
+  "conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "kuromaterials"
+    }
+  ]
+}
