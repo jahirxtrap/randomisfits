@@ -11,9 +11,10 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ShovelItem;
 import net.minecraft.world.item.ToolMaterial;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.component.TooltipDisplay;
 import net.minecraft.world.level.Level;
 
-import java.util.List;
+import java.util.function.Consumer;
 
 import static com.jahirtrap.randomisfits.util.CommonUtils.blueBar;
 import static com.jahirtrap.randomisfits.util.CommonUtils.coloredTextComponent;
@@ -37,9 +38,9 @@ public class BaseExcavatorItem extends ShovelItem implements RangeItem {
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag flag) {
+    public void appendHoverText(ItemStack stack, TooltipContext context, TooltipDisplay display, Consumer<Component> tooltip, TooltipFlag flag) {
         if (ModConfig.toggleExcavatorMode)
-            tooltip.add(coloredTextComponent(getModeText(getMode(stack)), ChatFormatting.GRAY));
+            tooltip.accept(coloredTextComponent(getModeText(getMode(stack)), ChatFormatting.GRAY));
     }
 
     @Override

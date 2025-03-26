@@ -1,1 +1,1 @@
-- Ender Bag particles will now be displayed in multiplayer
+- Update to 1.21.5

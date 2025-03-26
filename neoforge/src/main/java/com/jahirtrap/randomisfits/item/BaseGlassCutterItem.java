@@ -5,16 +5,16 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.item.ItemEntity;
-import net.minecraft.world.item.DiggerItem;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ToolMaterial;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class BaseGlassCutterItem extends DiggerItem {
+public class BaseGlassCutterItem extends Item {
     public BaseGlassCutterItem(ToolMaterial material, Properties properties) {
-        super(material, ModTags.Blocks.MINEABLE_WITH_GLASS_CUTTER, -1f, -2f, properties);
+        super(properties.tool(material, ModTags.Blocks.MINEABLE_WITH_GLASS_CUTTER, -1f, -2f, 0));
     }
 
     @Override
