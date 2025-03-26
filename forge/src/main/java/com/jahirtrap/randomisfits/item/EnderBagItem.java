@@ -2,6 +2,7 @@ package com.jahirtrap.randomisfits.item;
 
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
@@ -35,10 +36,10 @@ public class EnderBagItem extends BaseItem {
 
     @Override
     public void inventoryTick(ItemStack stack, Level level, Entity entity, int i, boolean bl) {
-        if (level.isClientSide() && entity instanceof Player player) {
+        if (level instanceof ServerLevel serverLevel && entity instanceof Player player) {
             if (bl || player.getOffhandItem() == stack) {
                 for (int j = 0; j < 2; j++)
-                    player.getLevel().addParticle(ParticleTypes.PORTAL, player.getRandomX(0.5), player.getRandomY() - 0.25, player.getRandomZ(0.5), (level.random.nextDouble() - 0.5) * 2, -level.random.nextDouble(), (level.random.nextDouble() - 0.5) * 2);
+                    serverLevel.sendParticles(ParticleTypes.PORTAL, player.getRandomX(0.5), player.getRandomY() - 0.25, player.getRandomZ(0.5), 1, 0, (level.random.nextDouble() - 0.5) * 2, -level.random.nextDouble(), (level.random.nextDouble() - 0.5) * 2);
             }
         }
     }
