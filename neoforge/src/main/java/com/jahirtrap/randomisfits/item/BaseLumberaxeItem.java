@@ -30,7 +30,7 @@ public class BaseLumberaxeItem extends AxeItem {
     public InteractionResult use(Level level, Player player, InteractionHand hand) {
         ItemStack stack = player.getItemInHand(hand);
 
-        if (ModConfig.toggleLumberaxeFelling && !level.isClientSide() && player.isShiftKeyDown()) {
+        if (ModConfig.toggleLumberaxeFelling && !level.isClientSide() && player.isSecondaryUseActive()) {
             setMode(stack, !getMode(stack));
             player.displayClientMessage(coloredTextComponent(getModeText(getMode(stack)), ChatFormatting.GOLD), true);
             return InteractionResult.SUCCESS_SERVER;
