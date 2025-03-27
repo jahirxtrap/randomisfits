@@ -10,23 +10,24 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
+import net.minecraft.world.item.component.TooltipDisplay;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 
-import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 import static com.jahirtrap.randomisfits.util.CommonUtils.blueBar;
 import static com.jahirtrap.randomisfits.util.CommonUtils.coloredTextComponent;
 
-public class BaseMultitoolItem extends DiggerItem {
+public class BaseMultitoolItem extends Item {
     private static final Item[] items = {Items.WOODEN_AXE, Items.WOODEN_PICKAXE, Items.WOODEN_SHOVEL, Items.WOODEN_HOE};
     private static final DataComponentType<String> MODE_KEY = ModComponents.MODE_KEY.get();
     private static final String SHOVEL_MODE = "shovel";
     private static final String HOE_MODE = "hoe";
 
     public BaseMultitoolItem(ToolMaterial material, Properties properties) {
-        super(material, ModTags.Blocks.MINEABLE_WITH_MULTITOOL, 6f, -3f, properties);
+        super(properties.tool(material, ModTags.Blocks.MINEABLE_WITH_MULTITOOL, 6f, -3f, 0));
     }
 
     @Override
@@ -48,9 +49,9 @@ public class BaseMultitoolItem extends DiggerItem {
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag flag) {
+    public void appendHoverText(ItemStack stack, TooltipContext context, TooltipDisplay display, Consumer<Component> tooltip, TooltipFlag flag) {
         if (ModConfig.multitoolInteractions)
-            tooltip.add(coloredTextComponent(getModeText(getMode(stack)), ChatFormatting.GRAY));
+            tooltip.accept(coloredTextComponent(getModeText(getMode(stack)), ChatFormatting.GRAY));
     }
 
     @Override
