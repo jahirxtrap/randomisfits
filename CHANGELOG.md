@@ -1,1 +1,1 @@
-- Ender Bag particles will now be displayed in multiplayer
+- Updated config lib
