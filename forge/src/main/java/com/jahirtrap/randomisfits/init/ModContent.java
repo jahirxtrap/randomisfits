@@ -11,9 +11,8 @@ import net.minecraft.world.item.equipment.ArmorType;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.furnace.FurnaceFuelBurnTimeEvent;
-import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.eventbus.api.bus.BusGroup;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 
@@ -97,13 +96,13 @@ public class ModContent {
         );
     }
 
-    public static void init(IEventBus bus) {
+    public static void init(BusGroup bus) {
         BLOCKS.register(bus);
         ITEMS.register(bus);
 
         FUEL_ITEMS.put(HANDLE, 200);
 
-        MinecraftForge.EVENT_BUS.addListener((FurnaceFuelBurnTimeEvent event) -> FUEL_ITEMS.forEach((item, burnTime) -> {
+        FurnaceFuelBurnTimeEvent.BUS.addListener((FurnaceFuelBurnTimeEvent event) -> FUEL_ITEMS.forEach((item, burnTime) -> {
             if (item.get() == event.getItemStack().getItem()) event.setBurnTime(burnTime);
         }));
     }

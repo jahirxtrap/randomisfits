@@ -4,7 +4,7 @@ import com.mojang.serialization.Codec;
 import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.codec.ByteBufCodecs;
-import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.eventbus.api.bus.BusGroup;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 
@@ -23,7 +23,7 @@ public class ModComponents {
         return COMPONENTS.register(name, supplier);
     }
 
-    public static void init(IEventBus bus) {
+    public static void init(BusGroup bus) {
         COMPONENTS.register(bus);
     }
 }

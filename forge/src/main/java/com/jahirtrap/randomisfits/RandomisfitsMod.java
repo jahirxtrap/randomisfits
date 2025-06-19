@@ -6,7 +6,7 @@ import com.jahirtrap.randomisfits.init.ModConfig;
 import com.jahirtrap.randomisfits.init.ModContent;
 import com.jahirtrap.randomisfits.init.ModTab;
 import com.jahirtrap.randomisfits.network.PacketHandler;
-import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.eventbus.api.bus.BusGroup;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
@@ -16,7 +16,7 @@ public class RandomisfitsMod {
     public static final String MODID = "randomisfits";
 
     public RandomisfitsMod(FMLJavaModLoadingContext context) {
-        IEventBus bus = context.getModEventBus();
+        BusGroup bus = context.getModBusGroup();
 
         TXFConfig.init(MODID, ModConfig.class);
         ModComponents.init(bus);
