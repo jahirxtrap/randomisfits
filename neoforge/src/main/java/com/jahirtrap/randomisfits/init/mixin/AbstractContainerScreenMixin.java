@@ -7,7 +7,7 @@ import com.jahirtrap.randomisfits.network.message.MessageOpenMenu;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.Item;
-import net.neoforged.neoforge.network.PacketDistributor;
+import net.neoforged.neoforge.client.network.ClientPacketDistributor;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -32,7 +32,7 @@ public abstract class AbstractContainerScreenMixin {
             else if (item instanceof CraftingPlateItem) menu = 2;
 
             if (menu != 0) {
-                PacketDistributor.sendToServer(new MessageOpenMenu(menu));
+                ClientPacketDistributor.sendToServer(new MessageOpenMenu(menu));
                 cir.setReturnValue(true);
             }
         }
