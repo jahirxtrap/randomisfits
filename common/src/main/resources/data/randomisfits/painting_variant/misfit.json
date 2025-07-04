@@ -1,5 +1,13 @@
 {
   "asset_id": "randomisfits:misfit",
+  "author": {
+    "color": "gray",
+    "translate": "painting.randomisfits.misfit.author"
+  },
+  "title": {
+    "color": "yellow",
+    "translate": "painting.randomisfits.misfit.title"
+  },
   "height": 1,
   "width": 1
 }
