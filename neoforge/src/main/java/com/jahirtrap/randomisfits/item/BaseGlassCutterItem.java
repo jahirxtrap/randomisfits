@@ -14,7 +14,7 @@ import net.minecraft.world.level.block.state.BlockState;
 
 public class BaseGlassCutterItem extends DiggerItem {
     public BaseGlassCutterItem(ToolMaterial material, Properties properties) {
-        super(material, ModTags.Blocks.MINEABLE_WITH_GLASS_CUTTER, -1f, -2f, properties);
+        super(material, ModTags.Blocks.MINEABLE_WITH_GLASS_CUTTER, 0, -2f, properties);
     }
 
     @Override
