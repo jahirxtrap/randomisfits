@@ -16,7 +16,7 @@ import static com.jahirtrap.randomisfits.init.ModTab.TAB_RANDOMISFITS;
 
 public class BaseGlassCutterItem extends DiggerItem {
     public BaseGlassCutterItem(Tier tier, Properties properties) {
-        super(-1, -2f, tier, ModTags.Blocks.MINEABLE_WITH_GLASS_CUTTER, properties.tab(TAB_RANDOMISFITS));
+        super(0, -2f, tier, ModTags.Blocks.MINEABLE_WITH_GLASS_CUTTER, properties.tab(TAB_RANDOMISFITS));
     }
 
     @Override
