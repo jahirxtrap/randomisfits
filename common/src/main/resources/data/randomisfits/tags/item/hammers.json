@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "randomisfits:copper_hammer",
     "randomisfits:iron_hammer",
     "randomisfits:golden_hammer",
     "randomisfits:diamond_hammer",

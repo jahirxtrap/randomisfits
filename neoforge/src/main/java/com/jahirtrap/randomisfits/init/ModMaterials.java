@@ -38,6 +38,7 @@ public class ModMaterials {
         ToolMaterial STEEL = new ToolMaterial(BlockTags.INCORRECT_FOR_IRON_TOOL, 501, 6.5f, 2f, 14, ModTags.Items.STEEL_INGOTS);
         ToolMaterial BRONZE = new ToolMaterial(BlockTags.INCORRECT_FOR_IRON_TOOL, 350, 7f, 2f, 16, ModTags.Items.BRONZE_INGOTS);
         ToolMaterial ENDERITE = new ToolMaterial(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 4096, 15f, 5f, 17, ModTags.Items.ENDERITE_INGOTS);
+        ToolMaterial COPPER_HARD = copy(ToolMaterial.COPPER, 2, 0);
         ToolMaterial IRON_HARD = copy(ToolMaterial.IRON, 2, 0);
         ToolMaterial GOLD_HARD = copy(ToolMaterial.GOLD, 10, 0);
         ToolMaterial DIAMOND_HARD = copy(ToolMaterial.DIAMOND, 2, 0);

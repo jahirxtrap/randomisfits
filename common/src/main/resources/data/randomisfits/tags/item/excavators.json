@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "randomisfits:copper_excavator",
     "randomisfits:iron_excavator",
     "randomisfits:golden_excavator",
     "randomisfits:diamond_excavator",

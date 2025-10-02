@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "IB",
+    "IR",
+    " R"
+  ],
+  "key": {
+    "B": "#c:storage_blocks/copper",
+    "I": "#c:ingots/copper",
+    "R": "randomisfits:handle"
+  },
+  "result": {
+    "id": "randomisfits:copper_lumberaxe",
+    "count": 1
+  }
+}

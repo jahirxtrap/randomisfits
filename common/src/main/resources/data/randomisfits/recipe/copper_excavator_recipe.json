@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "B",
+    "R",
+    "R"
+  ],
+  "key": {
+    "B": "#c:storage_blocks/copper",
+    "R": "randomisfits:handle"
+  },
+  "result": {
+    "id": "randomisfits:copper_excavator",
+    "count": 1
+  }
+}

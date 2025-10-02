@@ -25,7 +25,7 @@ public record MessageOpenMenu(int menu) implements CustomPacketPayload {
 
     public static void handle(MessageOpenMenu message, ServerPlayNetworking.Context context) {
         int menu = message.menu;
-        context.player().getServer().execute(() -> {
+        context.server().execute(() -> {
             ServerPlayer player = context.player();
             if (ModConfig.rightClickSlotOpenMenu) {
                 if (menu == 1) {

@@ -5,6 +5,7 @@ import com.jahirtrap.randomisfits.item.CraftingPlateItem;
 import com.jahirtrap.randomisfits.item.EnderBagItem;
 import com.jahirtrap.randomisfits.network.message.MessageOpenMenu;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
+import net.minecraft.client.input.MouseButtonEvent;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.Item;
 import net.neoforged.neoforge.client.network.ClientPacketDistributor;
@@ -23,9 +24,9 @@ public abstract class AbstractContainerScreenMixin {
     protected Slot hoveredSlot;
 
     @Inject(method = "mouseClicked", at = @At("HEAD"), cancellable = true)
-    public void mouseClicked(double d, double e, int i, CallbackInfoReturnable<Boolean> cir) {
+    public void mouseClicked(MouseButtonEvent buttonEvent, boolean bl, CallbackInfoReturnable<Boolean> cir) {
         Slot slot = hoveredSlot;
-        if (ModConfig.rightClickSlotOpenMenu && slot != null && i == 1) {
+        if (ModConfig.rightClickSlotOpenMenu && slot != null && buttonEvent.button() == 1) {
             int menu = 0;
             Item item = slot.getItem().getItem();
             if (item instanceof EnderBagItem) menu = 1;

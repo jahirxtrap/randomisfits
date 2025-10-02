@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ASP",
+    "HR ",
+    " R "
+  ],
+  "key": {
+    "A": "minecraft:copper_axe",
+    "S": "minecraft:copper_shovel",
+    "P": "minecraft:copper_pickaxe",
+    "H": "minecraft:copper_hoe",
+    "R": "randomisfits:handle"
+  },
+  "result": {
+    "id": "randomisfits:copper_multitool",
+    "count": 1
+  }
+}
