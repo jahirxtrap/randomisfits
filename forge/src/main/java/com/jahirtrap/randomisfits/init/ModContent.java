@@ -30,6 +30,7 @@ public class ModContent {
     public static final List<RegistryObject<Item>> INVISIBLE_ARMOR = registerArmor(ModMaterials.Armor.INVISIBLE, new Item.Properties());
     public static final List<RegistryObject<Item>> REINFORCED_INVISIBLE_ARMOR = registerArmor(ModMaterials.Armor.REINFORCED_INVISIBLE, new Item.Properties());
     public static final RegistryObject<Item> HANDLE = registerItem("handle", Item::new, new Item.Properties());
+    public static final List<RegistryObject<Item>> COPPER_EXTRA_TOOLS = registerExtraTools("copper", ToolMaterial.COPPER, ModMaterials.Tool.COPPER_HARD, new Item.Properties());
     public static final List<RegistryObject<Item>> IRON_EXTRA_TOOLS = registerExtraTools("iron", ToolMaterial.IRON, ModMaterials.Tool.IRON_HARD, new Item.Properties());
     public static final List<RegistryObject<Item>> GOLDEN_EXTRA_TOOLS = registerExtraTools("golden", ToolMaterial.GOLD, ModMaterials.Tool.GOLD_HARD, new Item.Properties());
     public static final List<RegistryObject<Item>> DIAMOND_EXTRA_TOOLS = registerExtraTools("diamond", ToolMaterial.DIAMOND, ModMaterials.Tool.DIAMOND_HARD, new Item.Properties());
