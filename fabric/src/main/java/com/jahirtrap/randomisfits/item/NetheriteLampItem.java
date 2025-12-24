@@ -1,6 +1,6 @@
 package com.jahirtrap.randomisfits.item;
 
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -15,11 +15,11 @@ public class NetheriteLampItem extends BaseWearableItem {
     public static ItemAttributeModifiers createAttributes() {
         return ItemAttributeModifiers.builder()
                 .add(Attributes.ARMOR,
-                        new AttributeModifier(ResourceLocation.withDefaultNamespace("base_armor"), 2.0F, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.HEAD)
+                        new AttributeModifier(Identifier.withDefaultNamespace("base_armor"), 2.0F, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.HEAD)
                 .add(Attributes.ARMOR_TOUGHNESS,
-                        new AttributeModifier(ResourceLocation.withDefaultNamespace("base_armor_toughness"), 2.0F, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.HEAD)
+                        new AttributeModifier(Identifier.withDefaultNamespace("base_armor_toughness"), 2.0F, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.HEAD)
                 .add(Attributes.KNOCKBACK_RESISTANCE,
-                        new AttributeModifier(ResourceLocation.withDefaultNamespace("base_knockback_resistance"), 0.1F, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.HEAD)
+                        new AttributeModifier(Identifier.withDefaultNamespace("base_knockback_resistance"), 0.1F, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.HEAD)
                 .build();
     }
 }
