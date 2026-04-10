@@ -13,6 +13,8 @@ import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.TooltipDisplay;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
+import net.neoforged.neoforge.common.ItemAbilities;
+import net.neoforged.neoforge.common.ItemAbility;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -41,7 +43,7 @@ public class BaseMultitoolItem extends Item {
             else mode = SHOVEL_MODE;
 
             setMode(stack, mode);
-            player.displayClientMessage(coloredTextComponent(getModeText(mode), ChatFormatting.GOLD), true);
+            player.sendOverlayMessage(coloredTextComponent(getModeText(mode), ChatFormatting.GOLD));
             return InteractionResult.SUCCESS_SERVER;
         }
 
@@ -81,6 +83,13 @@ public class BaseMultitoolItem extends Item {
 
     private void setMode(ItemStack stack, String mode) {
         stack.set(MODE_KEY, mode);
+    }
+
+    @Override
+    public boolean canPerformAction(ItemInstance stack, ItemAbility itemAbility) {
+        return ItemAbilities.DEFAULT_AXE_ACTIONS.contains(itemAbility)
+                || ItemAbilities.DEFAULT_SHOVEL_ACTIONS.contains(itemAbility)
+                || ItemAbilities.DEFAULT_HOE_ACTIONS.contains(itemAbility);
     }
 
     private String getModeText(String mode) {

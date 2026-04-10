@@ -2,7 +2,7 @@ package com.jahirtrap.randomisfits.init;
 
 import com.jahirtrap.randomisfits.block.BaseLightBlock;
 import com.jahirtrap.randomisfits.item.*;
-import net.fabricmc.fabric.api.registry.FuelRegistryEvents;
+import net.fabricmc.fabric.api.registry.FuelValueEvents;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -101,6 +101,6 @@ public class ModContent {
     public static void init() {
         FUEL_ITEMS.put(HANDLE, 200);
 
-        FuelRegistryEvents.BUILD.register((builder, context) -> FUEL_ITEMS.forEach(builder::add));
+        FuelValueEvents.BUILD.register((builder, context) -> FUEL_ITEMS.forEach(builder::add));
     }
 }

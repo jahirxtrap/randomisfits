@@ -26,7 +26,7 @@ public class EnderBagItem extends Item {
     @Override
     public InteractionResult use(Level level, Player player, InteractionHand hand) {
         if (!level.isClientSide()) {
-            level.playSound(null, player.blockPosition(), SoundEvents.ENDER_CHEST_OPEN, SoundSource.PLAYERS, 0.5f, level.random.nextFloat() * 0.1f + 0.9f);
+            level.playSound(null, player.blockPosition(), SoundEvents.ENDER_CHEST_OPEN, SoundSource.PLAYERS, 0.5f, level.getRandom().nextFloat() * 0.1f + 0.9f);
             player.openMenu(new SimpleMenuProvider(EnderBagMenu::new, Component.translatable("item.randomisfits.ender_bag")));
             return InteractionResult.SUCCESS_SERVER;
         }
@@ -39,7 +39,7 @@ public class EnderBagItem extends Item {
         if (entity instanceof Player player) {
             if (player.getMainHandItem() == stack || player.getOffhandItem() == stack) {
                 for (int j = 0; j < 2; j++)
-                    level.sendParticles(ParticleTypes.PORTAL, player.getRandomX(0.5), player.getRandomY() - 0.25, player.getRandomZ(0.5), 1, 0, (level.random.nextDouble() - 0.5) * 2, -level.random.nextDouble(), (level.random.nextDouble() - 0.5) * 2);
+                    level.sendParticles(ParticleTypes.PORTAL, player.getRandomX(0.5), player.getRandomY() - 0.25, player.getRandomZ(0.5), 1, 0, (level.getRandom().nextDouble() - 0.5) * 2, -level.getRandom().nextDouble(), (level.getRandom().nextDouble() - 0.5) * 2);
             }
         }
     }
@@ -51,7 +51,7 @@ public class EnderBagItem extends Item {
 
         @Override
         public void removed(Player player) {
-            player.level().playSound(null, player.blockPosition(), SoundEvents.ENDER_CHEST_CLOSE, SoundSource.PLAYERS, 0.5f, player.level().random.nextFloat() * 0.1f + 0.9f);
+            player.level().playSound(null, player.blockPosition(), SoundEvents.ENDER_CHEST_CLOSE, SoundSource.PLAYERS, 0.5f, player.level().getRandom().nextFloat() * 0.1f + 0.9f);
             super.removed(player);
         }
     }

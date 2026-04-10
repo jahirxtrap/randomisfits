@@ -41,7 +41,7 @@ public class BaseMultitoolItem extends Item {
             else mode = SHOVEL_MODE;
 
             setMode(stack, mode);
-            player.displayClientMessage(coloredTextComponent(getModeText(mode), ChatFormatting.GOLD), true);
+            player.sendOverlayMessage(coloredTextComponent(getModeText(mode), ChatFormatting.GOLD));
             return InteractionResult.SUCCESS_SERVER;
         }
 

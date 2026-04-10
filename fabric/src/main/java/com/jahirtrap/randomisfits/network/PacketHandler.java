@@ -6,7 +6,7 @@ import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 
 public class PacketHandler {
     public static void init() {
-        PayloadTypeRegistry.playC2S().register(MessageOpenMenu.TYPE, MessageOpenMenu.CODEC);
+        PayloadTypeRegistry.serverboundPlay().register(MessageOpenMenu.TYPE, MessageOpenMenu.CODEC);
 
         ServerPlayNetworking.registerGlobalReceiver(MessageOpenMenu.TYPE, MessageOpenMenu::handle);
     }

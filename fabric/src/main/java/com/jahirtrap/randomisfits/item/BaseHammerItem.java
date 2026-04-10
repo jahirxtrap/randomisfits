@@ -30,7 +30,7 @@ public class BaseHammerItem extends Item implements RangeItem {
 
         if (ModConfig.toggleHammerMode && !level.isClientSide() && player.isSecondaryUseActive()) {
             setMode(stack, !getMode(stack));
-            player.displayClientMessage(coloredTextComponent(getModeText(getMode(stack)), ChatFormatting.GOLD), true);
+            player.sendOverlayMessage(coloredTextComponent(getModeText(getMode(stack)), ChatFormatting.GOLD));
             return InteractionResult.SUCCESS_SERVER;
         }
 
