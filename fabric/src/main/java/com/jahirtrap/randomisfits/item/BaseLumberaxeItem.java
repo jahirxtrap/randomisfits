@@ -8,7 +8,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.AxeItem;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ToolMaterial;
 import net.minecraft.world.item.TooltipFlag;
@@ -20,11 +20,11 @@ import java.util.function.Consumer;
 import static com.jahirtrap.randomisfits.util.CommonUtils.blueBar;
 import static com.jahirtrap.randomisfits.util.CommonUtils.coloredTextComponent;
 
-public class BaseLumberaxeItem extends AxeItem {
+public class BaseLumberaxeItem extends Item {
     private static final DataComponentType<Boolean> FELLING_KEY = ModComponents.FELLING_KEY;
 
     public BaseLumberaxeItem(ToolMaterial material, Properties properties) {
-        super(material, 6f, -3f, properties);
+        super(properties.axe(material, 6f, -3f));
     }
 
     @Override

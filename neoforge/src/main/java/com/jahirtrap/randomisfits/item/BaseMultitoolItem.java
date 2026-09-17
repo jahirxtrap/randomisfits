@@ -4,17 +4,19 @@ import com.jahirtrap.randomisfits.init.ModComponents;
 import com.jahirtrap.randomisfits.init.ModConfig;
 import com.jahirtrap.randomisfits.init.ModTags;
 import net.minecraft.ChatFormatting;
+import net.minecraft.core.component.BlockTransformer;
 import net.minecraft.core.component.DataComponentType;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
+import net.minecraft.world.item.component.BlockTransformers;
 import net.minecraft.world.item.component.TooltipDisplay;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
-import net.neoforged.neoforge.common.ItemAbilities;
-import net.neoforged.neoforge.common.ItemAbility;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -23,7 +25,6 @@ import static com.jahirtrap.randomisfits.util.CommonUtils.blueBar;
 import static com.jahirtrap.randomisfits.util.CommonUtils.coloredTextComponent;
 
 public class BaseMultitoolItem extends Item {
-    private static final Item[] items = {Items.WOODEN_AXE, Items.WOODEN_PICKAXE, Items.WOODEN_SHOVEL, Items.WOODEN_HOE};
     private static final DataComponentType<String> MODE_KEY = ModComponents.MODE_KEY.get();
     private static final String SHOVEL_MODE = "shovel";
     private static final String HOE_MODE = "hoe";
@@ -64,14 +65,15 @@ public class BaseMultitoolItem extends Item {
     @Override
     public InteractionResult useOn(UseOnContext context) {
         if (!ModConfig.multitoolInteractions) return InteractionResult.PASS;
-        InteractionResult result = items[0].useOn(context);
-        if (result == InteractionResult.PASS) {
-            result = items[1].useOn(context);
-            if (result == InteractionResult.PASS)
-                result = items[getMode(context.getItemInHand()).equals(SHOVEL_MODE) ? 2 : 3].useOn(context);
-        }
+        InteractionResult result = transform(context, BlockTransformers.AXE);
+        if (result == InteractionResult.PASS)
+            result = transform(context, getMode(context.getItemInHand()).equals(SHOVEL_MODE) ? BlockTransformers.SHOVEL : BlockTransformers.HOE);
 
         return result;
+    }
+
+    private InteractionResult transform(UseOnContext context, ResourceKey<BlockTransformer> key) {
+        return context.getLevel().registryAccess().lookupOrThrow(Registries.BLOCK_TRANSFORMER).getOrThrow(key).value().transformBlock(context);
     }
 
     private String getMode(ItemStack stack) {
@@ -83,13 +85,6 @@ public class BaseMultitoolItem extends Item {
 
     private void setMode(ItemStack stack, String mode) {
         stack.set(MODE_KEY, mode);
-    }
-
-    @Override
-    public boolean canPerformAction(ItemInstance stack, ItemAbility itemAbility) {
-        return ItemAbilities.DEFAULT_AXE_ACTIONS.contains(itemAbility)
-                || ItemAbilities.DEFAULT_SHOVEL_ACTIONS.contains(itemAbility)
-                || ItemAbilities.DEFAULT_HOE_ACTIONS.contains(itemAbility);
     }
 
     private String getModeText(String mode) {

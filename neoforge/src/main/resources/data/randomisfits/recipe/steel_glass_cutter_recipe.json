@@ -14,7 +14,7 @@
     "id": "randomisfits:steel_glass_cutter",
     "count": 1
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

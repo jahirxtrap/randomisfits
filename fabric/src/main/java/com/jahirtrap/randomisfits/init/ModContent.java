@@ -2,7 +2,6 @@ package com.jahirtrap.randomisfits.init;
 
 import com.jahirtrap.randomisfits.block.BaseLightBlock;
 import com.jahirtrap.randomisfits.item.*;
-import net.fabricmc.fabric.api.registry.FuelValueEvents;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -11,12 +10,11 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.equipment.ArmorMaterial;
 import net.minecraft.world.item.equipment.ArmorType;
-import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.function.Function;
 
@@ -24,11 +22,10 @@ import static com.jahirtrap.randomisfits.RandomisfitsMod.MODID;
 
 public class ModContent {
     public static final List<Item> ITEMS = new ArrayList<>();
-    public static final HashMap<ItemLike, Integer> FUEL_ITEMS = new HashMap<>();
 
     public static final List<Item> INVISIBLE_ARMOR = registerArmor(ModMaterials.Armor.INVISIBLE, new Item.Properties());
     public static final List<Item> REINFORCED_INVISIBLE_ARMOR = registerArmor(ModMaterials.Armor.REINFORCED_INVISIBLE, new Item.Properties());
-    public static final Item HANDLE = registerItem("handle", Item::new, new Item.Properties());
+    public static final Item HANDLE = registerItem("handle", Item::new, new Item.Properties().cookingFuel(ContextIntProviders.COOKING_TIME_WOOD_ITEMS_LARGE));
     public static final List<Item> COPPER_EXTRA_TOOLS = registerExtraTools("copper", ToolMaterial.COPPER, ModMaterials.Tool.COPPER_HARD, new Item.Properties());
     public static final List<Item> IRON_EXTRA_TOOLS = registerExtraTools("iron", ToolMaterial.IRON, ModMaterials.Tool.IRON_HARD, new Item.Properties());
     public static final List<Item> GOLDEN_EXTRA_TOOLS = registerExtraTools("golden", ToolMaterial.GOLD, ModMaterials.Tool.GOLD_HARD, new Item.Properties());
@@ -72,9 +69,9 @@ public class ModContent {
         return List.of(
                 registerItem(name + "_sword", (p) -> new Item(p.sword(material, 3f, -2.4f)), itemProp),
                 registerItem(name + "_pickaxe", (p) -> new Item(p.pickaxe(material, 1f, -2.8f)), itemProp),
-                registerItem(name + "_axe", (p) -> new AxeItem(material, attr[0], attr[1], p), itemProp),
-                registerItem(name + "_shovel", (p) -> new ShovelItem(material, 1.5f, -3f, p), itemProp),
-                registerItem(name + "_hoe", (p) -> new HoeItem(material, attr[2], attr[3], p), itemProp)
+                registerItem(name + "_axe", (p) -> new Item(p.axe(material, attr[0], attr[1])), itemProp),
+                registerItem(name + "_shovel", (p) -> new Item(p.shovel(material, 1.5f, -3f)), itemProp),
+                registerItem(name + "_hoe", (p) -> new Item(p.hoe(material, attr[2], attr[3])), itemProp)
         );
     }
 
@@ -99,8 +96,5 @@ public class ModContent {
     }
 
     public static void init() {
-        FUEL_ITEMS.put(HANDLE, 200);
-
-        FuelValueEvents.BUILD.register((builder, context) -> FUEL_ITEMS.forEach(builder::add));
     }
 }

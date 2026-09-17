@@ -26,7 +26,7 @@ public class BaseLightBlock extends Block implements SimpleWaterloggedBlock {
     private final float width, height;
 
     public BaseLightBlock(float width, float height, Properties properties) {
-        super(properties.pushReaction(PushReaction.DESTROY).sound(SoundType.METAL).strength(0.5f).lightLevel($ -> 15));
+        super(properties.pushReaction(PushReaction.POPPED).sound(SoundType.METAL).strength(0.5f).lightLevel($ -> 15));
         this.registerDefaultState(stateDefinition.any().setValue(FACING, Direction.UP).setValue(BlockStateProperties.WATERLOGGED, false));
         this.width = width;
         this.height = height;
