@@ -16,10 +16,8 @@
     "id": "randomisfits:enderite_multitool",
     "count": 1
   },
-  "conditions": [
-    {
-      "type": "forge:mod_loaded",
-      "modid": "enderitemod"
-    }
-  ]
+  "forge:condition": {
+    "type": "forge:mod_loaded",
+    "modid": "enderitemod"
+  }
 }

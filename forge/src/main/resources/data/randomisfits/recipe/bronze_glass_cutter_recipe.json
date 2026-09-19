@@ -14,13 +14,11 @@
     "id": "randomisfits:bronze_glass_cutter",
     "count": 1
   },
-  "conditions": [
-    {
-      "type": "forge:not",
-      "value": {
-        "type": "forge:tag_empty",
-        "tag": "c:ingots/bronze"
-      }
+  "forge:condition": {
+    "type": "forge:not",
+    "value": {
+      "type": "forge:tag_empty",
+      "tag": "c:ingots/bronze"
     }
-  ]
+  }
 }

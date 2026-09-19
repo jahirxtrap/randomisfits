@@ -8,15 +8,13 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.equipment.ArmorMaterial;
 import net.minecraft.world.item.equipment.ArmorType;
-import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraftforge.event.furnace.FurnaceFuelBurnTimeEvent;
+import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
 import net.minecraftforge.eventbus.api.bus.BusGroup;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.function.Function;
 
@@ -25,11 +23,10 @@ import static com.jahirtrap.randomisfits.RandomisfitsMod.MODID;
 public class ModContent {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(Registries.BLOCK, MODID);
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(Registries.ITEM, MODID);
-    public static final HashMap<RegistryObject<? extends ItemLike>, Integer> FUEL_ITEMS = new HashMap<>();
 
     public static final List<RegistryObject<Item>> INVISIBLE_ARMOR = registerArmor(ModMaterials.Armor.INVISIBLE, new Item.Properties());
     public static final List<RegistryObject<Item>> REINFORCED_INVISIBLE_ARMOR = registerArmor(ModMaterials.Armor.REINFORCED_INVISIBLE, new Item.Properties());
-    public static final RegistryObject<Item> HANDLE = registerItem("handle", Item::new, new Item.Properties());
+    public static final RegistryObject<Item> HANDLE = registerItem("handle", Item::new, new Item.Properties().cookingFuel(ContextIntProviders.COOKING_TIME_WOOD_ITEMS_LARGE));
     public static final List<RegistryObject<Item>> COPPER_EXTRA_TOOLS = registerExtraTools("copper", ToolMaterial.COPPER, ModMaterials.Tool.COPPER_HARD, new Item.Properties());
     public static final List<RegistryObject<Item>> IRON_EXTRA_TOOLS = registerExtraTools("iron", ToolMaterial.IRON, ModMaterials.Tool.IRON_HARD, new Item.Properties());
     public static final List<RegistryObject<Item>> GOLDEN_EXTRA_TOOLS = registerExtraTools("golden", ToolMaterial.GOLD, ModMaterials.Tool.GOLD_HARD, new Item.Properties());
@@ -71,9 +68,9 @@ public class ModContent {
         return List.of(
                 registerItem(name + "_sword", (p) -> new Item(p.sword(material, 3f, -2.4f)), itemProp),
                 registerItem(name + "_pickaxe", (p) -> new Item(p.pickaxe(material, 1f, -2.8f)), itemProp),
-                registerItem(name + "_axe", (p) -> new AxeItem(material, attr[0], attr[1], p), itemProp),
-                registerItem(name + "_shovel", (p) -> new ShovelItem(material, 1.5f, -3f, p), itemProp),
-                registerItem(name + "_hoe", (p) -> new HoeItem(material, attr[2], attr[3], p), itemProp)
+                registerItem(name + "_axe", (p) -> new Item(p.axe(material, attr[0], attr[1])), itemProp),
+                registerItem(name + "_shovel", (p) -> new Item(p.shovel(material, 1.5f, -3f)), itemProp),
+                registerItem(name + "_hoe", (p) -> new Item(p.hoe(material, attr[2], attr[3])), itemProp)
         );
     }
 
@@ -100,11 +97,5 @@ public class ModContent {
     public static void init(BusGroup bus) {
         BLOCKS.register(bus);
         ITEMS.register(bus);
-
-        FUEL_ITEMS.put(HANDLE, 200);
-
-        FurnaceFuelBurnTimeEvent.BUS.addListener((FurnaceFuelBurnTimeEvent event) -> FUEL_ITEMS.forEach((item, burnTime) -> {
-            if (item.get() == event.getItemStack().getItem()) event.setBurnTime(burnTime);
-        }));
     }
 }

@@ -7,8 +7,8 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.ShovelItem;
 import net.minecraft.world.item.ToolMaterial;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.component.TooltipDisplay;
@@ -19,9 +19,9 @@ import java.util.function.Consumer;
 import static com.jahirtrap.randomisfits.util.CommonUtils.blueBar;
 import static com.jahirtrap.randomisfits.util.CommonUtils.coloredTextComponent;
 
-public class BaseExcavatorItem extends ShovelItem implements RangeItem {
+public class BaseExcavatorItem extends Item implements RangeItem {
     public BaseExcavatorItem(ToolMaterial material, Properties properties) {
-        super(material, 3f, -3f, properties);
+        super(properties.shovel(material, 3f, -3f));
     }
 
     @Override

@@ -13,13 +13,11 @@
     "id": "randomisfits:steel_excavator",
     "count": 1
   },
-  "conditions": [
-    {
-      "type": "forge:not",
-      "value": {
-        "type": "forge:tag_empty",
-        "tag": "c:storage_blocks/steel"
-      }
+  "forge:condition": {
+    "type": "forge:not",
+    "value": {
+      "type": "forge:tag_empty",
+      "tag": "c:storage_blocks/steel"
     }
-  ]
+  }
 }

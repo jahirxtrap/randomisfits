@@ -16,10 +16,8 @@
     "id": "randomisfits:steel_multitool",
     "count": 1
   },
-  "conditions": [
-    {
-      "type": "forge:mod_loaded",
-      "modid": "ingotcraft"
-    }
-  ]
+  "forge:condition": {
+    "type": "forge:mod_loaded",
+    "modid": "ingotcraft"
+  }
 }
